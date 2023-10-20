@@ -1,6 +1,7 @@
 import json
 import os
 from .urlParser import UrlParser
+from .modifyText import TextModifier
 
 class RequestItem:
     def __init__(self, base_collection_path, item_folder):
@@ -44,7 +45,7 @@ class RequestItem:
         else:
             print("No item data loaded. Create a RequestItem object first.")
             
-    def add_event(self):
+    def add_event(self, L1, L2, CodAppl, NomeSoftware, CollectionName, ApplName):
         # Define the paths for pre-request and test scripts
         pre_req_script_path = os.path.join(self.itemFolder, "preRequestScript.txt")
         test_script_path = os.path.join(self.itemFolder, "testScript.txt")
@@ -53,7 +54,10 @@ class RequestItem:
         if os.path.exists(pre_req_script_path):
             with open(pre_req_script_path, "r", encoding="utf-8") as pre_req:
                 pre_req_content = pre_req.read()
-            self.request_data["event"][0]["script"]["exec"] = pre_req_content
+            # Modify text
+            textMod = TextModifier(pre_req_content)
+            textMod.replace_placeholders(L1, L2, CodAppl, NomeSoftware, CollectionName, ApplName)
+            self.request_data["event"][0]["script"]["exec"] = textMod.text
         else:
             print(f"Pre-request script not found at '"+pre_req_script_path)
 
@@ -61,18 +65,24 @@ class RequestItem:
         if os.path.exists(test_script_path):
             with open(test_script_path, "r", encoding="utf-8") as test:
                 test_content = test.read()
-            self.request_data["event"][1]["script"]["exec"] = test_content
+            # Modify text
+            textModTest = TextModifier(test_content)
+            textModTest.replace_placeholders(L1, L2, CodAppl, NomeSoftware, CollectionName, ApplName)
+            self.request_data["event"][1]["script"]["exec"] = textModTest.text
         else:
             print(f"Test script not found at '"+test_script_path)
     
-    def add_request_body(self, json_file_path):
+    def add_request_body(self, json_file_path, L1, L2, CodAppl, NomeSoftware, CollectionName, ApplName):
         try:
             with open(json_file_path, "r", encoding="utf-8") as json_file:
                 request_body = json.load(json_file)
                 if isinstance(request_body, dict):
                     # If request_body is a dictionary, convert it to a JSON string (basically a string of text)
                     request_body = json.dumps(request_body, indent=4)
-                self.request_data["request"]["body"]["raw"] = request_body
+                # Modify text
+                textMod = TextModifier(request_body)
+                textMod.replace_placeholders(L1, L2, CodAppl, NomeSoftware, CollectionName, ApplName)
+                self.request_data["request"]["body"]["raw"] = textMod.text
         except FileNotFoundError:
             print(f"JSON file not found at: {json_file_path}")
         except json.JSONDecodeError:

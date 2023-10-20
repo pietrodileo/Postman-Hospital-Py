@@ -2,6 +2,6 @@
 
 Install-Module PSTree -Scope CurrentUser
 
-*Comando per stampare il tree in un file .txt*
+*Comando per stampare il tree in un file .txt andando ad escludere le cartelle o i file indicati*
 
 Get-PSTree -Exclude *venv, *__pycache__, *node_modules, *.vscode, *tree.txt, *treeCommand.txt, *structured_keys.txt  | Select-Object > ./utils/tree.txt

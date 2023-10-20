@@ -19,8 +19,9 @@ def main():
     collection.load_collection_data()
 
     # Build the collection specifying a name and description from a text file
-    collection.build_collection(name="Postman Hospital", descriptionPath="./models/collection/description.txt")
-
+    collection.build_collection(CollectionName="Postman Hospital", descriptionPath="./models/collection/description.txt",
+                                L1="1", L2="2", CodAppl="3", NomeSoftware="prova",ApplName="pro")
+    
     # Load collection variables
     collection.load_variables()
 
@@ -42,8 +43,10 @@ def main():
                 request = RequestItem(base_collection_path, current_folder)
                 json_name = json_file[:-5]  # Remove the last 5 characters (i.e., ".json")
                 request.add_info(json_name, collection_properties_path)
-                request.add_event()
-                request.add_request_body(json_file_path)
+                request.add_event(L1="1", L2="2", CodAppl="3", NomeSoftware="prova", 
+                                  CollectionName="Postman Hospital",ApplName="pro")
+                request.add_request_body(json_file_path=json_file_path, L1="1", L2="2", CodAppl="3", 
+                                         NomeSoftware="prova", CollectionName="Postman Hospital",ApplName="pro")
                 item.add_request_to_item(request.request_data)
             
             # Add the new folder to the collection
