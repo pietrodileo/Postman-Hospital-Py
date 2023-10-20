@@ -1,0 +1,111 @@
+{
+    "info": {
+        "_postman_id": "f5e74d06-ef9a-445c-ae93-0931128257ad",
+        "name": "Postman Hospital",
+        "description": "# NomeCollection_VSC\n\n## NomeOspedale_VSC\n\nQuesta collection \u00e8 stata creata automaticamente in data currentDate_VSC, per simulare l'applicativo di un laboratorio di analisi che possieda i seguenti parametri: \n- **L1** = L1code_VSC;\n- **L2** = L2code_VSC;\n- **Codice Applicativo** = CodiceApplicativo_VSC;\n- **Nome Software** = NomeOspedale_VSC;\n- **Nome Applicativo** = ApplName_VSC;\n\n### Funzionamento\nSegui i seguenti passaggi per poter simulare correttamente un servizio web tramite questa collection:\n1. Crea su Postman un nuovo _Environment_ vuoto e chiamalo come preferisci.\n2. Importa le collection generate automaticamente con lo script _PostmanHospital_.\n3. Per ogni collection crea un *Mock Server* cliccando sulle impostazioni della collection, poi su _Mock collection_.\n4. Scegli il nome del Mock che preferisci, dopodich\u00e8 fallo lavorare nell'_Environment_ appena creato.\n5. Clicca su _Mock Servers_ nella barra laterale e copia l'URL del Mock Server.\n6. Clicca sulla collection, poi su _Variables_, e incolla l'URL nel parametro _URL_Mock_.\n7. Ripeti il processo per ognuna delle collection realizzate.\n8. Sei pronto per utilizzare i tuoi Mock Server!\n\n\n\n\n\n",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+        "_exporter_id": "25646092"
+    },
+    "item": [],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    "..."
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    "..."
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "URL_Mock",
+            "value": "https://334dfdde-1ca4-4e0e-b45b-18b19977a72e.mock.pstmn.io",
+            "type": "string"
+        },
+        {
+            "key": "port",
+            "value": "1888",
+            "type": "any"
+        },
+        {
+            "key": "port2",
+            "value": "52773",
+            "type": "any"
+        },
+        {
+            "key": "requisition",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "formattedRequisition",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "MessageHeaderID",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "MessageHeaderFullUrl",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "serviceID",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "Date",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "CodiceApplicativo",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "L1code",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "L2code",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "NomeSoftware",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "PlacerOrderNumber",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "PlacerOrderNumber2",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "BundleID",
+            "value": ""
+        }
+    ]
+}
