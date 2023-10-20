@@ -13,12 +13,7 @@ Questa collection è stata creata automaticamente in data currentDate_VSC, per s
 Segui i seguenti passaggi per poter simulare correttamente un servizio web tramite questa collection:
 1. Crea su Postman un nuovo _Environment_ vuoto e chiamalo come preferisci.
 2. Importa le collection generate automaticamente con lo script _PostmanHospital_.
-3. Per ogni collection crea un *Mock Server* cliccando sulle impostazioni della collection, poi su _Mock collection_.
-4. Scegli il nome del Mock che preferisci, dopodichè fallo lavorare nell'_Environment_ appena creato.
-5. Clicca su _Mock Servers_ nella barra laterale e copia l'URL del Mock Server.
-6. Clicca sulla collection, poi su _Variables_, e incolla l'URL nel parametro _URL_Mock_.
-7. Ripeti il processo per ognuna delle collection realizzate.
-8. Sei pronto per utilizzare i tuoi Mock Server!
+3. Invia i tuoi messaggi tramite Postman.
 
 
 

@@ -1,0 +1,83 @@
+import json
+import os
+from .urlParser import UrlParser
+
+class RequestItem:
+    def __init__(self, base_collection_path, item_folder):
+        self.base_collection_path = base_collection_path
+        self.itemFolder = item_folder
+        try:
+            with open(self.base_collection_path, "r", encoding="utf-8") as json_file:
+                self.collection_content = json.load(json_file)
+            
+            self.request_data = self.collection_content["request"]
+        except FileNotFoundError:
+            print("Collection file not found.")
+        except json.JSONDecodeError:
+            print("Error decoding JSON in the collection file.")
+            
+    def add_info(self, itemName, collection_properties_path):
+        if self.request_data:            
+            # Add an item name
+            self.request_data["name"] = itemName
+
+            # Open and read the collection properties JSON file
+            try:
+                with open(collection_properties_path, "r", encoding="utf-8") as properties_file:
+                    collection_properties = json.load(properties_file)
+                # Add HTTP method
+                self.request_data["request"]["method"] = collection_properties["method"]
+                # Add URL
+                self.request_data["request"]["url"]["raw"] = collection_properties["URL"]
+                # Extract information from the URL
+                urlParser = UrlParser(collection_properties["URL"])
+                # Add information from the URL
+                self.request_data["request"]["url"]["host"] = urlParser.url_info["host"]
+                self.request_data["request"]["url"]["port"] = urlParser.url_info["port"]
+                self.request_data["request"]["url"]["path"] = urlParser.url_info["path"]
+                self.request_data["request"]["url"]["query"] = urlParser.url_info["query"]
+                
+            except FileNotFoundError:
+                print(f"Collection properties file not found at '{collection_properties_path}'")
+            except json.JSONDecodeError:
+                print(f"Error decoding JSON in the collection properties file.")
+        else:
+            print("No item data loaded. Create a RequestItem object first.")
+            
+    def add_event(self):
+        # Define the paths for pre-request and test scripts
+        pre_req_script_path = os.path.join(self.itemFolder, "preRequestScript.txt")
+        test_script_path = os.path.join(self.itemFolder, "testScript.txt")
+
+        # Add the pre-request script
+        if os.path.exists(pre_req_script_path):
+            with open(pre_req_script_path, "r", encoding="utf-8") as pre_req:
+                pre_req_content = pre_req.read()
+            self.request_data["event"][0]["script"]["exec"] = pre_req_content
+        else:
+            print(f"Pre-request script not found at '"+pre_req_script_path)
+
+        # Add the test script
+        if os.path.exists(test_script_path):
+            with open(test_script_path, "r", encoding="utf-8") as test:
+                test_content = test.read()
+            self.request_data["event"][1]["script"]["exec"] = test_content
+        else:
+            print(f"Test script not found at '"+test_script_path)
+    
+    def add_request_body(self, json_file_path):
+        try:
+            with open(json_file_path, "r", encoding="utf-8") as json_file:
+                request_body = json.load(json_file)
+                if isinstance(request_body, dict):
+                    # If request_body is a dictionary, convert it to a JSON string (basically a string of text)
+                    request_body = json.dumps(request_body, indent=4)
+                self.request_data["request"]["body"]["raw"] = request_body
+        except FileNotFoundError:
+            print(f"JSON file not found at: {json_file_path}")
+        except json.JSONDecodeError:
+            print(f"Error decoding JSON in the file: {json_file_path}")
+    
+    def add_request_to_item(self, request_data):
+        # add an item (request) to the folder:
+        self.request_data["item"].append(request_data)
