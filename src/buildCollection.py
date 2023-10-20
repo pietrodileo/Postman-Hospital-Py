@@ -49,6 +49,6 @@ class Collection:
         else:
             print("No collection data to save. Call load_collection and build_collection first.")
             
-    def add_item_to_collection(self, item_data):
-        # add an item to the collection
+    def add_folder_to_collection(self, item_data):
+        # add an item (a folder) to the collection
         self.collection_data["item"].append(item_data)

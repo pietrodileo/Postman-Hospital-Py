@@ -1,0 +1,4 @@
+{
+    "method":"POST",
+    "URL":"http://localhost:{{port}}/lombardia/retelaboratori/fhir/EnsLib.REST.GenericService/?prova=prova&prova2=prova2"
+}

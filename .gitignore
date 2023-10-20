@@ -1,7 +1,8 @@
 # custom files
 Postman Hospital Base Model New.postman_collection.json
 structured_keys.txt
-.vscode
+.vscode/
+output/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

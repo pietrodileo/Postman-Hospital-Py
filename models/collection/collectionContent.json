@@ -62,19 +62,13 @@
                 }
             },
             "url": {
-                "raw": "http://localhost:{{port}}/lombardia/retelaboratori/fhir/EnsLib.REST.GenericService/?prova=prova",
+                "raw": "...",
                 "protocol": "http",
                 "host": [
-                    "localhost"
+                    "..."
                 ],
-                "port": "{{port}}",
-                "path": [
-                    "lombardia",
-                    "retelaboratori",
-                    "fhir",
-                    "EnsLib.REST.GenericService",
-                    ""
-                ],
+                "port": "...",
+                "path": [],
                 "query": [
                     {
                         "key": "prova",
