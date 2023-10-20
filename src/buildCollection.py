@@ -1,7 +1,7 @@
 import json
 import uuid
 
-class Builder:
+class Collection:
     def __init__(self, base_collection_path):
         self.base_collection_path = base_collection_path
         self.collection_content = None
@@ -48,3 +48,7 @@ class Builder:
                 print(f"Error saving collection data: {str(e)}")
         else:
             print("No collection data to save. Call load_collection and build_collection first.")
+            
+    def add_item_to_collection(self, item_data):
+        # add an item to the collection
+        self.collection_data["item"].append(item_data)
