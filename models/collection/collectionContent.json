@@ -1,0 +1,168 @@
+{
+    "collection": {
+        "info": {
+            "_postman_id": "f8593dcd-482c-4b02-a93c-87a2680736ad",
+            "name": "Collection Name",
+            "description": "Qui verrà inserita la descrizione della collection che andiamo a creare",
+            "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+            "_exporter_id": "25646092"
+        },
+        "item": [],
+        "event": [
+            {
+                "listen": "prerequest",
+                "script": {
+                    "type": "text/javascript",
+                    "exec": ["..."]
+                }
+            },
+            {
+                "listen": "test",
+                "script": {
+                    "type": "text/javascript",
+                    "exec": ["..."]
+                }
+            }
+        ],
+        "variable": []
+    },
+    "folder": {
+        "name": "Folder Name",
+        "item": [],
+        "description": "..."
+    },
+    "request": {
+        "name": "Request Name",
+        "event": [
+            {
+                "listen": "prerequest",
+                "script": {
+                    "exec": ["..."],
+                    "type": "text/javascript"
+                }
+            },
+            {
+                "listen": "test",
+                "script": {
+                    "exec": ["..."],
+                    "type": "text/javascript"
+                }
+            }
+        ],
+        "request": {
+            "method": "...",
+            "header": [],
+            "body": {
+                "mode": "raw",
+                "raw": "...",
+                "options": {
+                    "raw": {
+                        "language": "json"
+                    }
+                }
+            },
+            "url": {
+                "raw": "http://localhost:{{port}}/lombardia/retelaboratori/fhir/EnsLib.REST.GenericService/?prova=prova",
+                "protocol": "http",
+                "host": [
+                    "localhost"
+                ],
+                "port": "{{port}}",
+                "path": [
+                    "lombardia",
+                    "retelaboratori",
+                    "fhir",
+                    "EnsLib.REST.GenericService",
+                    ""
+                ],
+                "query": [
+                    {
+                        "key": "prova",
+                        "value": "prova"
+                    }
+                ]
+            }
+        }
+    },
+    "variables": [
+        {
+            "key": "URL_Mock",
+            "value": "https://334dfdde-1ca4-4e0e-b45b-18b19977a72e.mock.pstmn.io",
+            "type": "string"
+        },
+        {
+            "key": "port",
+            "value": "1888",
+            "type": "any"
+        },
+        {
+            "key": "port2",
+            "value": "52773",
+            "type": "any"
+        },
+        {
+            "key": "requisition",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "formattedRequisition",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "MessageHeaderID",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "MessageHeaderFullUrl",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "serviceID",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "Date",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "CodiceApplicativo",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "L1code",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "L2code",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "NomeSoftware",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "PlacerOrderNumber",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "PlacerOrderNumber2",
+            "value": "",
+            "type": "any"
+        },
+        {
+            "key": "BundleID",
+            "value": ""
+        }
+    ]
+}
