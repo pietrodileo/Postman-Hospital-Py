@@ -1,5 +1,5 @@
 from src.exploreJSONcontent import explore_and_save_keys
-from src.buildCollection import Builder
+from src.buildCollection import Collection
 import json
 
 # Define the input JSON file path and the output file path for structured keys
@@ -10,8 +10,8 @@ import json
 
 base_collection_path = "./models/collection/collectionContent.json"
 ouput_collection_path = "./output/collection.json"
-builder = Builder(base_collection_path)
-builder.load_collection_data()
-builder.build_collection(name="Postman Hospital", descriptionPath= "./models/collection/description.txt")
-builder.load_variables()
-builder.save_collection(ouput_collection_path)
+collection = Collection(base_collection_path)
+collection.load_collection_data()
+collection.build_collection(name="Postman Hospital", descriptionPath= "./models/collection/description.txt")
+collection.load_variables()
+collection.save_collection(ouput_collection_path)
