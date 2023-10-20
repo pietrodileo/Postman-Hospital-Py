@@ -1,0 +1,7 @@
+*Per installare il package per visualizzare un folder tree avanzato*
+
+Install-Module PSTree -Scope CurrentUser
+
+*Comando per stampare il tree in un file .txt*
+
+Get-PSTree -Exclude *node_modules, *.vscode, *tree.txt, *treeCommand.txt  | Select-Object > ./utils/tree.txt
