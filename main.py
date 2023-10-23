@@ -1,6 +1,8 @@
 import os
 import sys
 import json
+import pandas as pd
+from datetime import datetime as dt
 from src.exploreJSONcontent import explore_and_save_keys
 from src.buildCollection import Collection
 from src.collectionItem import CollectionItem
@@ -8,30 +10,55 @@ from src.requestItem import RequestItem
 
 # Define paths
 base_collection_path = ".\models\collection\collectionContent.json"
-output_collection_path = ".\output\PyHospital.postman_collection.json"
 messageModels_path = ".\models\messages"
 collection_properties_path = ".\models\collection\properties.json"
+censimento_xlsx = "CensimentoEnti.xlsx"
 
 # If save_to_log_file=True all the log will be saved in .\output\log.txt, otherwise they will be printed in the terminal
-def main(save_to_log_file=True):
-    collectionName = "Postman Hospital"
-    L1 = "1"
-    L2 = "2"
-    codAppl = "3"
-    nomeSoftware = "prova"
-    applName = "applName"
+def main(save_to_log_file=True, delete_old_log=True):
+    # Define the log file path
+    log_file_path = os.path.join(".\output", "log.txt")
 
-    if save_to_log_file:
-        log_file_path = os.path.join(".\output", "log.txt")
-        with open(log_file_path, "w") as log_file:
-            sys.stdout = log_file
-            _run_main(collectionName, L1, L2, codAppl, nomeSoftware, applName)
-            sys.stdout = sys.__stdout__
-            log_file.close()
-    else:
-        _run_main(collectionName, L1, L2, codAppl, nomeSoftware, applName)
+    # If save_to_log_file is True and the log file already exists, delete the old log file
+    if save_to_log_file and delete_old_log and os.path.exists(log_file_path):
+        os.remove(log_file_path)
+        print(f"An old log file was removed from {log_file_path}\n")
 
-def _run_main(collectionName, L1, L2, codAppl, nomeSoftware, applName):
+    # Read the xlsx file to obtain the data of the laboratory 
+    try:
+        df = pd.read_excel(censimento_xlsx, engine='openpyxl')
+        # extract data from the xlsx file
+        for index, row in df.iterrows():
+            row_data = row.to_dict()
+            collectionName = row_data['Nome Collection Postman']
+            L1 = str(row_data['Codice L1'])
+            L2 = str(row_data['Codice L2'])
+            codAppl = str(row_data['Codice Applicativo'])
+            nomeSoftware = str(row_data['Ospedale']) + ' - ' + str(row_data['Laboratorio'])
+            applName = row_data['Nome applicativo']
+            print(f"Building {collectionName} ...")
+
+            outputCollectionName = collectionName.replace(" ", "")
+            # Define the path of the outputh collection
+            output_collection_path = f".\output\\{outputCollectionName}.postman_collection.json"
+
+            # run the main processing         
+            if save_to_log_file:
+                with open(log_file_path, "a") as log_file:  # Open the log file in append mode
+                    sys.stdout = log_file
+                    # run main function for the current collection
+                    _run_main(collectionName, L1, L2, codAppl, nomeSoftware, applName, output_collection_path)
+                    sys.stdout = sys.__stdout__
+                    log_file.close()
+            else:
+                _run_main(collectionName, L1, L2, codAppl, nomeSoftware, applName, output_collection_path)
+            
+            # Build complete 
+            print(f"Build Completed!\n")
+    except Exception as e:
+        print(f"Error reading XLSX: {e}")
+
+def _run_main(collectionName, L1, L2, codAppl, nomeSoftware, applName, output_collection_path):
     # Create an instance of the Collection class
     collection = Collection(base_collection_path, collection_properties_path)
 
@@ -47,7 +74,9 @@ def _run_main(collectionName, L1, L2, codAppl, nomeSoftware, applName):
 
     # Check if the messageModels_path exists and is a directory
     if os.path.exists(messageModels_path) and os.path.isdir(messageModels_path):
-        print("* " * 5 + " Adding data to the collection " + collectionName + " * " * 5)
+        # Insert local date and time in the log
+        logTime = (f"\n\n{dt.now()} - {collectionName}\n")
+        print("* " * 5 + logTime + " Adding data to the collection " + collectionName + " * " * 5)
         print("-" * 100)
         # List all folders in the messageModels_path
         folders = [folder for folder in os.listdir(messageModels_path) if os.path.isdir(os.path.join(messageModels_path, folder))]
@@ -82,4 +111,6 @@ def _run_main(collectionName, L1, L2, codAppl, nomeSoftware, applName):
     collection.save_collection(output_collection_path)
 
 if __name__ == "__main__":
-    main(save_to_log_file=True)  # Save the log to "log.txt" (or False to display on terminal)
+    main(save_to_log_file=True,delete_old_log=True)  
+    # save_to_log_file: Save the log to "log.txt" (or False to display on terminal)
+    # delete_old_log: Delete the old log file if True
