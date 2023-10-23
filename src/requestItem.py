@@ -20,7 +20,7 @@ class RequestItem:
     def add_info(self, itemName, collection_properties_path):
         if self.request_data:            
             # Add an item name
-            self.request_data["name"] = itemName
+            self.request_data["name"] = itemName.replace("_", " ")
 
             # Open and read the collection properties JSON file
             try:
@@ -33,9 +33,10 @@ class RequestItem:
                 # Extract information from the URL
                 urlParser = UrlParser(collection_properties["URL"])
                 # Add information from the URL
-                self.request_data["request"]["url"]["host"] = urlParser.url_info["host"]
+                self.request_data["request"]["url"]["host"].append(urlParser.url_info["host"])
                 self.request_data["request"]["url"]["port"] = urlParser.url_info["port"]
                 self.request_data["request"]["url"]["path"] = urlParser.url_info["path"]
+                self.request_data["request"]["url"]["path"].append("")
                 self.request_data["request"]["url"]["query"] = urlParser.url_info["query"]
                 
             except FileNotFoundError:

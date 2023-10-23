@@ -3,8 +3,9 @@ import uuid
 from .modifyText import TextModifier
 
 class Collection:
-    def __init__(self, base_collection_path):
+    def __init__(self, base_collection_path, collection_properties_path):
         self.base_collection_path = base_collection_path
+        self.collection_properties_path = collection_properties_path
         self.collection_content = None
         self.collection_data = None
 
@@ -37,6 +38,17 @@ class Collection:
     def load_variables(self):
         if self.collection_data:
             self.collection_data["variable"] = self.collection_content.get("variables", {})
+            # Set the URL of the Mock service
+            with open(self.collection_properties_path, "r", encoding="utf-8") as json_file:
+                collection_properties = json.load(json_file)
+                index = self.find_key(self.collection_data["variable"], "URL_Mock")
+                self.collection_data["variable"][index]["value"] = collection_properties["URL_Mock"]                
+    
+    def find_key(self, data, expected_key):
+        for index, item in enumerate(data):
+            if item.get("key") == expected_key:
+                return index
+        return None
 
     def save_collection(self, output_file_path):
         if self.collection_data:

@@ -1,0 +1,5 @@
+# Cancellation Notification
+
+In questa cartella sono contenuti i messaggi che il laboratorio (come ES) invia per notificare all'OMR la cancellazione di 1 o 2 prestazioni che aveva precedentemente accettato:
+  * "*ES cancels 1 service*": notifica di cancellazione di 1 prestazione;
+  * "*ES cancels 2 services*": notifica di cancellazione di 2 prestazioni;

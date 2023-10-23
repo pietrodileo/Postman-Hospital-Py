@@ -26,7 +26,7 @@ class CollectionItem:
                 print(description_file_path + " file not found.")
             
             # Add an item name
-            self.item_data["name"] = itemName
+            self.item_data["name"] = itemName.replace("_", " ")
         else:
             print("No item data loaded. Create a CollectionItem object first.")
             

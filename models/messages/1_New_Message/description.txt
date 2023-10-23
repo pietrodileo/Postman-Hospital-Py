@@ -2,5 +2,5 @@
 
 In questa cartella sono contenuti i messaggi che il laboratorio (come ER) invia per richiedere 1 o 2 prestazioni all'OMR:
 
-  * "*ER request 1 service request*": richiesta di 1 prestazione;
-  * "*ER request 2 service requests*": richiesta di 2 prestazioni;
+  * "*ER New Request 1 service*": richiesta di 1 prestazione;
+  * "*ER New Request 2 services*": richiesta di 2 prestazioni;

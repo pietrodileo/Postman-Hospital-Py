@@ -13,14 +13,14 @@
                 "listen": "prerequest",
                 "script": {
                     "type": "text/javascript",
-                    "exec": ["..."]
+                    "exec": []
                 }
             },
             {
                 "listen": "test",
                 "script": {
                     "type": "text/javascript",
-                    "exec": ["..."]
+                    "exec": []
                 }
             }
         ],
@@ -29,7 +29,7 @@
     "folder": {
         "name": "Folder Name",
         "item": [],
-        "description": "..."
+        "description": ""
     },
     "request": {
         "name": "Request Name",
@@ -37,24 +37,24 @@
             {
                 "listen": "prerequest",
                 "script": {
-                    "exec": ["..."],
+                    "exec": [],
                     "type": "text/javascript"
                 }
             },
             {
                 "listen": "test",
                 "script": {
-                    "exec": ["..."],
+                    "exec": [],
                     "type": "text/javascript"
                 }
             }
         ],
         "request": {
-            "method": "...",
+            "method": "",
             "header": [],
             "body": {
                 "mode": "raw",
-                "raw": "...",
+                "raw": "",
                 "options": {
                     "raw": {
                         "language": "json"
@@ -62,12 +62,10 @@
                 }
             },
             "url": {
-                "raw": "...",
+                "raw": "",
                 "protocol": "http",
-                "host": [
-                    "..."
-                ],
-                "port": "...",
+                "host": [],
+                "port": "",
                 "path": [],
                 "query": [
                     {
@@ -81,7 +79,7 @@
     "variables": [
         {
             "key": "URL_Mock",
-            "value": "https://334dfdde-1ca4-4e0e-b45b-18b19977a72e.mock.pstmn.io",
+            "value": "",
             "type": "string"
         },
         {
