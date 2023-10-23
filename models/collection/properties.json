@@ -1,4 +1,5 @@
 {
     "method":"POST",
-    "URL":"http://localhost:{{port}}/lombardia/retelaboratori/fhir/EnsLib.REST.GenericService/?prova=prova&prova2=prova2"
+    "URL":"http://localhost:{{port}}/lombardia/retelaboratori/fhir/EnsLib.REST.GenericService/?prova=prova&prova2=prova2",
+    "URL_Mock": "pietrodileo.pythonanywhere.com"
 }

@@ -1,0 +1,6 @@
+# Order Completed
+
+In questa cartella sono contenuti i messaggi che il laboratorio (come ES) invia per notificare all'OMR che un ordine comprendente 1 o 2 prestazioni è stato completato:
+
+  * "*ES Order Completed 1 request*": notifica di ordine completato per 1 prestazione;
+  * "*ES Order Completed 2 requests*": notifica di ordine completato per 2 prestazioni;
