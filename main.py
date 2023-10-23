@@ -14,20 +14,20 @@ messageModels_path = ".\models\messages"
 collection_properties_path = ".\models\collection\properties.json"
 censimento_xlsx = "CensimentoEnti.xlsx"
 
-# If save_to_log_file=True all the log will be saved in .\output\log.txt, otherwise they will be printed in the terminal
+# If save_to_log_file=True, all the log will be saved in .\output\log.txt. Otherwise, they will be printed in the terminal.
 def main(save_to_log_file=True, delete_old_log=True):
     # Define the log file path
     log_file_path = os.path.join(".\output", "log.txt")
 
-    # If save_to_log_file is True and the log file already exists, delete the old log file
+    # If save_to_log_file is True and delete_old_log is True, delete the old log file if it exists
     if save_to_log_file and delete_old_log and os.path.exists(log_file_path):
         os.remove(log_file_path)
         print(f"An old log file was removed from {log_file_path}\n")
 
-    # Read the xlsx file to obtain the data of the laboratory 
+    # Read the XLSX file to obtain the data of the laboratory 
     try:
         df = pd.read_excel(censimento_xlsx, engine='openpyxl')
-        # extract data from the xlsx file
+        # Extract data from the XLSX file
         for index, row in df.iterrows():
             row_data = row.to_dict()
             collectionName = row_data['Nome Collection Postman']
@@ -39,19 +39,16 @@ def main(save_to_log_file=True, delete_old_log=True):
             print(f"Building {collectionName} ...")
 
             outputCollectionName = collectionName.replace(" ", "")
-            # Define the path of the outputh collection
+            # Define the path of the output collection
             output_collection_path = f".\output\\{outputCollectionName}.postman_collection.json"
 
-            # run the main processing         
+            # Run the main processing         
             if save_to_log_file:
                 with open(log_file_path, "a") as log_file:  # Open the log file in append mode
                     sys.stdout = log_file
-                    # run main function for the current collection
+                    # Run the main function for the current collection
                     _run_main(collectionName, L1, L2, codAppl, nomeSoftware, applName, output_collection_path)
                     sys.stdout = sys.__stdout__
-                    log_file.close()
-            else:
-                _run_main(collectionName, L1, L2, codAppl, nomeSoftware, applName, output_collection_path)
             
             # Build complete 
             print(f"Build Completed!\n")
@@ -111,6 +108,6 @@ def _run_main(collectionName, L1, L2, codAppl, nomeSoftware, applName, output_co
     collection.save_collection(output_collection_path)
 
 if __name__ == "__main__":
-    main(save_to_log_file=True,delete_old_log=True)  
-    # save_to_log_file: Save the log to "log.txt" (or False to display on terminal)
+    main(save_to_log_file=True, delete_old_log=True)
+    # save_to_log_file: Save the log to "log.txt" (or False to display on the terminal)
     # delete_old_log: Delete the old log file if True
