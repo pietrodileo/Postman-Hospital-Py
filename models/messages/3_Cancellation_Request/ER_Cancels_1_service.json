@@ -18,8 +18,8 @@
                 },
                 "eventCoding": {
                     "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodiceEventoMessageHeader",
-                    "code": "O21 OML",
-                    "display": "Richiesta di cancellazione"
+                    "code": "OML_O21",
+                    "display": "OML^O21^OML_O21"
                 },
                 "destination": {
                     "name": "OMR",
@@ -169,20 +169,10 @@
                     "display": "Informazioni Richiesta Lab"
                 },
                 "authoredOn": "2022-11-16T14:59:37Z",
-                "requester": {
-                    "reference": "Practitioner/1fcacede-58fa-4500-8868-92644f365799",
-                    "display": "Medico"
-                },
                 "supportingInfo": {
                     "reference": "Observation/d52a9b60-d45e-11ed-afa1-0242ac120002",
                     "display": "Info Cliniche"
                 },
-                "specimen": [
-                    {
-                        "reference": "Specimen/4bbecc4b-60b4-4b4a-9b99-ce39b1f69876",
-                        "display": "Campione da analizzare"
-                    }
-                ],
                 "performer": [
                     {
                         "reference": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287"
@@ -199,35 +189,6 @@
                         ]
                     }
                 ]
-            }
-        },
-        {
-            "fullUrl": "Specimen/4bbecc4b-60b4-4b4a-9b99-ce39b1f69876",
-            "resource": {
-                "resourceType": "Specimen",
-                "id": "4bbecc4b-60b4-4b4a-9b99-ce39b1f69876",
-                "meta": {
-                    "profile": [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabSpecimenCampioneDaAnalizzare"
-                    ],
-                    "versionId": 1
-                },
-                "receivedTime": "2022-11-16T14:59:37Z",
-                "collection": {
-                    "collectedDateTime": "2022-11-16T14:59:37Z",
-                    "quantity": {
-                        "value": 0
-                    },
-                    "bodySite": {
-                        "coding": [
-                            {
-                                "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
-                                "code": "TBD",
-                                "display": "TBD"
-                            }
-                        ]
-                    }
-                }
             }
         },
         {
@@ -419,43 +380,6 @@
                                 "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabAddressCodiceISTAT",
                                 "valueString": "015146"
                             }
-                        ]
-                    }
-                ],
-                "generalPractitioner": {
-                    "reference": "Practitioner/1fcacede-58fa-4500-8868-92644f365799"
-                }
-            }
-        },
-        {
-            "fullUrl": "Practitioner/1fcacede-58fa-4500-8868-92644f365799",
-            "resource": {
-                "resourceType": "Practitioner",
-                "id": "1fcacede-58fa-4500-8868-92644f365799",
-                "meta": {
-                    "profile": [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabPractitionerMedico"
-                    ]
-                },
-                "identifier": [
-                    {
-                        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/CodiceFiscale",
-                        "type": {
-                            "coding": [
-                                {
-                                    "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/CodiceFiscale",
-                                    "code": "NN"
-                                }
-                            ]
-                        },
-                        "value": "NVESFN77E09H264L"
-                    }
-                ],
-                "name": [
-                    {
-                        "family": "Neva",
-                        "given": [
-                            "Stefano"
                         ]
                     }
                 ]
