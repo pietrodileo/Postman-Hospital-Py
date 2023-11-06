@@ -99,7 +99,7 @@
         },
         {
             "key": "BusinessService",
-            "value": "EnsLib.REST.GenericService",
+            "value": "OmrService",
             "type": "any"
         },
         {
