@@ -84,12 +84,27 @@
         },
         {
             "key": "port",
+            "value": "8000",
+            "type": "any"
+        },
+        {
+            "key": "PietroPort",
             "value": "1888",
             "type": "any"
         },
         {
-            "key": "port2",
+            "key": "SaraPort",
             "value": "52773",
+            "type": "any"
+        },
+        {
+            "key": "BusinessService",
+            "value": "EnsLib.REST.GenericService",
+            "type": "any"
+        },
+        {
+            "key": "WebApplicationIRIS",
+            "value": "lombardia/retelaboratori/fhir",
             "type": "any"
         },
         {
