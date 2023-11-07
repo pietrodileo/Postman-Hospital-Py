@@ -26,13 +26,15 @@ def main(save_to_log_file=True, delete_old_log=True):
 
     # Read the XLSX file to obtain the data of the laboratory 
     try:
-        df = pd.read_excel(censimento_xlsx, engine='openpyxl')
-        # Extract data from the XLSX file
+        df = pd.read_excel(censimento_xlsx, engine='openpyxl', dtype=str)
         for index, row in df.iterrows():
             row_data = row.to_dict()
+            # Extract data from the XLSX file
             collectionName = row_data['Nome Collection Postman']
-            L1 = str(row_data['Codice L1'])
-            L2 = str(row_data['Codice L2'])
+            L1 = row_data['Codice L1']
+            L2 = row_data['Codice L2']
+            L3 = row_data['Codice L3']
+            L4 = row_data['Codice L4']
             codAppl = str(row_data['Codice Applicativo'])
             nomeSoftware = str(row_data['Ospedale']) + ' - ' + str(row_data['Laboratorio'])
             applName = row_data['Nome applicativo']
