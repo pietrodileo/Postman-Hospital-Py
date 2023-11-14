@@ -210,6 +210,11 @@
                     "reference": "Encounter/ace5cde7-33f3-4d36-9d6b-9a837ed7fdcb",
                     "display": "Informazioni Richiesta Lab"
                 },
+                "specimen": [
+                    {
+                        "reference": "Specimen/725be834-82de-11ee-b83f-02001700b287"
+                    }
+                ],
                 "authoredOn": "2022-11-16T14:59:37Z",
                 "performer": [
                     {
@@ -301,6 +306,11 @@
                     "reference": "Encounter/ace5cde7-33f3-4d36-9d6b-9a837ed7fdcb",
                     "display": "Informazioni Richiesta Lab"
                 },
+                "specimen": [
+                    {
+                        "reference": "Specimen/7fdfe24a-8233-11ee-b83f-02001700b287"
+                    }
+                ],
                 "authoredOn": "2022-11-16T14:59:37Z",
                 "performer": [
                     {
@@ -512,6 +522,68 @@
                     "reference": "Organization/34568719c-9c43-4074-a2d4-7e34e18b1ae4"
                 },
                 "name": "Descrizione del presidio L2"
+            }
+        },
+        {
+            "fullUrl": "Specimen/725be834-82de-11ee-b83f-02001700b287",
+            "resource": {
+                "resourceType": "Specimen",
+                "id": "725be834-82de-11ee-b83f-02001700b287",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabSpecimenCampioneDaAnalizzareCheckInCheckOut"
+                    ]
+                },
+                "type": {
+                    "coding": [
+                        {
+                            "code": "DATIC",
+                            "display": "DATIC"
+                        }
+                    ]
+                },
+                "status": "available",
+                "collection": {
+                    "collectedDateTime": "2022-11-16T15:00:51+01:00",
+                    "quantity": {
+                        "value": "0"
+                    }
+                },
+                "subject": {
+                    "reference": "Patient/6686199c-f386-4345-a178-5e98023575f7"
+                }
+            }
+        },
+        {
+            "fullUrl": "Specimen/7fdfe24a-8233-11ee-b83f-02001700b287",
+            "resource": {
+                "resourceType": "Specimen",
+                "id": "7fdfe24a-8233-11ee-b83f-02001700b287",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabSpecimenCampioneDaAnalizzareCheckInCheckOut"
+                    ]
+                },
+                "type": {
+                    "coding": [
+                        {
+                            "code": "DATIC",
+                            "display": "DATIC"
+                        }
+                    ]
+                },
+                "status": "available",
+                "collection": {
+                    "collectedDateTime": "2022-11-16T15:00:51+01:00",
+                    "quantity": {
+                        "value": "0"
+                    }
+                },
+                "subject": {
+                    "reference": "Patient/6686199c-f386-4345-a178-5e98023575f7"
+                }
             }
         }
     ]

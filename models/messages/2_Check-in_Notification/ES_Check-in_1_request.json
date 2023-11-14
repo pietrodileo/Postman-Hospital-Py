@@ -143,6 +143,11 @@
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
                     "value": "Placer Requisition Value"
                 },
+                "specimen": [
+                    {
+                        "reference": "Specimen/725be834-82de-11ee-b83f-02001700b287"
+                    }
+                ],
                 "status": "active",
                 "intent": "order",
                 "priority": "asap",
@@ -397,6 +402,37 @@
                     "reference": "Organization/34568719c-9c43-4074-a2d4-7e34e18b1ae4"
                 },
                 "name": "Descrizione del presidio L2"
+            }
+        },
+        {
+            "fullUrl": "Specimen/725be834-82de-11ee-b83f-02001700b287",
+            "resource": {
+                "resourceType": "Specimen",
+                "id": "725be834-82de-11ee-b83f-02001700b287",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabSpecimenCampioneDaAnalizzareCheckInCheckOut"
+                    ]
+                },
+                "type": {
+                    "coding": [
+                        {
+                            "code": "DATIC",
+                            "display": "DATIC"
+                        }
+                    ]
+                },
+                "status": "available",
+                "collection": {
+                    "collectedDateTime": "2022-11-16T15:00:51+01:00",
+                    "quantity": {
+                        "value": "0"
+                    }
+                },
+                "subject": {
+                    "reference": "Patient/725bad56-82de-11ee-b83f-02001700b287"
+                }
             }
         }
     ]
