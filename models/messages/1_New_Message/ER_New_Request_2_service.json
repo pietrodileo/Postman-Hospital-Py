@@ -94,6 +94,10 @@
                 ],
                 "extension": [
                     {
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterServiceRequester",
+                        "valueString": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287"
+                    },
+                    {
                         "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/Anamnesi",
                         "valueString": "Il paziente ha riferito di avere avuto episodi di vertigini negli ultimi mesi"
                     },
