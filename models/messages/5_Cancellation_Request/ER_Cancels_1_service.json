@@ -4,6 +4,12 @@
     "id": "{{BundleID}}",
     "type": "message",
     "timestamp": "{{Date}}",
+    "meta": {
+        "versionId": "1",
+        "profile":  [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleModificaOrdine"
+        ]
+    },
     "entry": [
         {
             "fullUrl": "{{MessageHeaderFullUrl}}",
@@ -141,6 +147,17 @@
                         }
                     ]
                 },
+                "category":  [
+                    {
+                        "coding":  [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
                 "orderDetail": {
                     "coding": [
                         {

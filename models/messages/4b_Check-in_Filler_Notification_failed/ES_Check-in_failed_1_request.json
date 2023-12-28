@@ -1,12 +1,12 @@
 {
-    "richiesta": "Check-in servente",
+    "richiesta": "Check-in servente failed",
     "resourceType": "Bundle",
     "id": "{{$randomUUID}}",
     "type": "message",
     "meta": {
         "versionId": "1",
         "profile":  [
-            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleCheckInCheckOut"
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleNotificaServente"
         ]
     },
     "timestamp": "{{Date}}",
@@ -57,7 +57,7 @@
                 "focus": {
                         "reference": "ServiceRequest/e2bdf00d-2235-4465-8b9c-944e337efd47"
                 },
-                "status": "in-progress",
+                "status": "failed",
                 "intent": "order"
             }
         },
@@ -158,6 +158,17 @@
                         "reference": "Specimen/725be834-82de-11ee-b83f-02001700b287"
                     }
                 ],
+                "category":  [
+                    {
+                        "coding":  [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
                 "status": "active",
                 "intent": "order",
                 "priority": "asap",
@@ -205,17 +216,6 @@
                 "performer": [
                     {
                         "reference": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287"
-                    }
-                ],
-                "category":  [
-                    {
-                        "coding":  [
-                            {
-                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
-                                "code": "1",
-                                "display": "Richiesta"
-                            }
-                        ]
                     }
                 ],
                 "reasonCode": [
@@ -433,7 +433,7 @@
                 "meta": {
                     "versionId": "1",
                     "profile": [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabSpecimenCampioneDaAnalizzareCheckInCheckOut"
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabSpecimenCampioneLaboratorio"
                     ]
                 },
                 "type": {
@@ -444,7 +444,6 @@
                         }
                     ]
                 },
-                "status": "unavailable",
                 "collection": {
                     "collectedDateTime": "2022-11-16T15:00:51+01:00",
                     "quantity": {

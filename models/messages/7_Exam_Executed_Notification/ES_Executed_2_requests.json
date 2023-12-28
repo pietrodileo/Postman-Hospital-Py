@@ -4,6 +4,12 @@
     "id": "{{$randomUUID}}",
     "type": "message",
     "timestamp": "{{Date}}",
+    "meta": {
+        "versionId": "1",
+        "profile":  [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleNotificaServente"
+        ]
+    },
     "entry": [
         {
             "fullUrl": "{{MessageHeaderFullUrl}}",
@@ -171,7 +177,7 @@
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
                     "value": "Placer Requisition Value"
                 },
-                "status": "active",
+                "status": "completed",
                 "intent": "order",
                 "priority": "asap",
                 "code": {
@@ -183,6 +189,17 @@
                         }
                     ]
                 },
+                "category":  [
+                    {
+                        "coding":  [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
                 "orderDetail": {
                     "coding": [
                         {
@@ -258,11 +275,22 @@
                         "value": "{{OMRServiceUID2}}"
                     }
                 ],
+                "category":  [
+                    {
+                        "coding":  [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
                 "requisition": {
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
                     "value": "Placer Requisition Value"
                 },
-                "status": "active",
+                "status": "completed",
                 "intent": "order",
                 "priority": "asap",
                 "code": {

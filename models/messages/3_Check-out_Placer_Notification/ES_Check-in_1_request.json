@@ -4,6 +4,12 @@
     "id": "{{$randomUUID}}",
     "type": "message",
     "timestamp": "{{Date}}",
+    "meta": {
+        "versionId": "1",
+        "profile":  [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleCheckInCheckOut"
+        ]
+    },
     "entry": [
         {
             "fullUrl": "{{MessageHeaderFullUrl}}",
@@ -150,6 +156,17 @@
                 "specimen": [
                     {
                         "reference": "Specimen/725be834-82de-11ee-b83f-02001700b287"
+                    }
+                ],
+                "category":  [
+                    {
+                        "coding":  [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
                     }
                 ],
                 "status": "active",

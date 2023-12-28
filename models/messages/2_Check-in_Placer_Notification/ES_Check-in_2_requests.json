@@ -3,6 +3,12 @@
     "resourceType": "Bundle",
     "id": "{{$randomUUID}}",
     "type": "message",
+    "meta": {
+        "versionId": "1",
+        "profile":  [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleCheckInCheckOut"
+        ]
+    },
     "timestamp": "{{Date}}",
     "entry": [
         {
@@ -174,6 +180,17 @@
                 "status": "active",
                 "intent": "order",
                 "priority": "asap",
+                "category":  [
+                    {
+                        "coding":  [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
                 "code": {
                     "coding": [
                         {
@@ -261,6 +278,17 @@
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/OMROrderNumber",
                         "value": "{{OMRServiceUID2}}"
+                    }
+                ],
+                "category":  [
+                    {
+                        "coding":  [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
                     }
                 ],
                 "requisition": {

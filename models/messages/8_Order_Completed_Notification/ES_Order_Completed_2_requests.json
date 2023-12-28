@@ -4,6 +4,12 @@
     "id": "{{$randomUUID}}",
     "type": "message",
     "timestamp": "{{Date}}",
+    "meta": {
+        "versionId": "1",
+        "profile":  [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleNotificaServente"
+        ]
+    },
     "entry": [
         {
             "fullUrl": "{{MessageHeaderFullUrl}}",
@@ -54,7 +60,7 @@
                 "focus": {
                     "reference": "ServiceRequest/e2bdf00d-2235-4465-8b9c-944e337efd47"
                 },
-                "status": "in-progress",
+                "status": "completed",
                 "intent": "order"
             }
         },
@@ -72,7 +78,7 @@
                 "focus": {
                     "reference": "ServiceRequest/d4ca776d-feb4-43ab-b945-36c47cafb8b3"
                 },
-                "status": "in-progress",
+                "status": "completed",
                 "intent": "order"
             }
         },
@@ -171,6 +177,17 @@
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
                     "value": "Placer Requisition Value"
                 },
+                "category":  [
+                    {
+                        "coding":  [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
                 "status": "completed",
                 "intent": "order",
                 "priority": "asap",
@@ -266,7 +283,18 @@
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
                     "value": "Placer Requisition Value"
                 },
-                "status": "active",
+                "category":  [
+                    {
+                        "coding":  [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
+                "status": "completed",
                 "intent": "order",
                 "priority": "asap",
                 "code": {
