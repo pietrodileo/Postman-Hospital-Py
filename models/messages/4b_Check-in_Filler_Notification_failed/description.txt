@@ -1,0 +1,6 @@
+# Check In Filler Notification Failed
+
+In questa cartella sono contenuti i messaggi che il laboratorio (come ES) invia all'OMR per notificare che il check-in servente è impossibile da effettuare (es. arrivo delle provette rotte) di 1 o 2 prestazioni:
+
+  * "*ES Check-in failed 1 request*": invio della notifica di check-in di 1 prestazione;
+  * "*ES Check-in failed 2 requests*": invio della notifica di check-in di 2 prestazioni;

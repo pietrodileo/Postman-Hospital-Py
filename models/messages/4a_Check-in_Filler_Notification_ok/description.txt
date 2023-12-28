@@ -1,0 +1,6 @@
+# Check In Filler Notification OK
+
+In questa cartella sono contenuti i messaggi che il laboratorio (come ES) invia all'OMR per notificare il check-in servente positivo (arrivo dei campioni inviati dall'ER) di 1 o 2 prestazioni:
+
+  * "*ES Check-in 1 request*": invio della notifica di check-in di 1 prestazione;
+  * "*ES Check-in 2 requests*": invio della notifica di check-in di 2 prestazioni;

@@ -1,8 +1,14 @@
 {
-    "richiesta": "Cancellation Notification",
+    "richiesta": "Check-in servente",
     "resourceType": "Bundle",
     "id": "{{$randomUUID}}",
     "type": "message",
+    "meta": {
+        "versionId": "1",
+        "profile":  [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleNotificaServente"
+        ]
+    },
     "timestamp": "{{Date}}",
     "entry": [
         {
@@ -49,9 +55,9 @@
                     "versionId": "1"
                 },
                 "focus": {
-                    "reference": "ServiceRequest/e2bdf00d-2235-4465-8b9c-944e337efd47"
+                        "reference": "ServiceRequest/e2bdf00d-2235-4465-8b9c-944e337efd47"
                 },
-                "status": "completed",
+                "status": "in-progress",
                 "intent": "order"
             }
         },
@@ -84,7 +90,7 @@
                         }
                     }
                 ],
-                "status": "cancelled",
+                "status": "in-progress",
                 "class": {
                     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
                     "code": "IMP",
@@ -147,7 +153,23 @@
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
                     "value": "Placer Requisition Value"
                 },
-                "status": "revoked",
+                "specimen": [
+                    {
+                        "reference": "Specimen/725be834-82de-11ee-b83f-02001700b287"
+                    }
+                ],
+                "category":  [
+                    {
+                        "coding":  [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
+                "status": "active",
                 "intent": "order",
                 "priority": "asap",
                 "code": {
@@ -191,10 +213,6 @@
                     "display": "Informazioni Richiesta Lab"
                 },
                 "authoredOn": "2022-11-16T14:59:37Z",
-                "requester": {
-                    "reference": "Practitioner/1fcacede-58fa-4500-8868-92644f365799",
-                    "display": "Medico"
-                },
                 "performer": [
                     {
                         "reference": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287"
@@ -322,43 +340,6 @@
                             }
                         ]
                     }
-                ],
-                "generalPractitioner": {
-                    "reference": "Practitioner/1fcacede-58fa-4500-8868-92644f365799"
-                }
-            }
-        },
-        {
-            "fullUrl": "Practitioner/1fcacede-58fa-4500-8868-92644f365799",
-            "resource": {
-                "resourceType": "Practitioner",
-                "id": "1fcacede-58fa-4500-8868-92644f365799",
-                "meta": {
-                    "profile": [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabPractitionerMedico"
-                    ]
-                },
-                "identifier": [
-                    {
-                        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/CodiceFiscale",
-                        "type": {
-                            "coding": [
-                                {
-                                    "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/CodiceFiscale",
-                                    "code": "NN"
-                                }
-                            ]
-                        },
-                        "value": "NVESFN77E09H264L"
-                    }
-                ],
-                "name": [
-                    {
-                        "family": "Neva",
-                        "given": [
-                            "Stefano"
-                        ]
-                    }
                 ]
             }
         },
@@ -442,6 +423,36 @@
                     "reference": "Organization/34568719c-9c43-4074-a2d4-7e34e18b1ae4"
                 },
                 "name": "Descrizione del presidio L2"
+            }
+        },
+        {
+            "fullUrl": "Specimen/725be834-82de-11ee-b83f-02001700b287",
+            "resource": {
+                "resourceType": "Specimen",
+                "id": "725be834-82de-11ee-b83f-02001700b287",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabSpecimenCampioneLaboratorio"
+                    ]
+                },
+                "type": {
+                    "coding": [
+                        {
+                            "code": "DATIC",
+                            "display": "DATIC"
+                        }
+                    ]
+                },
+                "collection": {
+                    "collectedDateTime": "2022-11-16T15:00:51+01:00",
+                    "quantity": {
+                        "value": "0"
+                    }
+                },
+                "subject": {
+                    "reference": "Patient/725bad56-82de-11ee-b83f-02001700b287"
+                }
             }
         }
     ]

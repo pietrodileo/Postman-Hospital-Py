@@ -1,9 +1,15 @@
 {
-    "richiesta": "Exam Executed",
+    "richiesta": "Order Completed",
     "resourceType": "Bundle",
     "id": "{{$randomUUID}}",
     "type": "message",
     "timestamp": "{{Date}}",
+    "meta": {
+        "versionId": "1",
+        "profile":  [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleNotificaServente"
+        ]
+    },
     "entry": [
         {
             "fullUrl": "{{MessageHeaderFullUrl}}",
@@ -84,7 +90,7 @@
                         }
                     }
                 ],
-                "status": "in-progress",
+                "status": "finished",
                 "class": {
                     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
                     "code": "IMP",
@@ -147,7 +153,7 @@
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
                     "value": "Placer Requisition Value"
                 },
-                "status": "active",
+                "status": "completed",
                 "intent": "order",
                 "priority": "asap",
                 "code": {
@@ -159,6 +165,17 @@
                         }
                     ]
                 },
+                "category":  [
+                    {
+                        "coding":  [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
                 "orderDetail": {
                     "coding": [
                         {
