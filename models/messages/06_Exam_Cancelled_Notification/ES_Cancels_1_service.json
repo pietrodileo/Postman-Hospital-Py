@@ -91,7 +91,7 @@
                         }
                     }
                 ],
-                "status": "cancelled",
+                "status": "in-progress",
                 "class": {
                     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
                     "code": "IMP",

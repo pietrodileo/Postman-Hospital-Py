@@ -85,6 +85,9 @@
                 "intent": "order",
                 "encounter": {
                     "reference": "Encounter/ace5cde7-33f3-4d36-9d6b-9a837ed7fdcb"
+                },
+                "focus": {
+                    "reference": "ServiceRequest/d4ca776d-feb4-43ab-b945-36c47cafb8b3"
                 }
             }
         },
@@ -117,7 +120,7 @@
                         }
                     }
                 ],
-                "status": "cancelled",
+                "status": "in-progress",
                 "class": {
                     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
                     "code": "IMP",
