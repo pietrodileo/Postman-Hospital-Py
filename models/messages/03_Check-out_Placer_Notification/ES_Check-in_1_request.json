@@ -1,15 +1,15 @@
 {
-    "richiesta": "Check-in servente cancellato",
+    "richiesta": "Check-in servente",
     "resourceType": "Bundle",
     "id": "{{$randomUUID}}",
     "type": "message",
+    "timestamp": "{{Date}}",
     "meta": {
         "versionId": "1",
         "profile":  [
-            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleNotificaServente"
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleCheckInCheckOut"
         ]
     },
-    "timestamp": "{{Date}}",
     "entry": [
         {
             "fullUrl": "{{MessageHeaderFullUrl}}",
@@ -20,7 +20,8 @@
                     "profile": [
                         "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabMessageHeader"
                     ],
-                    "versionId": "1"
+                    "versionId": "1",
+                    "lastUpdated": "2022-11-16T15:00:51+01:00"
                 },
                 "eventCoding": {
                     "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodiceEventoMessageHeader",
@@ -57,7 +58,7 @@
                 "focus": {
                         "reference": "ServiceRequest/e2bdf00d-2235-4465-8b9c-944e337efd47"
                 },
-                "status": "cancelled",
+                "status": "in-progress",
                 "intent": "order"
             }
         },
@@ -433,7 +434,7 @@
                 "meta": {
                     "versionId": "1",
                     "profile": [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabSpecimenCampioneLaboratorio"
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabSpecimenCampioneDaAnalizzareCheckInCheckOut"
                     ]
                 },
                 "type": {
@@ -444,6 +445,7 @@
                         }
                     ]
                 },
+                "status": "available",
                 "collection": {
                     "collectedDateTime": "2022-11-16T15:00:51+01:00",
                     "quantity": {

@@ -3,13 +3,13 @@
     "resourceType": "Bundle",
     "id": "{{$randomUUID}}",
     "type": "message",
-    "timestamp": "{{Date}}",
     "meta": {
         "versionId": "1",
         "profile":  [
-            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleCheckInCheckOut"
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleNotificaServente"
         ]
     },
+    "timestamp": "{{Date}}",
     "entry": [
         {
             "fullUrl": "{{MessageHeaderFullUrl}}",
@@ -20,7 +20,8 @@
                     "profile": [
                         "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabMessageHeader"
                     ],
-                    "versionId": "1"
+                    "versionId": "1",
+                    "lastUpdated": "2022-11-16T15:00:51+01:00"
                 },
                 "eventCoding": {
                     "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodiceEventoMessageHeader",
@@ -173,17 +174,6 @@
                         "value": "{{OMRServiceUID1}}"
                     }
                 ],
-                "category":  [
-                    {
-                        "coding":  [
-                            {
-                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
-                                "code": "1",
-                                "display": "Richiesta"
-                            }
-                        ]
-                    }
-                ],
                 "requisition": {
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
                     "value": "Placer Requisition Value"
@@ -200,6 +190,17 @@
                         }
                     ]
                 },
+                "category":  [
+                    {
+                        "coding":  [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
                 "orderDetail": {
                     "coding": [
                         {
@@ -564,7 +565,7 @@
                 "meta": {
                     "versionId": "1",
                     "profile": [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabSpecimenCampioneDaAnalizzareCheckInCheckOut"
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabSpecimenCampioneLaboratorio"
                     ]
                 },
                 "type": {
@@ -575,7 +576,6 @@
                         }
                     ]
                 },
-                "status": "available",
                 "collection": {
                     "collectedDateTime": "2022-11-16T15:00:51+01:00",
                     "quantity": {
@@ -595,7 +595,7 @@
                 "meta": {
                     "versionId": "1",
                     "profile": [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabSpecimenCampioneDaAnalizzareCheckInCheckOut"
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabSpecimenCampioneLaboratorio"
                     ]
                 },
                 "type": {
@@ -606,7 +606,6 @@
                         }
                     ]
                 },
-                "status": "available",
                 "collection": {
                     "collectedDateTime": "2022-11-16T15:00:51+01:00",
                     "quantity": {
