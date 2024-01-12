@@ -79,7 +79,7 @@
                 "focus": {
                     "reference": "ServiceRequest/d4ca776d-feb4-43ab-b945-36c47cafb8b3"
                 },
-                "status": "in-progress",
+                "status": "completed",
                 "intent": "order"
             }
         },
