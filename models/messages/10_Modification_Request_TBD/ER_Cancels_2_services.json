@@ -6,7 +6,7 @@
     "timestamp": "{{Date}}",
     "meta": {
         "versionId": "1",
-        "profile":  [
+        "profile": [
             "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleModificaOrdine"
         ]
     },
@@ -28,10 +28,12 @@
                     "code": "OML^O21",
                     "display": "OML^O21^OML_O21"
                 },
-                "destination": {
-                    "name": "OMR",
-                    "endpoint": "localhost:52773/fhir/retilab/Omr"
-                },
+                "destination": [
+                    {
+                        "name": "OMR",
+                        "endpoint": "localhost:52773/fhir/retilab/Omr"
+                    }
+                ],
                 "source": {
                     "name": "{{CodiceApplicativo}}",
                     "software": "{{NomeSoftware}}",
@@ -96,19 +98,27 @@
                 "extension": [
                     {
                         "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterServiceRequester",
-                        "valueString": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287"
+                        "valueReference": {
+                            "reference": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287"
+                        }
                     },
                     {
                         "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/Anamnesi",
-                        "valueString": "Il paziente ha riferito di avere avuto episodi di vertigini negli ultimi mesi"
+                        "valueReference": {
+                            "reference": "Il paziente ha riferito di avere avuto episodi di vertigini negli ultimi mesi"
+                        }
                     },
                     {
                         "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/DettaglioOperatoreRiceveOrdine",
-                        "valueString": "Si è provveduto alla raccolta dei campioni biologoci del paziente"
+                        "valueReference": {
+                            "reference": "Si è provveduto alla raccolta dei campioni biologoci del paziente"
+                        }
                     },
                     {
                         "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/NotePazientePrestazione",
-                        "valueString": "Sono stati prelevati campioni di sangue dal paziente per l'esecuzione degli esami di laboratorio prescritti."
+                        "valueReference": {
+                            "reference": "Sono stati prelevati campioni di sangue dal paziente per l'esecuzione degli esami di laboratorio prescritti."
+                        }
                     }
                 ]
             }
@@ -142,9 +152,9 @@
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
                     "value": "{{formattedRequisition}}"
                 },
-                "category":  [
+                "category": [
                     {
-                        "coding":  [
+                        "coding": [
                             {
                                 "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
                                 "code": "1",
@@ -197,10 +207,12 @@
                     "display": "Informazioni Richiesta Lab"
                 },
                 "authoredOn": "2022-11-16T14:59:37Z",
-                "supportingInfo": {
-                    "reference": "Observation/d52a9b60-d45e-11ed-afa1-0242ac120002",
-                    "display": "Info Cliniche"
-                },
+                "supportingInfo": [
+                    {
+                        "reference": "Observation/d52a9b60-d45e-11ed-afa1-0242ac120002",
+                        "display": "Info Cliniche"
+                    }
+                ],
                 "performer": [
                     {
                         "reference": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287"
@@ -251,9 +263,9 @@
                 "status": "revoked",
                 "intent": "order",
                 "priority": "asap",
-                "category":  [
+                "category": [
                     {
-                        "coding":  [
+                        "coding": [
                             {
                                 "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
                                 "code": "1",
