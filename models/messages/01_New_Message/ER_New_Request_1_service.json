@@ -28,10 +28,12 @@
                     "code": "OML^O21",
                     "display": "OML^O21^OML_O21"
                 },
-                "destination": {
-                    "name": "OMR",
-                    "endpoint": "localhost:52773/fhir/retilab/Omr"
-                },
+                "destination": [
+                    {
+                        "name": "OMR",
+                        "endpoint": "localhost:52773/fhir/retilab/Omr"
+                    }
+                ],
                 "source": {
                     "name": "{{CodiceApplicativo}}",
                     "software": "{{NomeSoftware}}",
@@ -142,19 +144,27 @@
                     },
                     {
                         "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterServiceRequester",
-                        "valueString": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287"
+                        "valueReference": {
+                            "reference": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287"
+                        }
                     },
                     {
                         "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/Anamnesi",
-                        "valueString": "Il paziente ha riferito di avere avuto episodi di vertigini negli ultimi mesi"
+                        "valueReference": {
+                            "reference": "Il paziente ha riferito di avere avuto episodi di vertigini negli ultimi mesi"
+                        }
                     },
                     {
                         "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/DettaglioOperatoreRiceveOrdine",
-                        "valueString": "Si è provveduto alla raccolta dei campioni biologoci del paziente"
+                        "valueReference": {
+                            "reference": "Si è provveduto alla raccolta dei campioni biologoci del paziente"
+                        }
                     },
                     {
                         "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/NotePazientePrestazione",
-                        "valueString": "Sono stati prelevati campioni di sangue dal paziente per l'esecuzione degli esami di laboratorio prescritti."
+                        "valueReference": {
+                            "reference": "Sono stati prelevati campioni di sangue dal paziente per l'esecuzione degli esami di laboratorio prescritti."
+                        }
                     }
                 ]
             }
@@ -341,10 +351,12 @@
                     "reference": "PractitionerRole/65a0765e-6f57-11ee-adbe-02001700b287",
                     "display": "Medico"
                 },
-                "supportingInfo": {
+                "supportingInfo": [
+                    {
                     "reference": "Observation/d52a9b60-d45e-11ed-afa1-0242ac120002",
                     "display": "Info Cliniche"
-                },
+                    }
+                ],
                 "specimen": [
                     {
                         "reference": "Specimen/4bbecc4b-60b4-4b4a-9b99-ce39b1f69876",
@@ -357,7 +369,7 @@
             "fullUrl": "Observation/d52a9b60-d45e-11ed-afa1-0242ac120002",
             "resource": {
                 "resourceType": "Observation",
-                "id": "Esempio Observation Info Cliniche",
+                "id": "d52a9b60-d45e-11ed-afa1-0242ac120002",
                 "meta": {
                     "profile": [
                         "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabObservationInfoCliniche"
