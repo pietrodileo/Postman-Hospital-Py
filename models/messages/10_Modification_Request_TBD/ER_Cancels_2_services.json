@@ -67,7 +67,7 @@
                             "coding": [
                                 {
                                     "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/numeroRicovero",
-                                    "code": "VN"
+                                    "code": "NR"
                                 }
                             ]
                         },
@@ -103,22 +103,16 @@
                         }
                     },
                     {
-                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/Anamnesi",
-                        "valueReference": {
-                            "reference": "Il paziente ha riferito di avere avuto episodi di vertigini negli ultimi mesi"
-                        }
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterAnamnesi",
+                        "valueString": "Il paziente ha riferito di avere avuto episodi di vertigini negli ultimi mesi"
                     },
                     {
-                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/DettaglioOperatoreRiceveOrdine",
-                        "valueReference": {
-                            "reference": "Si è provveduto alla raccolta dei campioni biologoci del paziente"
-                        }
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterDettaglioOperatore",
+                        "valueString": "Si è provveduto alla raccolta dei campioni biologoci del paziente"
                     },
                     {
-                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/NotePazientePrestazione",
-                        "valueReference": {
-                            "reference": "Sono stati prelevati campioni di sangue dal paziente per l'esecuzione degli esami di laboratorio prescritti."
-                        }
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterNotePaziente",
+                        "valueString": "Sono stati prelevati campioni di sangue dal paziente per l'esecuzione degli esami di laboratorio prescritti."
                     }
                 ]
             }

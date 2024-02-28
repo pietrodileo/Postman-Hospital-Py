@@ -6,7 +6,7 @@
     "timestamp": "{{Date}}",
     "meta": {
         "versionId": "1",
-        "profile":  [
+        "profile": [
             "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleModificaOrdine"
         ]
     },
@@ -67,7 +67,7 @@
                             "coding": [
                                 {
                                     "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/numeroRicovero",
-                                    "code": "VN"
+                                    "code": "NR"
                                 }
                             ]
                         },
@@ -103,22 +103,16 @@
                         }
                     },
                     {
-                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/Anamnesi",
-                        "valueReference": {
-                            "reference": "Il paziente ha riferito di avere avuto episodi di vertigini negli ultimi mesi"
-                        }
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterAnamnesi",
+                        "valueString": "Il paziente ha riferito di avere avuto episodi di vertigini negli ultimi mesi"
                     },
                     {
-                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/DettaglioOperatoreRiceveOrdine",
-                        "valueReference": {
-                            "reference": "Si è provveduto alla raccolta dei campioni biologoci del paziente"
-                        }
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterDettaglioOperatore",
+                        "valueString": "Si è provveduto alla raccolta dei campioni biologoci del paziente"
                     },
                     {
-                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/NotePazientePrestazione",
-                        "valueReference": {
-                            "reference": "Sono stati prelevati campioni di sangue dal paziente per l'esecuzione degli esami di laboratorio prescritti."
-                        }
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterNotePaziente",
+                        "valueString": "Sono stati prelevati campioni di sangue dal paziente per l'esecuzione degli esami di laboratorio prescritti."
                     }
                 ]
             }
@@ -152,9 +146,9 @@
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
                     "value": "{{formattedRequisition}}"
                 },
-                "category":  [
+                "category": [
                     {
-                        "coding":  [
+                        "coding": [
                             {
                                 "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
                                 "code": "1",
@@ -209,8 +203,8 @@
                 "authoredOn": "2022-11-16T14:59:37Z",
                 "supportingInfo": [
                     {
-                    "reference": "Observation/d52a9b60-d45e-11ed-afa1-0242ac120002",
-                    "display": "Info Cliniche"
+                        "reference": "Observation/d52a9b60-d45e-11ed-afa1-0242ac120002",
+                        "display": "Info Cliniche"
                     }
                 ],
                 "performer": [
@@ -263,9 +257,9 @@
                 "status": "revoked",
                 "intent": "order",
                 "priority": "asap",
-                "category":  [
+                "category": [
                     {
-                        "coding":  [
+                        "coding": [
                             {
                                 "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
                                 "code": "1",
