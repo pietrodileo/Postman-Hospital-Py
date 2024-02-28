@@ -5,7 +5,7 @@
     "type": "message",
     "meta": {
         "versionId": "1",
-        "profile":  [
+        "profile": [
             "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleCheckInCheckOut"
         ]
     },
@@ -61,7 +61,7 @@
                     "versionId": "1"
                 },
                 "focus": {
-                        "reference": "ServiceRequest/e2bdf00d-2235-4465-8b9c-944e337efd47"
+                    "reference": "ServiceRequest/e2bdf00d-2235-4465-8b9c-944e337efd47"
                 },
                 "status": "in-progress",
                 "intent": "order"
@@ -79,7 +79,7 @@
                     "versionId": "1"
                 },
                 "focus": {
-                        "reference": "ServiceRequest/d4ca776d-feb4-43ab-b945-36c47cafb8b3"
+                    "reference": "ServiceRequest/d4ca776d-feb4-43ab-b945-36c47cafb8b3"
                 },
                 "status": "in-progress",
                 "intent": "order"
@@ -103,7 +103,7 @@
                             "coding": [
                                 {
                                     "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/numeroRicovero",
-                                    "code": "VN"
+                                    "code": "NR"
                                 }
                             ]
                         },
@@ -139,22 +139,16 @@
                         }
                     },
                     {
-                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/Anamnesi",
-                        "valueReference": {
-                            "reference": "Il paziente ha riferito di avere avuto episodi di vertigini negli ultimi mesi"
-                        }
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterAnamnesi",
+                        "valueString": "Il paziente ha riferito di avere avuto episodi di vertigini negli ultimi mesi"
                     },
                     {
-                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/DettaglioOperatoreRiceveOrdine",
-                        "valueReference": {
-                            "reference": "Si è provveduto alla raccolta dei campioni biologoci del paziente"
-                        }
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterDettaglioOperatore",
+                        "valueString": "Si è provveduto alla raccolta dei campioni biologoci del paziente"
                     },
                     {
-                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/NotePazientePrestazione",
-                        "valueReference": {
-                            "reference": "Sono stati prelevati campioni di sangue dal paziente per l'esecuzione degli esami di laboratorio prescritti."
-                        }
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterNotePaziente",
+                        "valueString": "Sono stati prelevati campioni di sangue dal paziente per l'esecuzione degli esami di laboratorio prescritti."
                     }
                 ]
             }
@@ -191,9 +185,9 @@
                 "status": "active",
                 "intent": "order",
                 "priority": "asap",
-                "category":  [
+                "category": [
                     {
-                        "coding":  [
+                        "coding": [
                             {
                                 "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
                                 "code": "1",
@@ -291,9 +285,9 @@
                         "value": "{{OMRServiceUID2}}"
                     }
                 ],
-                "category":  [
+                "category": [
                     {
-                        "coding":  [
+                        "coding": [
                             {
                                 "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
                                 "code": "1",

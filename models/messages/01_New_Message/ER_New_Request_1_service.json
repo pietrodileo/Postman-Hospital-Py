@@ -5,7 +5,7 @@
     "type": "message",
     "meta": {
         "versionId": "1",
-        "profile":  [
+        "profile": [
             "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleNuovaRichiesta"
         ]
     },
@@ -56,12 +56,12 @@
                 "id": "31220ea7-39a8-4a90-a37f-9d93b63160ff",
                 "meta": {
                     "versionId": "1",
-                    "profile":  [
+                    "profile": [
                         "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabAllergyIntoleranceAllergie"
                     ]
                 },
                 "code": {
-                    "coding":  [
+                    "coding": [
                         {
                             "display": "Pelo di gatto",
                             "code": "123",
@@ -70,9 +70,9 @@
                     ]
                 },
                 "onsetDateTime": "2016",
-                "reaction":  [
+                "reaction": [
                     {
-                        "manifestation":  [
+                        "manifestation": [
                             {
                                 "text": "Infiammazione cutanea"
                             }
@@ -102,7 +102,7 @@
                             "coding": [
                                 {
                                     "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/numeroRicovero",
-                                    "code": "VN"
+                                    "code": "NR"
                                 }
                             ]
                         },
@@ -137,7 +137,7 @@
                 ],
                 "extension": [
                     {
-                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBinaryDocumentoPDFEncodedBase64",
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterNotaDiAccompagnamento",
                         "valueReference": {
                             "reference": "Binary/a8d5502e-02df-4a15-a433-aa6ce2f9fa50"
                         }
@@ -149,22 +149,16 @@
                         }
                     },
                     {
-                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/Anamnesi",
-                        "valueReference": {
-                            "reference": "Il paziente ha riferito di avere avuto episodi di vertigini negli ultimi mesi"
-                        }
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterAnamnesi",
+                        "valueString": "Il paziente ha riferito di avere avuto episodi di vertigini negli ultimi mesi"
                     },
                     {
-                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/DettaglioOperatoreRiceveOrdine",
-                        "valueReference": {
-                            "reference": "Si è provveduto alla raccolta dei campioni biologoci del paziente"
-                        }
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterDettaglioOperatore",
+                        "valueString": "Si è provveduto alla raccolta dei campioni biologoci del paziente"
                     },
                     {
-                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/NotePazientePrestazione",
-                        "valueReference": {
-                            "reference": "Sono stati prelevati campioni di sangue dal paziente per l'esecuzione degli esami di laboratorio prescritti."
-                        }
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterNotePaziente",
+                        "valueString": "Sono stati prelevati campioni di sangue dal paziente per l'esecuzione degli esami di laboratorio prescritti."
                     }
                 ]
             }
@@ -176,7 +170,7 @@
                 "id": "a8d5502e-02df-4a15-a433-aa6ce2f9fa50",
                 "meta": {
                     "versionId": "1",
-                    "profile":  [
+                    "profile": [
                         "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBinaryDocumentoPDFEncodedBase64"
                     ]
                 },
@@ -353,8 +347,8 @@
                 },
                 "supportingInfo": [
                     {
-                    "reference": "Observation/d52a9b60-d45e-11ed-afa1-0242ac120002",
-                    "display": "Info Cliniche"
+                        "reference": "Observation/d52a9b60-d45e-11ed-afa1-0242ac120002",
+                        "display": "Info Cliniche"
                     }
                 ],
                 "specimen": [
@@ -410,7 +404,7 @@
                     "versionId": 1
                 },
                 "type": {
-                    "coding":  [
+                    "coding": [
                         {
                             "code": "119297000",
                             "display": "Blood specimen (specimen)",
@@ -698,7 +692,7 @@
                 "generalPractitioner": {
                     "reference": "PractitionerRole/65a0765e-6f57-11ee-adbe-02001700b287"
                 },
-                "link":  [
+                "link": [
                     {
                         "other": {
                             "reference": "RelatedPerson/1928379c-f234-2874-a178-5e98109982f7"
@@ -715,24 +709,24 @@
                 "id": "1928379c-f234-2874-a178-5e98109982f7",
                 "meta": {
                     "versionId": "1",
-                    "profile":  [
+                    "profile": [
                         "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabRelatedPerson"
                     ]
                 },
-                "name":  [
+                "name": [
                     {
                         "family": "Rossi",
-                        "given":  [
+                        "given": [
                             "Marcella"
                         ]
                     }
                 ],
-                "identifier":  [
+                "identifier": [
                     {
                         "value": "RSSMRC66P09N656M",
                         "system": "https://fhir.siss.regione.lombardia.it/Valueset/CodiceFiscale",
                         "type": {
-                            "coding":  [
+                            "coding": [
                                 {
                                     "display": "Codice fiscale",
                                     "code": "NN",
