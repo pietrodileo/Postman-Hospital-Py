@@ -148,7 +148,7 @@
                     {
                         "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterServiceRequester",
                         "valueReference": {
-                            "reference": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287"
+                            "reference": "Organization/72c10akc-9d02-34df-cina-01945719a018"
                         }
                     },
                     {
@@ -698,7 +698,7 @@
                 "identifier": [
                     {
                         "value": "121314",
-                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto"
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeAmbulatorio"
                     }
                 ],
                 "name": "CARDIOLOGIA",
