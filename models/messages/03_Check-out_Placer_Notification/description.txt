@@ -2,5 +2,5 @@
 
 In questa cartella sono contenuti i messaggi che il laboratorio (come ER) invia all'OMR per notificare il check-out richiedente (campioni spediti) di 1 o 2 prestazioni:
 
-  * "*ES Check-out 1 request*": invio della notifica di check-out di 1 prestazione;
-  * "*ES Check-out 2 requests*": invio della notifica di check-out di 2 prestazioni;
+  * "*ER Check-out 1 request*": invio della notifica di check-out di 1 prestazione;
+  * "*ER Check-out 2 requests*": invio della notifica di check-out di 2 prestazioni;

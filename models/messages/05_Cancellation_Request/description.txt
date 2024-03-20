@@ -2,5 +2,7 @@
 
 In questa cartella sono contenuti i messaggi che il laboratorio (come ER) invia per richiedere la cancellazione di 1 o 2 prestazioni che ha precedentemente richiesto all'OMR:
 
-  * "*ER cancels 1 service*": richiesta di cancellazione di 1 prestazione;
-  * "*ER cancels 2 services*": richiesta di cancellazione di 2 prestazioni;
+  * "*ER Cancels 1 service with OMR ID*": richiesta di cancellazione di 1 prestazione, effettuata successivamente all'assegnazione della richiesta ad un servente e della comunicazione da OMR al richiedente dell'OMROrderNumber e del FillerOrderNumber;
+  * "*ER Cancels 1 service without OMR ID*": richiesta di cancellazione di 1 prestazione, effettuata prima dell'assegnazione della richiesta ad un servente e della comunicazione da OMR al richiedente dell'OMROrderNumber e del FillerOrderNumber;
+  * "*ER Cancels 2 services with OMR ID*": richiesta di cancellazione di 2 prestazioni, effettuata successivamente all'assegnazione della richiesta ad un servente e della comunicazione da OMR al richiedente dell'OMROrderNumber e del FillerOrderNumber;
+  * "*ER Cancels 2 services without OMR ID*": richiesta di cancellazione di 2 prestazioni, effettuata prima dell'assegnazione della richiesta ad un servente e della comunicazione da OMR al richiedente dell'OMROrderNumber e del FillerOrderNumber;

@@ -286,7 +286,7 @@
                 "birthDate": "2000-07-02",
                 "address": [
                     {
-                        "use": "BDL",
+                        "use": "home",
                         "city": "TORINO",
                         "state": "TO",
                         "postalCode": "20158",
@@ -298,7 +298,7 @@
                         ]
                     },
                     {
-                        "use": "L",
+                        "use": "home",
                         "text": "V. C/O LOMBARDIA INFORMATICA VIA MINZONI, 24",
                         "line": [
                             "V. C/O LOMBARDIA INFORMATICA VIA MINZONI",
@@ -322,7 +322,7 @@
                         ]
                     },
                     {
-                        "use": "H",
+                        "use": "home",
                         "text": "V. C/O LOMBARDIA INFORMATICA VIA MINZONI, 24",
                         "line": [
                             "V. C/O LOMBARDIA INFORMATICA VIA MINZONI",

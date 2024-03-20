@@ -1,6 +1,0 @@
-# Cancellation Request
-
-In questa cartella sono contenuti i messaggi che il laboratorio (come ER) invia per richiedere la cancellazione di 1 o 2 prestazioni che ha precedentemente richiesto all'OMR:
-
-  * "*ER cancels 1 service*": richiesta di cancellazione di 1 prestazione;
-  * "*ER cancels 2 services*": richiesta di cancellazione di 2 prestazioni;
