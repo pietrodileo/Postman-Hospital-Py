@@ -1,5 +1,5 @@
 {
-    "richiesta": "Cancellation Request",
+    "richiesta": "Modification Request",
     "resourceType": "Bundle",
     "id": "{{BundleID}}",
     "type": "message",
@@ -261,6 +261,27 @@
                         }
                     ]
                 },
+                ,
+                "orderDetail": {
+                    "coding": [
+                        {
+                            "system": "https://fhir.siss.regione.lombardia.it/sid/identificativoInternoUnitaErogante",
+                            "code": "0002"
+                        },
+                        {
+                            "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto",
+                            "code": "0801"
+                        },
+                        {
+                            "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio",
+                            "code": "03091300"
+                        },
+                        {
+                            "system": "https://fhir.siss.regione.lombardia.it/sid/identificativoInternoSalaErogatrice",
+                            "code": "LAB"
+                        }
+                    ]
+                },
                 "category": [
                     {
                         "coding": [
@@ -430,6 +451,27 @@
                             "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
                             "code": "{{OldSR2SISS}}",
                             "display": "{{OldServiceRequest2}}"
+                        }
+                    ]
+                },
+                ,
+                "orderDetail": {
+                    "coding": [
+                        {
+                            "system": "https://fhir.siss.regione.lombardia.it/sid/identificativoInternoUnitaErogante",
+                            "code": "0002"
+                        },
+                        {
+                            "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto",
+                            "code": "0801"
+                        },
+                        {
+                            "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio",
+                            "code": "03091300"
+                        },
+                        {
+                            "system": "https://fhir.siss.regione.lombardia.it/sid/identificativoInternoSalaErogatrice",
+                            "code": "LAB"
                         }
                     ]
                 },
