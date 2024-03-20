@@ -1,13 +1,13 @@
 {
-    "richiesta": "Order Completed",
+    "richiesta": "Cancellation Request",
     "resourceType": "Bundle",
-    "id": "{{$randomUUID}}",
+    "id": "{{BundleID}}",
     "type": "message",
     "timestamp": "{{Date}}",
     "meta": {
         "versionId": "1",
         "profile": [
-            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleNotificaServente"
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleModificaOrdine"
         ]
     },
     "entry": [
@@ -41,27 +41,9 @@
                 },
                 "focus": [
                     {
-                        "reference": "Task/c1d60f86-ffe1-44e8-a3bc-be73e50951f9"
+                        "reference": "ServiceRequest/e2bdf00d-2235-4465-8b9c-944e337efd47"
                     }
                 ]
-            }
-        },
-        {
-            "fullUrl": "Task/c1d60f86-ffe1-44e8-a3bc-be73e50951f9",
-            "resource": {
-                "resourceType": "Task",
-                "id": "c1d60f86-ffe1-44e8-a3bc-be73e50951f9",
-                "meta": {
-                    "profile": [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabTaskStatoRichiesta"
-                    ],
-                    "versionId": "1"
-                },
-                "focus": {
-                    "reference": "ServiceRequest/e2bdf00d-2235-4465-8b9c-944e337efd47"
-                },
-                "status": "completed",
-                "intent": "order"
             }
         },
         {
@@ -93,7 +75,7 @@
                         }
                     }
                 ],
-                "status": "finished",
+                "status": "cancelled",
                 "class": {
                     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
                     "code": "IMP",
@@ -143,22 +125,14 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
-                        "value": "Placer Order Number"
-                    },
-                    {
-                        "system": "https://fhir.siss.regione.lombardia.it/sid/FillerOrderNumber",
-                        "value": "{{$randomUUID}}"
-                    },
-                    {
-                        "system": "https://fhir.siss.regione.lombardia.it/sid/OMROrderNumber",
-                        "value": "{{OMRServiceUID1}}"
+                        "value": "{{PlacerOrderNumber}}"
                     }
                 ],
                 "requisition": {
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
-                    "value": "Placer Requisition Value"
+                    "value": "{{formattedRequisition}}"
                 },
-                "status": "completed",
+                "status": "revoked",
                 "intent": "order",
                 "priority": "asap",
                 "code": {
@@ -213,6 +187,12 @@
                     "display": "Informazioni Richiesta Lab"
                 },
                 "authoredOn": "2022-11-16T14:59:37Z",
+                "supportingInfo": [
+                    {
+                        "reference": "Observation/d52a9b60-d45e-11ed-afa1-0242ac120002",
+                        "display": "Info Cliniche"
+                    }
+                ],
                 "performer": [
                     {
                         "reference": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287"
@@ -229,6 +209,88 @@
                         ]
                     }
                 ]
+            }
+        },
+        {
+            "fullUrl": "Organization/7195779b-9c43-4074-a2d4-7e34e18b1ae4",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "7195779b-9c43-4074-a2d4-7e34e18b1ae4",
+                "meta": {
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationL1"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoEnte",
+                        "value": "{{L1code}}"
+                    }
+                ],
+                "name": "Denominazione dell'ente L1"
+            }
+        },
+        {
+            "fullUrl": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "37d47b20-fbe0-11ed-99f7-02001700b287",
+                "meta": {
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationL2"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio",
+                        "value": "{{L2code}}"
+                    }
+                ],
+                "partOf": {
+                    "reference": "Organization/7195779b-9c43-4074-a2d4-7e34e18b1ae4"
+                },
+                "name": "Descrizione del presidio L2"
+            }
+        },
+        {
+            "fullUrl": "Organization/34568719c-9c43-4074-a2d4-7e34e18b1ae4",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "34568719c-9c43-4074-a2d4-7e34e18b1ae4",
+                "meta": {
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationL1"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoEnte",
+                        "value": "Codice L1 ES}}"
+                    }
+                ],
+                "name": "Denominazione dell'ente L1"
+            }
+        },
+        {
+            "fullUrl": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "30d4p103-fbe0-11ed-99f7-02001700b287",
+                "meta": {
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationL2"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio",
+                        "value": "Codice L2 ES"
+                    }
+                ],
+                "partOf": {
+                    "reference": "Organization/34568719c-9c43-4074-a2d4-7e34e18b1ae4"
+                },
+                "name": "Descrizione del presidio L2"
             }
         },
         {
@@ -341,88 +403,6 @@
                         ]
                     }
                 ]
-            }
-        },
-        {
-            "fullUrl": "Organization/7195779b-9c43-4074-a2d4-7e34e18b1ae4",
-            "resource": {
-                "resourceType": "Organization",
-                "id": "7195779b-9c43-4074-a2d4-7e34e18b1ae4",
-                "meta": {
-                    "profile": [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationL1"
-                    ]
-                },
-                "identifier": [
-                    {
-                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoEnte",
-                        "value": "Codice L1 Ente Richiedente"
-                    }
-                ],
-                "name": "Denominazione dell'ente L1"
-            }
-        },
-        {
-            "fullUrl": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287",
-            "resource": {
-                "resourceType": "Organization",
-                "id": "37d47b20-fbe0-11ed-99f7-02001700b287",
-                "meta": {
-                    "profile": [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationL2"
-                    ]
-                },
-                "identifier": [
-                    {
-                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio",
-                        "value": "Codice L2 Ente Richiedente"
-                    }
-                ],
-                "partOf": {
-                    "reference": "Organization/7195779b-9c43-4074-a2d4-7e34e18b1ae4"
-                },
-                "name": "Descrizione del presidio L2"
-            }
-        },
-        {
-            "fullUrl": "Organization/34568719c-9c43-4074-a2d4-7e34e18b1ae4",
-            "resource": {
-                "resourceType": "Organization",
-                "id": "34568719c-9c43-4074-a2d4-7e34e18b1ae4",
-                "meta": {
-                    "profile": [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationL1"
-                    ]
-                },
-                "identifier": [
-                    {
-                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoEnte",
-                        "value": "{{L1code}}"
-                    }
-                ],
-                "name": "Denominazione dell'ente L1"
-            }
-        },
-        {
-            "fullUrl": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287",
-            "resource": {
-                "resourceType": "Organization",
-                "id": "30d4p103-fbe0-11ed-99f7-02001700b287",
-                "meta": {
-                    "profile": [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationL2"
-                    ]
-                },
-                "identifier": [
-                    {
-                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio",
-                        "value": "{{L2code}}"
-                    }
-                ],
-                "partOf": {
-                    "reference": "Organization/34568719c-9c43-4074-a2d4-7e34e18b1ae4"
-                },
-                "name": "Descrizione del presidio L2"
             }
         }
     ]

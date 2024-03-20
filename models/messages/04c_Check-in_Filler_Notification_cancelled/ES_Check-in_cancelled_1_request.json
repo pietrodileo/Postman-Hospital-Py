@@ -1,15 +1,15 @@
 {
-    "richiesta": "Order Completed",
+    "richiesta": "Check-in servente cancellato",
     "resourceType": "Bundle",
     "id": "{{$randomUUID}}",
     "type": "message",
-    "timestamp": "{{Date}}",
     "meta": {
         "versionId": "1",
         "profile": [
             "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleNotificaServente"
         ]
     },
+    "timestamp": "{{Date}}",
     "entry": [
         {
             "fullUrl": "{{MessageHeaderFullUrl}}",
@@ -60,7 +60,7 @@
                 "focus": {
                     "reference": "ServiceRequest/e2bdf00d-2235-4465-8b9c-944e337efd47"
                 },
-                "status": "completed",
+                "status": "cancelled",
                 "intent": "order"
             }
         },
@@ -93,7 +93,7 @@
                         }
                     }
                 ],
-                "status": "finished",
+                "status": "in-progress",
                 "class": {
                     "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
                     "code": "IMP",
@@ -158,18 +158,11 @@
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
                     "value": "Placer Requisition Value"
                 },
-                "status": "completed",
-                "intent": "order",
-                "priority": "asap",
-                "code": {
-                    "coding": [
-                        {
-                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
-                            "code": "{{SR1SISS}}",
-                            "display": "{{ServiceRequest1}}"
-                        }
-                    ]
-                },
+                "specimen": [
+                    {
+                        "reference": "Specimen/725be834-82de-11ee-b83f-02001700b287"
+                    }
+                ],
                 "category": [
                     {
                         "coding": [
@@ -181,6 +174,18 @@
                         ]
                     }
                 ],
+                "status": "active",
+                "intent": "order",
+                "priority": "asap",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
+                            "code": "{{SR1SISS}}",
+                            "display": "{{ServiceRequest1}}"
+                        }
+                    ]
+                },
                 "orderDetail": {
                     "coding": [
                         {
@@ -423,6 +428,36 @@
                     "reference": "Organization/34568719c-9c43-4074-a2d4-7e34e18b1ae4"
                 },
                 "name": "Descrizione del presidio L2"
+            }
+        },
+        {
+            "fullUrl": "Specimen/725be834-82de-11ee-b83f-02001700b287",
+            "resource": {
+                "resourceType": "Specimen",
+                "id": "725be834-82de-11ee-b83f-02001700b287",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabSpecimenCampioneLaboratorio"
+                    ]
+                },
+                "type": {
+                    "coding": [
+                        {
+                            "code": "DATIC",
+                            "display": "DATIC"
+                        }
+                    ]
+                },
+                "collection": {
+                    "collectedDateTime": "2022-11-16T15:00:51+01:00",
+                    "quantity": {
+                        "value": "0"
+                    }
+                },
+                "subject": {
+                    "reference": "Patient/725bad56-82de-11ee-b83f-02001700b287"
+                }
             }
         }
     ]

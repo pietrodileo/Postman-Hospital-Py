@@ -45,7 +45,7 @@ pm.collectionVariables.set("BundleID", BundleID);
 // Stampa il valore del Bundle ID
 console.log("The Bundle UID is:", BundleID);
 
-// Definiamo una di valori predefiniti per le Service Request e i relativi codici SISS
+// Definiamo una lista di valori predefiniti per le Service Request e i relativi codici SISS
 const serviceRequestList = ["Emocromo completo", "Insulina a digiuno", "Glicemia a digiuno", "Magnesio totale nelle urine", "Chetosteroidi nelle urine", "Cortisolo nel sangue"];
 const SISSCodeList = ["90622", "90291", "90271", "90325", "90013", "90352"];
 
