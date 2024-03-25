@@ -41,30 +41,12 @@
                 },
                 "focus": [
                     {
-                        "reference": "Task/c1d60f86-ffe1-44e8-a3bc-be73e50951f9"
+                        "reference": "Task/889fb6c1-e4f0-459a-9940-fedf650604rr"
                     },
                     {
                         "reference": "Task/778fb6c0-e4f0-459a-9940-fedf650593ee"
-                    }
+                    }            
                 ]
-            }
-        },
-        {
-            "fullUrl": "Task/c1d60f86-ffe1-44e8-a3bc-be73e50951f9",
-            "resource": {
-                "resourceType": "Task",
-                "id": "c1d60f86-ffe1-44e8-a3bc-be73e50951f9",
-                "meta": {
-                    "profile": [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabTaskStatoRichiesta"
-                    ],
-                    "versionId": "1"
-                },
-                "focus": {
-                    "reference": "ServiceRequest/e2bdf00d-2235-4465-8b9c-944e337efd47"
-                },
-                "status": "completed",
-                "intent": "order"
             }
         },
         {
@@ -80,6 +62,24 @@
                 },
                 "focus": {
                     "reference": "ServiceRequest/a7co152e-qxb5-99uu-u110-00z44xagx6x2"
+                },
+                "status": "completed",
+                "intent": "order-filler"
+            }
+        },
+        {
+            "fullUrl": "Task/889fb6c1-e4f0-459a-9940-fedf650604rr",
+            "resource": {
+                "resourceType": "Task",
+                "id": "889fb6c1-e4f0-459a-9940-fedf650604rr",
+                "meta": {
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabTaskStatoRichiesta"
+                    ],
+                    "versionId": "1"
+                },
+                "focus": {
+                    "reference": "ServiceRequest/a8co263e-qxb5-99uu-u110-00x55cshc7m3"
                 },
                 "status": "completed",
                 "intent": "order-filler"
@@ -125,10 +125,10 @@
                 },
                 "basedOn": [
                     {
-                        "reference": "ServiceRequest/e2bdf00d-2235-4465-8b9c-944e337efd47"
+                        "reference": "ServiceRequest/a7co152e-qxb5-99uu-u110-00z44xagx6x2"
                     },
                     {
-                        "reference": "ServiceRequest/a7co152e-qxb5-99uu-u110-00z44xagx6x2"
+                        "reference": "ServiceRequest/a8co263e-qxb5-99uu-u110-00x55cshc7m3"
                     }
                 ],
                 "extension": [
@@ -153,7 +153,7 @@
                 ]
             }
         },
-        {
+         {
             "fullUrl": "ServiceRequest/a7co152e-qxb5-99uu-u110-00z44xagx6x2",
             "resource": {
                 "resourceType": "ServiceRequest",
@@ -244,10 +244,10 @@
             }
         },
         {
-            "fullUrl": "ServiceRequest/e2bdf00d-2235-4465-8b9c-944e337efd47",
+            "fullUrl": "ServiceRequest/a8co263e-qxb5-99uu-u110-00x55cshc7m3",
             "resource": {
                 "resourceType": "ServiceRequest",
-                "id": "e2bdf00d-2235-4465-8b9c-944e337efd47",
+                "id": "a8co263e-qxb5-99uu-u110-00x55cshc7m3",
                 "meta": {
                     "profile": [
                         "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabServiceRequestRichiestaEsamiLab"
@@ -256,30 +256,18 @@
                 },
                 "identifier": [
                     {
-                        "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
-                        "value": "Placer Order Number"
-                    },
-                    {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/FillerOrderNumber",
                         "value": "{{$randomUUID}}"
-                    },
-                    {
-                        "system": "https://fhir.siss.regione.lombardia.it/sid/OMROrderNumber",
-                        "value": "{{OMRServiceUID1}}"
                     }
                 ],
-                "requisition": {
-                    "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
-                    "value": "Placer Requisition Value"
-                },
-                "status": "completed",
-                "intent": "order",
+                "status": "active",
+                "intent": "order-filler",
                 "priority": "asap",
                 "code": {
                     "coding": [
                         {
                             "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
-                            "code": "{{SR1SISS}}",
+                            "code": "{{SR2SISS}}",
                             "display": "{{ServiceRequest1}}"
                         }
                     ]
