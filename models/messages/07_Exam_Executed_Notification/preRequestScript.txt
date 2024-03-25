@@ -24,3 +24,69 @@ pm.collectionVariables.set("NomeSoftware", softwareName);
 
 console.log("L1 code: ",pm.collectionVariables.get("L1code"), "L2 code: ",pm.collectionVariables.get("L2code"))
 console.log("CodiceApplicativo: ",pm.collectionVariables.get("CodiceApplicativo"))
+
+// Estraiamo le richieste precedentemente assegnate
+const SR1SISS = pm.environment.get("SR1SISS")
+const SR2SISS = pm.environment.get("SR2SISS")
+const ServiceRequest1 = pm.environment.get("ServiceRequest1")
+const ServiceRequest2 = pm.environment.get("ServiceRequest2")
+
+// Definiamo una funzione per filtrare gli elementi che sono presenti in SR1SISS
+// Funzione per filtrare gli elementi presenti in un array da un altro array
+function filterOutFromArray(arr, toBeFilteredOut) {
+    return arr.filter(item => !toBeFilteredOut.includes(item));
+}
+
+// Inizializza la nuova lista
+let NewSISSCodeList = []
+let NewserviceRequestList = []
+
+// Definiamo una lista di valori predefiniti per le Service Request e i relativi codici SISS
+const serviceRequestList = ["Emocromo completo", "Insulina a digiuno", "Glicemia a digiuno", "Magnesio totale nelle urine", "Chetosteroidi nelle urine", "Cortisolo nel sangue"];
+const SISSCodeList = ["90622", "90291", "90271", "90325", "90013", "90352"];
+
+// Verifichiamo se SR1SISS non è vuoto e se contiene valori
+if (SR1SISS) {
+    NewSISSCodeList = filterOutFromArray(SISSCodeList, SR1SISS);
+    // Verifichiamo se SR2SISS non è vuoto e se contiene valori
+    if (SR2SISS) {
+        NewSISSCodeList = filterOutFromArray(NewSISSCodeList, SR2SISS);
+    }
+}
+
+// Verifichiamo se SR1SISS non è vuoto e se contiene valori
+if (ServiceRequest1) {
+    NewserviceRequestList = filterOutFromArray(serviceRequestList, ServiceRequest1);
+    // Verifichiamo se SR2SISS non è vuoto e se contiene valori
+    if (ServiceRequest2) {
+        NewserviceRequestList = filterOutFromArray(NewserviceRequestList, ServiceRequest2);
+    }
+}
+
+// Rimuove i valori già utilizzati per SR1SISS e SR2SISS dalle liste
+const remainingServiceRequests = [...NewserviceRequestList];
+const remainingSISSCodes = [...NewSISSCodeList];
+
+// Rimuove i valori già utilizzati per SR1SISS e SR2SISS dalle liste
+const SR3Index = Math.floor(Math.random() * remainingServiceRequests.length);
+const SR3Value = remainingServiceRequests.splice(SR3Index, 1)[0];
+const SR3SISS = remainingSISSCodes.splice(SR3Index, 1)[0];
+
+const SR4Index = Math.floor(Math.random() * remainingServiceRequests.length);
+const SR4Value = remainingServiceRequests[SR4Index];
+const SR4SISS = remainingSISSCodes[SR4Index];
+
+// Assegna i valori casuali alle variabili delle Service Request
+pm.environment.set("ServiceRequest3", SR3Value);
+pm.environment.set("SR3SISS", SR3SISS);
+pm.environment.set("ServiceRequest4", SR4Value);
+pm.environment.set("SR4SISS", SR4SISS);
+
+console.log("SR1SISS:", SR1SISS);
+console.log("SR2SISS:", SR2SISS);
+console.log("ServiceRequest1:", ServiceRequest1);
+console.log("ServiceRequest2:", ServiceRequest2);
+console.log("SR3SISS:", SR3SISS);
+console.log("SR4SISS:", SR4SISS);
+console.log("ServiceRequest3:", SR3Value);
+console.log("ServiceRequest4:", SR4Value);

@@ -35,6 +35,9 @@ console.log("The formatted requisition is:", formattedRequisition);
 pm.collectionVariables.set(requisitionKey, requisition);
 pm.collectionVariables.set("formattedRequisition", formattedRequisition);
 
+// Aggiungi una variabile di environment per testare l'aggiunta di richieste extra dal filler (Exam Executed o Order Completed)
+pm.environment.set("formattedRequisitionPlacer", formattedRequisition);
+
 // (Se necessario) Rimuovi la variabile "requisition" dalla collezione di variabili
 //pm.collectionVariables.unset(requisitionKey);
 
