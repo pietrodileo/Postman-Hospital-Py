@@ -22,6 +22,14 @@ pm.collectionVariables.set("L2code", L2code);
 const softwareName = "NomeSoftware_VSC"   
 pm.collectionVariables.set("NomeSoftware", softwareName);
 
+// <inserisci qui il codice L1 del richiedente>
+const L1codePlacer = "<>"
+// <inserisci qui il codice L2 del richiedente>
+const L2codePlacer = "<>"
+
+pm.collectionVariables.set("L1codePlacer",L1codePlacer);
+pm.collectionVariables.set("L2codePlacer",L2codePlacer);
+
 console.log("L1 code: ",pm.collectionVariables.get("L1code"), "L2 code: ",pm.collectionVariables.get("L2code"))
 console.log("CodiceApplicativo: ",pm.collectionVariables.get("CodiceApplicativo"))
 

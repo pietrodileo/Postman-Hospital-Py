@@ -88,7 +88,7 @@
                         },
                         "value": "202300001",
                         "assigner": {
-                            "reference": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287",
+                            "reference": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287",
                             "display": "Laboratorio richiedente"
                         }
                     }
@@ -111,7 +111,7 @@
                     {
                         "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterServiceRequester",
                         "valueReference": {
-                            "reference": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287"
+                            "reference": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287"
                         }
                     },
                     {
@@ -207,7 +207,7 @@
                 "authoredOn": "2022-11-16T14:59:37Z",
                 "performer": [
                     {
-                        "reference": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287"
+                        "reference": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287"
                     }
                 ],
                 "reasonCode": [
@@ -389,7 +389,7 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoEnte",
-                        "value": "{{L1codeFiller}}"
+                        "value": "{{L1codePlacer}}"
                     }
                 ],
                 "name": "Denominazione dell'ente L1"
@@ -408,7 +408,7 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio",
-                        "value": "{{L2codeFiller}}"
+                        "value": "{{L2codePlacer}}"
                     }
                 ],
                 "partOf": {
