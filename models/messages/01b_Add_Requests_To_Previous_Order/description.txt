@@ -1,0 +1,6 @@
+# Add requests to a previous order
+
+In questa cartella sono contenuti i messaggi che il laboratorio (come ER) invia per richiedere all'OMR l'aggiunta di 1 o 2 prestazioni ad un ordine che aveva già precedentemente richiesto:
+
+  * "*ER Add 1 Request To Previous Order*": richiesta di aggiunta di 1 prestazione ad un ordine già esistente;
+  * "*ER Add 2 Requests To Previous Order*": richiesta di 2 prestazioni ad un ordine già esistente;

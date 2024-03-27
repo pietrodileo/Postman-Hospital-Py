@@ -4,7 +4,7 @@ const isoString = now.toISOString();
 pm.collectionVariables.set("Date", isoString);
 
 console.log("");
-console.log("This is the pre request script of a check-in notification message, generated at: " + pm.collectionVariables.get("Date") + " by " + pm.collectionVariables.get("NomeSoftware"));
+console.log("This is the pre request script of a exam executed/completed notification message, generated at: " + pm.collectionVariables.get("Date") + " by " + pm.collectionVariables.get("NomeSoftware"));
 
 // Crea un UUID per il Message Header
 const MessageHeaderID = pm.variables.replaceIn("{{$randomUUID}}").toString();
@@ -21,15 +21,6 @@ const L2code = "L2code_VSC"
 pm.collectionVariables.set("L2code", L2code);
 const softwareName = "NomeSoftware_VSC"   
 pm.collectionVariables.set("NomeSoftware", softwareName);
-
-// <inserisci qui il codice L1 del richiedente>
-const L1codePlacer = "<>"
-// <inserisci qui il codice L2 del richiedente>
-const L2codePlacer = "<>"
-
-pm.collectionVariables.set("L1codePlacer",L1codePlacer);
-pm.collectionVariables.set("L2codePlacer",L2codePlacer);
-
 console.log("L1 code: ",pm.collectionVariables.get("L1code"), "L2 code: ",pm.collectionVariables.get("L2code"))
 console.log("CodiceApplicativo: ",pm.collectionVariables.get("CodiceApplicativo"))
 
@@ -98,3 +89,7 @@ console.log("SR3SISS:", SR3SISS);
 console.log("SR4SISS:", SR4SISS);
 console.log("ServiceRequest3:", SR3Value);
 console.log("ServiceRequest4:", SR4Value);
+
+// Dichiara le variabili di ambiente L1 filler e L2 filler da utilizzare negli altri flussi per identificare il placer
+pm.environment.set("L1codeFiller",L1code);
+pm.environment.set("L2codeFiller",L2code);
