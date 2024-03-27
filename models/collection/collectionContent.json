@@ -88,6 +88,11 @@
             "type": "any"
         },
         {
+            "key": "port2",
+            "value": "9085",
+            "type": "any"
+        },
+        {
             "key": "PietroPort",
             "value": "1888",
             "type": "any"
@@ -150,6 +155,26 @@
         {
             "key": "L2code",
             "value": "",
+            "type": "any"
+        },
+        {
+            "key": "L1codePlacer",
+            "value": "Codice L1 Ente Richiedente",
+            "type": "any"
+        },
+        {
+            "key": "L2codePlacer",
+            "value": "Codice L2 Ente Richiedente",
+            "type": "any"
+        },
+        {
+            "key": "L1codeFiller",
+            "value": "Codice L1 Ente Servente",
+            "type": "any"
+        },
+        {
+            "key": "L2codeFiller",
+            "value": "Codice L2 Ente Servente",
             "type": "any"
         },
         {

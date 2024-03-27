@@ -4,7 +4,7 @@ const isoString = now.toISOString();
 pm.collectionVariables.set("Date", isoString);
 
 console.log("");
-console.log("This is the pre request script of a check-in notification message, generated at: " + pm.collectionVariables.get("Date") + " by " + pm.collectionVariables.get("NomeSoftware"));
+console.log("This is the pre request script of a placer check-in notification message, generated at: " + pm.collectionVariables.get("Date") + " by " + pm.collectionVariables.get("NomeSoftware"));
 
 // Crea un UUID per il Message Header
 const MessageHeaderID = pm.variables.replaceIn("{{$randomUUID}}").toString();
@@ -24,3 +24,7 @@ pm.collectionVariables.set("NomeSoftware", softwareName);
 
 console.log("L1 code: ",pm.collectionVariables.get("L1code"), "L2 code: ",pm.collectionVariables.get("L2code"))
 console.log("CodiceApplicativo: ",pm.collectionVariables.get("CodiceApplicativo"))
+
+// Dichiara le variabili di ambiente L1 placer e L2 placer da utilizzare negli altri flussi per identificare il placer
+pm.environment.set("L1codePlacer",L1code);
+pm.environment.set("L2codePlacer",L1code);

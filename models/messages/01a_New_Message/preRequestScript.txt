@@ -52,31 +52,55 @@ console.log("The Bundle UID is:", BundleID);
 const serviceRequestList = ["Emocromo completo", "Insulina a digiuno", "Glicemia a digiuno", "Magnesio totale nelle urine", "Chetosteroidi nelle urine", "Cortisolo nel sangue"];
 const SISSCodeList = ["90622", "90291", "90271", "90325", "90013", "90352"];
 
-// Genera un indice casuale per selezionare un valore dalla lista
-const randomIndex = Math.floor(Math.random() * serviceRequestList.length);
-let randomIndex2 = randomIndex;
+// Function to get random values and SISS codes from the provided lists without repetition
+function getRandomValuesAndSISS(serviceRequestList, SISSCodeList) {
+    const getRandomIndexWithout = (exclude) => {
+        let randomIndex;
+        do {
+            randomIndex = Math.floor(Math.random() * serviceRequestList.length);
+        } while (exclude.includes(randomIndex));
+        return randomIndex;
+    };
 
-// Ripeti il processo per la Service Request 2
-while (randomIndex2 === randomIndex) {
-  randomIndex2 = Math.floor(Math.random() * serviceRequestList.length);
+    let indexes = [];
+    for (let i = 0; i < 4; i++) {
+        indexes.push(getRandomIndexWithout(indexes));
+    }
+
+    const values = [];
+    const SISSCodes = [];
+    for (let i = 0; i < 4; i++) {
+        values.push(serviceRequestList[indexes[i]]);
+        SISSCodes.push(SISSCodeList[indexes[i]]);
+    }
+
+    return {
+        value1: values[0], SISS1: SISSCodes[0],
+        value2: values[1], SISS2: SISSCodes[1],
+        value3: values[2], SISS3: SISSCodes[2],
+        value4: values[3], SISS4: SISSCodes[3]
+    };
 }
 
-// Seleziona il valore casuale dalla lista per la Service Request 1
-const randomValue =  serviceRequestList[randomIndex] ;
-const randomSISS =  SISSCodeList[randomIndex] ;
-
-// Seleziona il valore casuale dalla lista per la Service Request 2
-const randomValue2 =  serviceRequestList[randomIndex2] ;
-const randomSISS2 =  SISSCodeList[randomIndex2] ;
+// Get random values and SISS codes
+const randomValuesAndSISS = getRandomValuesAndSISS(serviceRequestList, SISSCodeList);
 
 // Assegna i valori casuali alle variabili delle Service Request
-pm.environment.set("ServiceRequest1", randomValue);
-pm.environment.set("SR1SISS", randomSISS);
-pm.environment.set("ServiceRequest2", randomValue2);
-pm.environment.set("SR2SISS", randomSISS2);
+pm.environment.set("ServiceRequest1", randomValuesAndSISS.value1);
+pm.environment.set("SR1SISS", randomValuesAndSISS.SISS1);
+pm.environment.set("ServiceRequest2", randomValuesAndSISS.value2);
+pm.environment.set("SR2SISS", randomValuesAndSISS.SISS2);
+pm.environment.set("ServiceRequest3", randomValuesAndSISS.value3);
+pm.environment.set("SR3SISS", randomValuesAndSISS.SISS3);
+pm.environment.set("ServiceRequest4", randomValuesAndSISS.value4);
+pm.environment.set("SR4SISS", randomValuesAndSISS.SISS4);
 
 // Stampa le prestazioni richieste casualmente
-console.log("Service Request 1 is:", randomValue, randomSISS, "; Service Request 2 is:", randomValue2, randomSISS2);
+console.log("Service Request 1 is:", randomValuesAndSISS.value1, randomValuesAndSISS.SISS1, 
+            "; Service Request 2 is:", randomValuesAndSISS.value2, randomValuesAndSISS.SISS2,
+            "; Service Request 3 is:", randomValuesAndSISS.value3, randomValuesAndSISS.SISS3,
+            "; Service Request 4 is:", randomValuesAndSISS.value4, randomValuesAndSISS.SISS4);
+
 
 // Crea un UUID per il Message Header
 const MessageHeaderID = pm.variables.replaceIn("{{$randomUUID}}").toString();
@@ -117,3 +141,7 @@ console.log("URL Mock Service: ",pm.collectionVariables.get("URL_Mock"))
 pm.collectionVariables.set("PlacerOrderNumber", CodiceApplicativo+"-"+serviceIDString);
 pm.collectionVariables.set("PlacerOrderNumber2", CodiceApplicativo+"-"+secondServiceIDString);
 console.log("");
+
+// Dichiara le variabili di ambiente L1 placer e L2 placer da utilizzare negli altri flussi per identificare il placer
+pm.environment.set("L1codePlacer",L1code);
+pm.environment.set("L2codePlacer",L1code);
