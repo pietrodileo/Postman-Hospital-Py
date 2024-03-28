@@ -1,0 +1,78 @@
+// This is a generic test script to test the response received from the web service through postman
+
+pm.test("Response status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+
+pm.test("Content type is application/json", function () {
+  pm.expect(pm.response.headers.get("Content-Type")).to.include("application/json");
+});
+
+
+pm.test("Entry array is present and contains at least one element", function () {
+    const responseData = pm.response.json();
+    
+    pm.expect(responseData).to.be.an('object');
+    pm.expect(responseData.entry).to.exist.and.to.be.an('array').that.is.not.empty;
+});
+
+
+pm.test("Entry object contains fullUrl and resource fields", function () {
+    const responseData = pm.response.json();
+
+    pm.expect(responseData.entry).to.be.an('array');
+    responseData.entry.forEach(function(entry) {
+        pm.expect(entry.fullUrl).to.exist;
+        pm.expect(entry.resource).to.exist;
+    });
+});
+
+// Represent the received response as a visual table to facilitate easier testing
+var template = `
+<style type="text/css">
+    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}
+    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}
+    .tftable tr {background-color:#ffffff;}
+    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}
+    .tftable tr:hover {background-color:#e0ffff;}
+</style>
+
+<table class="tftable" border="1">
+    <tr>
+        <th>Full URL</th>
+        <th>Resource Type</th>
+        <th>Resource ID</th>
+        <th>Resource Profile</th>
+        <th>Event Coding System</th>
+        <th>Source Name</th>
+        <th>Response Identifier</th>
+        <th>Response Code</th>
+        <th>Issue Severity</th>
+        <th>Issue Code</th>
+        <th>Issue Diagnostics</th>
+    </tr>
+    
+    {{#each response.entry}}
+        <tr>
+            <td>{{fullUrl}}</td>
+            <td>{{resource.resourceType}}</td>
+            <td>{{resource.id}}</td>
+            <td>{{resource.meta.profile}}</td>
+            <td>{{resource.eventCoding.system}}</td>
+            <td>{{resource.source.name}}</td>
+            <td>{{resource.response.identifier}}</td>
+            <td>{{resource.response.code}}</td>
+            <td>{{resource.issue.0.severity}}</td>
+            <td>{{resource.issue.0.code}}</td>
+            <td>{{resource.issue.0.diagnostics}}</td>
+        </tr>
+    {{/each}}
+</table>
+`;
+
+function constructVisualizerPayload() {
+    return { response: pm.response.json() }
+}
+
+pm.visualizer.set(template, constructVisualizerPayload());
