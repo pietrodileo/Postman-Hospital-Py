@@ -6,7 +6,7 @@
     "timestamp": "{{Date}}",
     "meta": {
         "versionId": "1",
-        "profile":  [
+        "profile": [
             "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleNotificaServente"
         ]
     },
@@ -119,12 +119,12 @@
                         "valueString": "Il paziente ha riferito di avere avuto episodi di vertigini negli ultimi mesi"
                     },
                     {
-"url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterDettaglioOperatore",
-"valueString": "Si è provveduto alla raccolta dei campioni biologoci del paziente"
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterDettaglioOperatore",
+                        "valueString": "Si è provveduto alla raccolta dei campioni biologoci del paziente"
                     },
                     {
-"url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterNotePaziente",
-"valueString": "Sono stati prelevati campioni di sangue dal paziente per l'esecuzione degli esami di laboratorio prescritti."
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterNotePaziente",
+                        "valueString": "Sono stati prelevati campioni di sangue dal paziente per l'esecuzione degli esami di laboratorio prescritti."
                     }
                 ]
             }
@@ -154,9 +154,9 @@
                         "value": "{{OMRServiceUID1}}"
                     }
                 ],
-                "category":  [
+                "category": [
                     {
-                        "coding":  [
+                        "coding": [
                             {
                                 "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
                                 "code": "1",

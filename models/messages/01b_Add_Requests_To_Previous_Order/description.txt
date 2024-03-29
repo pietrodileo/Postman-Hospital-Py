@@ -1,5 +1,8 @@
 # Add requests to a previous order
 
+## Questa feature è sospesa
+### Se un richiedente invia all'OMR un ordine usando lo stesso requisition number, gli verrà restituito un messaggio di errore. La funzionalità viene perciò sospesa.
+
 In questa cartella sono contenuti i messaggi che il laboratorio (come ER) invia per richiedere all'OMR l'aggiunta di 1 o 2 prestazioni ad un ordine che aveva già precedentemente richiesto:
 
   * "*ER Add 1 Request To Previous Order*": richiesta di aggiunta di 1 prestazione ad un ordine già esistente;
