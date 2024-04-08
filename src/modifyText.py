@@ -5,6 +5,9 @@ class TextModifier:
     def __init__(self, text):
         self.text = text
 
+    def append_texts(self, additional_text):
+        self.text += additional_text
+
     def replace_placeholders(self, L1, L2, CodAppl, NomeSoftware, CollectionName, ApplName):
         # Generate unique IDs
         UID1 = str(uuid.uuid4())

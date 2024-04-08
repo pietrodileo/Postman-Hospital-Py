@@ -1,0 +1,147 @@
+// Crea una stringa in formato ISO 8601 per la data e l'orario
+const now = new Date();
+const isoString = now.toISOString();
+pm.collectionVariables.set("Date", isoString);
+
+// Definisci il nome del laboratorio
+const softwareName = "NomeSoftware_VSC"   
+pm.collectionVariables.set("NomeSoftware", softwareName);
+
+console.log("");
+console.log("This is the pre request script of a new order message, generated at: " + pm.collectionVariables.get("Date") + " by " + pm.collectionVariables.get("NomeSoftware"));
+
+var requisitionKey = "requisition";
+
+// Verifica se la variabile "requisition" è stata precedentemente dichiarata
+// Se non è stata dichiarata, imposta il valore predefinito a 1
+let requisition = pm.collectionVariables.has(requisitionKey)
+  ? pm.collectionVariables.get(requisitionKey)
+  : 1;
+
+if (requisition !== 1) {
+    requisition++;
+}
+
+// Aggiungi zeri iniziali fino a raggiungere la lunghezza desiderata
+requisition = requisition.toString().padStart(8, "0");
+
+// Inserisci i trattini nella variabile "requisition"
+var formattedRequisition = requisition.slice(0, 4) + "-" + requisition.slice(4) + '-';
+
+// Stampa il valore formattato della variabile "requisition"
+console.log("The formatted requisition is:", formattedRequisition);
+
+// Aggiorna il valore della variabile di raccolta "requisition"
+pm.collectionVariables.set(requisitionKey, requisition);
+pm.collectionVariables.set("formattedRequisition", formattedRequisition);
+
+// Aggiungi una variabile di environment per testare l'aggiunta di richieste extra dal filler (Exam Executed o Order Completed)
+pm.environment.set("formattedRequisitionPlacer", formattedRequisition);
+
+// (Se necessario) Rimuovi la variabile "requisition" dalla collezione di variabili
+//pm.collectionVariables.unset(requisitionKey);
+
+// Genera un UUID casuale utilizzando $randomUUID
+const BundleID = pm.variables.replaceIn("{{$randomUUID}}").toString();
+pm.collectionVariables.set("BundleID", BundleID);
+
+// Stampa il valore del Bundle ID
+console.log("The Bundle UID is:", BundleID);
+
+// Definiamo una lista di valori predefiniti per le Service Request e i relativi codici SISS
+const serviceRequestList = ["Emocromo completo", "Insulina a digiuno", "Glicemia a digiuno", "Magnesio totale nelle urine", "Chetosteroidi nelle urine", "Cortisolo nel sangue"];
+const SISSCodeList = ["90622", "90291", "90271", "90325", "90013", "90352"];
+
+// Function to get random values and SISS codes from the provided lists without repetition
+function getRandomValuesAndSISS(serviceRequestList, SISSCodeList) {
+    const getRandomIndexWithout = (exclude) => {
+        let randomIndex;
+        do {
+            randomIndex = Math.floor(Math.random() * serviceRequestList.length);
+        } while (exclude.includes(randomIndex));
+        return randomIndex;
+    };
+
+    let indexes = [];
+    for (let i = 0; i < 4; i++) {
+        indexes.push(getRandomIndexWithout(indexes));
+    }
+
+    const values = [];
+    const SISSCodes = [];
+    for (let i = 0; i < 4; i++) {
+        values.push(serviceRequestList[indexes[i]]);
+        SISSCodes.push(SISSCodeList[indexes[i]]);
+    }
+
+    return {
+        value1: values[0], SISS1: SISSCodes[0],
+        value2: values[1], SISS2: SISSCodes[1],
+        value3: values[2], SISS3: SISSCodes[2],
+        value4: values[3], SISS4: SISSCodes[3]
+    };
+}
+
+// Get random values and SISS codes
+const randomValuesAndSISS = getRandomValuesAndSISS(serviceRequestList, SISSCodeList);
+
+// Assegna i valori casuali alle variabili delle Service Request
+pm.environment.set("ServiceRequest1", randomValuesAndSISS.value1);
+pm.environment.set("SR1SISS", randomValuesAndSISS.SISS1);
+pm.environment.set("ServiceRequest2", randomValuesAndSISS.value2);
+pm.environment.set("SR2SISS", randomValuesAndSISS.SISS2);
+pm.environment.set("ServiceRequest3", randomValuesAndSISS.value3);
+pm.environment.set("SR3SISS", randomValuesAndSISS.SISS3);
+pm.environment.set("ServiceRequest4", randomValuesAndSISS.value4);
+pm.environment.set("SR4SISS", randomValuesAndSISS.SISS4);
+
+// Stampa le prestazioni richieste casualmente
+console.log("Service Request 1 is:", randomValuesAndSISS.value1, randomValuesAndSISS.SISS1, 
+            "; Service Request 2 is:", randomValuesAndSISS.value2, randomValuesAndSISS.SISS2,
+            "; Service Request 3 is:", randomValuesAndSISS.value3, randomValuesAndSISS.SISS3,
+            "; Service Request 4 is:", randomValuesAndSISS.value4, randomValuesAndSISS.SISS4);
+
+
+// Crea un UUID per il Message Header
+const MessageHeaderID = pm.variables.replaceIn("{{$randomUUID}}").toString();
+pm.collectionVariables.set("MessageHeaderID", MessageHeaderID);
+pm.collectionVariables.set("MessageHeaderFullUrl", "MessageHeader"+"/"+MessageHeaderID);
+console.log("MessageHeaderID:", MessageHeaderID);
+
+// Crea un placer order number (identificativo univoco dell'ordine) tramite il ServiceOrderNumber
+var serviceIDKey = "serviceID";
+
+let serviceID = pm.collectionVariables.has(serviceIDKey)
+  ? pm.collectionVariables.get(serviceIDKey)
+  : 1;
+
+if (serviceID !== 1) {
+  serviceID++;
+}
+
+serviceIDString = serviceID.toString().padStart(4, "0");
+secondServiceIDString = (serviceID+1).toString().padStart(4, "0");
+pm.collectionVariables.set(serviceIDKey, serviceID);
+serviceID++;
+pm.collectionVariables.set(serviceIDKey,serviceID);
+console.log("Service ID:",serviceID)
+
+// Dichiara le informazioni sull'Ente
+const CodiceApplicativo = "CodiceApplicativo_VSC"  
+pm.collectionVariables.set("CodiceApplicativo", CodiceApplicativo);
+const L1code = "L1code_VSC"   
+pm.collectionVariables.set("L1code", L1code);
+const L2code = "L2code_VSC"   
+pm.collectionVariables.set("L2code", L2code);
+
+console.log("L1 code: ",pm.collectionVariables.get("L1code"), "L2 code: ",pm.collectionVariables.get("L2code"))
+console.log("CodiceApplicativo: ",pm.collectionVariables.get("CodiceApplicativo"))
+console.log("URL Mock Service: ",pm.collectionVariables.get("URL_Mock"))
+
+pm.collectionVariables.set("PlacerOrderNumber", CodiceApplicativo+"-"+serviceIDString);
+pm.collectionVariables.set("PlacerOrderNumber2", CodiceApplicativo+"-"+secondServiceIDString);
+console.log("");
+
+// Dichiara le variabili di ambiente L1 placer e L2 placer da utilizzare negli altri flussi per identificare il placer
+pm.environment.set("L1codePlacer",L1code);
+pm.environment.set("L2codePlacer",L1code);

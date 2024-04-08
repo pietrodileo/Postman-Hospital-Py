@@ -50,7 +50,8 @@ class RequestItem:
         # Define the paths for pre-request and test scripts
         pre_req_script_path = os.path.join(self.itemFolder, "preRequestScript.txt")
         test_script_path = os.path.join(self.itemFolder, "testScript.txt")
-
+        generic_test_script_path = "models\\collection\\generic_test_script.txt"
+        
         # Add the pre-request script
         if os.path.exists(pre_req_script_path):
             with open(pre_req_script_path, "r", encoding="utf-8") as pre_req:
@@ -62,17 +63,27 @@ class RequestItem:
         else:
             print(f"Pre-request script not found at '"+pre_req_script_path)
 
-        # Add the test script
+        # Add the generic test script
+        with open(generic_test_script_path, "r", encoding="utf-8") as test:
+            generic_test_content = test.read()
+
+        # Add custom test script
         if os.path.exists(test_script_path):
             with open(test_script_path, "r", encoding="utf-8") as test:
-                test_content = test.read()
+                custom_test_content = test.read()
             # Modify text
-            textModTest = TextModifier(test_content)
+            textModTest = TextModifier(custom_test_content)
             textModTest.replace_placeholders(L1, L2, CodAppl, NomeSoftware, CollectionName, ApplName)
+            # append the generic test content
+            textModTest.append_texts(generic_test_content)
             self.request_data["event"][1]["script"]["exec"] = textModTest.text
         else:
-            print(f"Test script not found at '"+test_script_path)
-    
+            print(f"Custom test script not found at {test_script_path}. Generic test script will be used.")
+            # Modify text
+            textModTest = TextModifier(generic_test_content)
+            textModTest.replace_placeholders(L1, L2, CodAppl, NomeSoftware, CollectionName, ApplName)
+            self.request_data["event"][1]["script"]["exec"] = textModTest.text
+
     def add_request_body(self, json_file_path, L1, L2, CodAppl, NomeSoftware, CollectionName, ApplName):
         try:
             with open(json_file_path, "r", encoding="utf-8") as json_file:

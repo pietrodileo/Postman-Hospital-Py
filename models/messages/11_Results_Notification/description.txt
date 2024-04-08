@@ -1,0 +1,6 @@
+# Results Notification
+
+In questa cartella sono contenuti i messaggi che il laboratorio (come ES) invia per notificare al richiedente i risultati degli esami completati:
+
+  * "*ES Sends Results of 1 Request*": richiesta di invio dei risultati al richiedente relativi a 1 prestazione;
+  * "*ES Sends Results of 2 Requests*": richiesta di invio dei risultati al richiedente relativi a 2 prestazioni;

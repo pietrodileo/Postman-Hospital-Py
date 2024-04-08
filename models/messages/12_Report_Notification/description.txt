@@ -1,0 +1,6 @@
+# Report Notification
+
+In questa cartella sono contenuti i messaggi che il laboratorio (come ES) invia per notificare al richiedente i referti degli esami completati:
+
+  * "*ES Sends Report of 1 Request*": richiesta di invio dei referti al richiedente relativi a 1 prestazione;
+  * "*ES Sends Reports of 2 Requests*": richiesta di invio dei referti al richiedente relativi a 2 prestazioni;
