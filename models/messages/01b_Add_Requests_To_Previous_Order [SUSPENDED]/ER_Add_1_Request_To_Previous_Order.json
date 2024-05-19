@@ -307,7 +307,7 @@
                     {
                         "coding": [
                             {
-                                "code": "0801",
+                                "code": "{{L3code}}",
                                 "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto"
                             }
                         ]
@@ -334,7 +334,7 @@
                 },
                 "subject": {
                     "reference": "Patient/6686199c-f386-4345-a178-5e98023575f7",
-                    "display": "Centoottantatre Prodsiss"
+                    "display": "Nome Cognome Paziente"
                 },
                 "encounter": {
                     "reference": "Encounter/ace5cde7-33f3-4d36-9d6b-9a837ed7fdcb",
@@ -489,7 +489,7 @@
                 },
                 "identifier": [
                     {
-                        "value": "0801",
+                        "value": "{{L3code}}",
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto"
                     }
                 ],
@@ -512,7 +512,7 @@
                 },
                 "identifier": [
                     {
-                        "value": "121314",
+                        "value": "{{L4code}}",
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeAmbulatorio"
                     }
                 ],
@@ -537,7 +537,7 @@
                     {
                         "url": "http://hl7.org/fhir/StructureDefinition/patient-birthPlace",
                         "valueAddress": {
-                            "city": "FRANCIA",
+                            "city": "{{$randomCity}}",
                             "extension": [
                                 {
                                     "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabAddressCodiceISTAT",
@@ -579,9 +579,9 @@
                 ],
                 "name": [
                     {
-                        "family": "PRODSISS",
+                        "family": "{{$randomLastName}}",
                         "given": [
-                            "CENTOOTTANTATRE"
+                            "{{$randomFirstName}}"
                         ]
                     }
                 ],

@@ -1,0 +1,8 @@
+# Filler Sends Labels
+
+In questa cartella sono contenuti i messaggi che il laboratorio (come ES) invia all'OMR per comunicare l'accettazione ad eseguire le prestazioni e le etichette, in formato strutturato o pdf, per 1 o 2 prestazioni:
+
+  * "*ES Sends Structured Labels 1 request*": invio della notifica di accettazione + etichette sotto forma di dati strutturati per 1 prestazione;
+  * "*ES Sends Structured Labels 2 requests*": invio della notifica di accettazione + etichette sotto forma di dati strutturati per 2 prestazioni;
+  * "*ES Sends PDF Labels 1 request*": invio della notifica di accettazione + etichette in pdf per 1 prestazione;
+  * "*ES Sends PDF Labels 2 requests*": invio della notifica di accettazione + etichette in pdf per 2 prestazioni;

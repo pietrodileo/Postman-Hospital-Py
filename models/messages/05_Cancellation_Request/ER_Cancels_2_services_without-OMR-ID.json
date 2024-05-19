@@ -169,7 +169,7 @@
                         },
                         {
                             "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto",
-                            "code": "0801"
+                            "code": "{{L3code}}"
                         },
                         {
                             "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio",
@@ -186,7 +186,7 @@
                 },
                 "subject": {
                     "reference": "Patient/6686199c-f386-4345-a178-5e98023575f7",
-                    "display": "Centoottantatre Prodsiss"
+                    "display": "Nome Cognome Paziente"
                 },
                 "encounter": {
                     "reference": "Encounter/ace5cde7-33f3-4d36-9d6b-9a837ed7fdcb",
@@ -269,7 +269,7 @@
                         },
                         {
                             "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto",
-                            "code": "0801"
+                            "code": "{{L3code}}"
                         },
                         {
                             "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio",
@@ -286,7 +286,7 @@
                 },
                 "subject": {
                     "reference": "Patient/6686199c-f386-4345-a178-5e98023575f7",
-                    "display": "Centoottantatre Prodsiss"
+                    "display": "Nome Cognome Paziente"
                 },
                 "encounter": {
                     "reference": "Encounter/ace5cde7-33f3-4d36-9d6b-9a837ed7fdcb",
