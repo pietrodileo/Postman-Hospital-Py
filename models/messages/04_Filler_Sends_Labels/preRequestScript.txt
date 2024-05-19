@@ -4,7 +4,7 @@ const isoString = now.toISOString();
 pm.collectionVariables.set("Date", isoString);
 
 console.log("");
-console.log("This is the pre request script of a filler check-in accepted notification message, generated at: " + pm.collectionVariables.get("Date") + " by " + pm.collectionVariables.get("NomeSoftware"));
+console.log("This is the pre request script of a filler labels notification message, generated at: " + pm.collectionVariables.get("Date") + " by " + pm.collectionVariables.get("NomeSoftware"));
 
 // Crea un UUID per il Message Header
 const MessageHeaderID = pm.variables.replaceIn("{{$randomUUID}}").toString();

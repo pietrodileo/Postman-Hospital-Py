@@ -135,7 +135,7 @@
                                     "valueString": "999215"
                                 }
                             ],
-                            "city": "FRANCIA"
+                            "city": "{{$randomCity}}"
                         }
                     }
                 ],
@@ -328,9 +328,9 @@
                 ],
                 "name":  [
                     {
-                        "family": "PRODSISS",
+                        "family": "{{$randomLastName}}",
                         "given":  [
-                            "CENTOOTTANTATRE"
+                            "{{$randomFirstName}}"
                         ]
                     }
                 ],
@@ -1179,7 +1179,7 @@
                 },
                 "identifier":  [
                     {
-                        "value": "0801",
+                        "value": "{{L3code}}",
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto"
                     }
                 ],
