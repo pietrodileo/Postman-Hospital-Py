@@ -49,7 +49,7 @@ def main(save_to_log_file=True, delete_old_log=True):
                 with open(log_file_path, "a") as log_file:  # Open the log file in append mode
                     sys.stdout = log_file
                     # Run the main function for the current collection
-                    _run_main(collectionName, L1, L2, codAppl, nomeSoftware, applName, output_collection_path)
+                    _run_main(collectionName, L1, L2,L3, L4, codAppl, nomeSoftware, applName, output_collection_path)
                     sys.stdout = sys.__stdout__
             
             # Build complete 
@@ -57,7 +57,7 @@ def main(save_to_log_file=True, delete_old_log=True):
     except Exception as e:
         print(f"Error reading XLSX: {e}")
 
-def _run_main(collectionName, L1, L2, codAppl, nomeSoftware, applName, output_collection_path):
+def _run_main(collectionName, L1, L2, L3, L4, codAppl, nomeSoftware, applName, output_collection_path):
     # Create an instance of the Collection class
     collection = Collection(base_collection_path, collection_properties_path)
 
@@ -66,7 +66,7 @@ def _run_main(collectionName, L1, L2, codAppl, nomeSoftware, applName, output_co
 
     # Build the collection specifying a name and description from a text file
     collection.build_collection(CollectionName=collectionName, descriptionPath="./models/collection/description.txt",
-                                L1=L1, L2=L2, CodAppl=codAppl, NomeSoftware=nomeSoftware, ApplName=applName)
+                                L1=L1, L2=L2, L3=L3, L4=L4, CodAppl=codAppl, NomeSoftware=nomeSoftware, ApplName=applName)
 
     # Load collection variables
     collection.load_variables()
@@ -94,9 +94,9 @@ def _run_main(collectionName, L1, L2, codAppl, nomeSoftware, applName, output_co
                 request = RequestItem(base_collection_path, current_folder)
                 json_name = json_file[:-5]  # Remove the last 5 characters (i.e., ".json")
                 request.add_info(json_name, collection_properties_path)
-                request.add_event(L1=L1, L2=L2, CodAppl=codAppl, NomeSoftware=nomeSoftware,
+                request.add_event(L1=L1, L2=L2, L3=L3, L4=L4, CodAppl=codAppl, NomeSoftware=nomeSoftware,
                                   CollectionName=collectionName, ApplName=applName)
-                request.add_request_body(json_file_path=json_file_path, L1=L1, L2=L2, CodAppl=codAppl,
+                request.add_request_body(json_file_path=json_file_path, L1=L1, L2=L2, L3=L3, L4=L4, CodAppl=codAppl,
                                          NomeSoftware=nomeSoftware, CollectionName=collectionName, ApplName=applName)
                 item.add_request_to_item(request.request_data)
 
