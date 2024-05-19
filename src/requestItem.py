@@ -46,7 +46,7 @@ class RequestItem:
         else:
             print("No item data loaded. Create a RequestItem object first.")
             
-    def add_event(self, L1, L2, CodAppl, NomeSoftware, CollectionName, ApplName):
+    def add_event(self, L1, L2, L3, L4, CodAppl, NomeSoftware, CollectionName, ApplName):
         # Define the paths for pre-request and test scripts
         pre_req_script_path = os.path.join(self.itemFolder, "preRequestScript.txt")
         test_script_path = os.path.join(self.itemFolder, "testScript.txt")
@@ -58,7 +58,7 @@ class RequestItem:
                 pre_req_content = pre_req.read()
             # Modify text
             textMod = TextModifier(pre_req_content)
-            textMod.replace_placeholders(L1, L2, CodAppl, NomeSoftware, CollectionName, ApplName)
+            textMod.replace_placeholders(L1, L2, L3, L4, CodAppl, NomeSoftware, CollectionName, ApplName)
             self.request_data["event"][0]["script"]["exec"] = textMod.text
         else:
             print(f"Pre-request script not found at '"+pre_req_script_path)
@@ -73,7 +73,7 @@ class RequestItem:
                 custom_test_content = test.read()
             # Modify text
             textModTest = TextModifier(custom_test_content)
-            textModTest.replace_placeholders(L1, L2, CodAppl, NomeSoftware, CollectionName, ApplName)
+            textModTest.replace_placeholders(L1, L2, L3, L4, CodAppl, NomeSoftware, CollectionName, ApplName)
             # append the generic test content
             textModTest.append_texts(generic_test_content)
             self.request_data["event"][1]["script"]["exec"] = textModTest.text
@@ -81,10 +81,10 @@ class RequestItem:
             print(f"Custom test script not found at {test_script_path}. Generic test script will be used.")
             # Modify text
             textModTest = TextModifier(generic_test_content)
-            textModTest.replace_placeholders(L1, L2, CodAppl, NomeSoftware, CollectionName, ApplName)
+            textModTest.replace_placeholders(L1, L2, L3, L4, CodAppl, NomeSoftware, CollectionName, ApplName)
             self.request_data["event"][1]["script"]["exec"] = textModTest.text
 
-    def add_request_body(self, json_file_path, L1, L2, CodAppl, NomeSoftware, CollectionName, ApplName):
+    def add_request_body(self, json_file_path, L1, L2, L3, L4, CodAppl, NomeSoftware, CollectionName, ApplName):
         try:
             with open(json_file_path, "r", encoding="utf-8") as json_file:
                 request_body = json.load(json_file)
@@ -93,7 +93,7 @@ class RequestItem:
                     request_body = json.dumps(request_body, indent=4)
                 # Modify text
                 textMod = TextModifier(request_body)
-                textMod.replace_placeholders(L1, L2, CodAppl, NomeSoftware, CollectionName, ApplName)
+                textMod.replace_placeholders(L1, L2, L3, L4, CodAppl, NomeSoftware, CollectionName, ApplName)
                 self.request_data["request"]["body"]["raw"] = textMod.text
         except FileNotFoundError:
             print(f"JSON file not found at: {json_file_path}")

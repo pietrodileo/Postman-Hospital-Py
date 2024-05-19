@@ -19,6 +19,10 @@ const L1code = "L1code_VSC"
 pm.collectionVariables.set("L1code", L1code);
 const L2code = "L2code_VSC"   
 pm.collectionVariables.set("L2code", L2code);
+const L3code = "L3code_VSC"   
+pm.collectionVariables.set("L3code", L3code);
+const L4code = "L4code_VSC"   
+pm.collectionVariables.set("L4code", L4code);
 const softwareName = "NomeSoftware_VSC"   
 pm.collectionVariables.set("NomeSoftware", softwareName);
 

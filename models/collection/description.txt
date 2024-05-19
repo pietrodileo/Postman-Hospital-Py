@@ -5,6 +5,8 @@
 Questa collection è stata creata automaticamente in data currentDate_VSC, per simulare l'applicativo di un laboratorio di analisi che possieda i seguenti parametri: 
 - **L1** = L1code_VSC;
 - **L2** = L2code_VSC;
+- **L3** = L3code_VSC;
+- **L4** = L4code_VSC;
 - **Codice Applicativo** = CodiceApplicativo_VSC;
 - **Nome Software** = NomeOspedale_VSC;
 - **Nome Applicativo** = ApplName_VSC;
