@@ -175,7 +175,7 @@
                 "code": {
                     "coding": [
                         {
-                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale",
                             "code": "{{SR1SISS}}",
                             "display": "{{ServiceRequest1}}"
                         }

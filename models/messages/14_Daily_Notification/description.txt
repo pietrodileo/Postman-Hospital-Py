@@ -1,0 +1,5 @@
+# Daily Notification
+
+In questa cartella sono contenuti i messaggi che il laboratorio invia per notificare a OMR quali sono gli esami che ha completato internamente:
+
+  *"*Lab sends Daily Notification of 5 Requests*": notifica a OMR di aver completato 5 prestazioni internamente;

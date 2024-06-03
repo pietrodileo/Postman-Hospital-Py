@@ -104,6 +104,7 @@ pm.environment.set("SR2SISS", randomSISS2);
 console.log("Service Request 1 is:", randomValue, randomSISS, "; Service Request 2 is:", randomValue2, randomSISS2);
 
 console.log("L1 code: ",pm.collectionVariables.get("L1code"), "L2 code: ",pm.collectionVariables.get("L2code"))
+console.log("L3 code: ",pm.collectionVariables.get("L3code"), "L4 code: ",pm.collectionVariables.get("L4code"))
 console.log("CodiceApplicativo: ",pm.collectionVariables.get("CodiceApplicativo"))
 
 // Dichiara le variabili di ambiente L1 placer e L2 placer da utilizzare negli altri flussi per identificare il placer

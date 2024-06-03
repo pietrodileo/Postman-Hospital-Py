@@ -289,7 +289,7 @@
                 "code": {
                     "coding": [
                         {
-                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale",
                             "code": "{{SR1SISS}}",
                             "display": "{{ServiceRequest1}}"
                         }
@@ -374,7 +374,7 @@
                 "code": {
                     "coding": [
                         {
-                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale",
                             "code": "15074-8",
                             "display": "Glucose [Moles/volume] in Blood"
                         }
@@ -424,7 +424,7 @@
                     "bodySite": {
                         "coding": [
                             {
-                                "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
+                                "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale",
                                 "code": "TBD",
                                 "display": "TBD"
                             }

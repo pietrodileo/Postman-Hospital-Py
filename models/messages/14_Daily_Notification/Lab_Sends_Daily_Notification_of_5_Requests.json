@@ -1,0 +1,467 @@
+{
+    "richiesta": "Notifica Giornaliera",
+    "resourceType": "Bundle",
+    "id": "{{BundleID}}",
+    "type": "message",
+    "timestamp": "{{Date}}",
+    "meta": {
+        "versionId": "1",
+        "profile": [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleNotificaGiornaliera"
+        ]
+    },
+    "entry": [
+        {
+            "fullUrl": "{{MessageHeaderFullUrl}}",
+            "resource": {
+                "resourceType": "MessageHeader",
+                "id": "{{MessageHeaderID}}",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabMessageHeader"
+                    ],
+                    "lastUpdated": "2022-11-16T15:00:51+01:00"
+                },
+                "eventCoding": {
+                    "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodiceEventoMessageHeader",
+                    "code": "OML^O21",
+                    "display": "OML^O21^OML_O21"
+                },
+                "destination": [
+                    {
+                        "name": "OMR",
+                        "endpoint": "localhost:52773/fhir/retilab/Omr"
+                    }
+                ],
+                "source": {
+                    "name": "{{CodiceApplicativo}}",
+                    "software": "{{NomeSoftware}}",
+                    "endpoint": "{{URL_Mock}}"
+                },
+                "focus": [
+                    {
+                        "reference": "ServiceRequest/esempio-servicerequest-notifica-giornaliera"
+                    },
+                    {
+                        "reference": "ServiceRequest/esempio-servicerequest-notifica-giornaliera-2"
+                    },
+                    {
+                        "reference": "ServiceRequest/esempio-servicerequest-notifica-giornaliera-3"
+                    },
+                    {
+                        "reference": "ServiceRequest/esempio-servicerequest-notifica-giornaliera-4"
+                    },
+                    {
+                        "reference": "ServiceRequest/esempio-servicerequest-notifica-giornaliera-5"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "ServiceRequest/esempio-servicerequest-notifica-giornaliera",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "esempio-servicerequest-notifica-giornaliera",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabServiceRequestRichiestaEsamiLab"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
+                        "value": "5108"
+                    }
+                ],
+                "requisition": {
+                    "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
+                    "value": "Placer Requisition Value"
+                },
+                "status": "completed",
+                "intent": "order",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "2",
+                                "display": "Impegnativa proveniente dal CUP"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "urgent",
+                "code": {
+                    "coding": [
+                        {
+                            "display": "E00777009",
+                            "code": "GLUCOSIO",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale"
+                        },
+                        {
+                            "display": "11221",
+                            "code": "GLUCOSIO",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLocale"
+                        }
+                    ]
+                },
+                "quantityQuantity": {
+                    "value": 1
+                },
+                "occurrencePeriod": {
+                    "start": "2022-11-16T14:59:37+01:00",
+                    "end": "2022-12-16T14:59:37+01:00"
+                },
+                "authoredOn": "2022-11-16T14:59:37+01:00",
+                "performer": [
+                    {
+                        "reference": "Organization/esempio-l4"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "ServiceRequest/esempio-servicerequest-notifica-giornaliera-2",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "esempio-servicerequest-notifica-giornaliera-2",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabServiceRequestRichiestaEsamiLab"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
+                        "value": "5108"
+                    }
+                ],
+                "requisition": {
+                    "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
+                    "value": "40093-3965-"
+                },
+                "status": "completed",
+                "intent": "order",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "2",
+                                "display": "Impegnativa proveniente dal CUP"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "urgent",
+                "code": {
+                    "coding": [
+                        {
+                            "display": "E00777010",
+                            "code": "EMOGLOBINA GLICATA",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale"
+                        },
+                        {
+                            "display": "11222",
+                            "code": "EMOGLOBINA GLICATA",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLocale"
+                        }
+                    ]
+                },
+                "quantityQuantity": {
+                    "value": 1
+                },
+                "occurrencePeriod": {
+                    "start": "2022-11-16T14:59:37+01:00",
+                    "end": "2022-12-16T14:59:37+01:00"
+                },
+                "authoredOn": "2022-11-16T14:59:37+01:00",
+                "performer": [
+                    {
+                        "reference": "Organization/esempio-l4"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "ServiceRequest/esempio-servicerequest-notifica-giornaliera-3",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "esempio-servicerequest-notifica-giornaliera-3",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabServiceRequestRichiestaEsamiLab"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
+                        "value": "5108"
+                    }
+                ],
+                "requisition": {
+                    "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
+                    "value": "40093-3965-"
+                },
+                "status": "completed",
+                "intent": "order",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "2",
+                                "display": "Impegnativa proveniente dal CUP"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "urgent",
+                "code": {
+                    "coding": [
+                        {
+                            "display": "E00777012",
+                            "code": "GLOBULI BIANCHI",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale"
+                        },
+                        {
+                            "display": "11223",
+                            "code": "GLOBULI BIANCHI",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLocale"
+                        }
+                    ]
+                },
+                "quantityQuantity": {
+                    "value": 1
+                },
+                "occurrencePeriod": {
+                    "start": "2022-11-16T14:59:37+01:00",
+                    "end": "2022-12-16T14:59:37+01:00"
+                },
+                "authoredOn": "2022-11-16T14:59:37+01:00",
+                "performer": [
+                    {
+                        "reference": "Organization/esempio-l4"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "ServiceRequest/esempio-servicerequest-notifica-giornaliera-4",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "esempio-servicerequest-notifica-giornaliera-4",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabServiceRequestRichiestaEsamiLab"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
+                        "value": "5108"
+                    }
+                ],
+                "requisition": {
+                    "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
+                    "value": "40093-3965-"
+                },
+                "status": "completed",
+                "intent": "order",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "2",
+                                "display": "Impegnativa proveniente dal CUP"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "urgent",
+                "code": {
+                    "coding": [
+                        {
+                            "display": "E00777013",
+                            "code": "CLORO",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale"
+                        },
+                        {
+                            "display": "11224",
+                            "code": "CLORO",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLocale"
+                        }
+                    ]
+                },
+                "quantityQuantity": {
+                    "value": 1
+                },
+                "occurrencePeriod": {
+                    "start": "2022-11-16T14:59:37+01:00",
+                    "end": "2022-12-16T14:59:37+01:00"
+                },
+                "authoredOn": "2022-11-16T14:59:37+01:00",
+                "performer": [
+                    {
+                        "reference": "Organization/esempio-l4"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "ServiceRequest/esempio-servicerequest-notifica-giornaliera-5",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "esempio-servicerequest-notifica-giornaliera-5",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabServiceRequestRichiestaEsamiLab"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
+                        "value": "5108"
+                    }
+                ],
+                "requisition": {
+                    "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
+                    "value": "40093-3965-"
+                },
+                "status": "completed",
+                "intent": "order",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "2",
+                                "display": "Impegnativa proveniente dal CUP"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "urgent",
+                "code": {
+                    "coding": [
+                        {
+                            "display": "E00777014",
+                            "code": "POTASSIO",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale"
+                        },
+                        {
+                            "display": "11225",
+                            "code": "POTASSIO",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLocale"
+                        }
+                    ]
+                },
+                "quantityQuantity": {
+                    "value": 1
+                },
+                "occurrencePeriod": {
+                    "start": "2022-11-16T14:59:37+01:00",
+                    "end": "2022-12-16T14:59:37+01:00"
+                },
+                "authoredOn": "2022-11-16T14:59:37+01:00",
+                "performer": [
+                    {
+                        "reference": "Organization/esempio-l4"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "Organization/esempio-l4",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "esempio-l4",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationL4"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "value": "0002",
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeAmbulatorio"
+                    }
+                ],
+                "partOf": {
+                    "reference": "Organization/esempio-2-organization-l3"
+                }
+            }
+        },
+        {
+            "fullUrl": "Organization/esempio-2-organization-l3",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "esempio-2-organization-l3",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationL3"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "value": "5678",
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto"
+                    }
+                ],
+                "partOf": {
+                    "reference": "Organization/esempio-2-organization-l2"
+                }
+            }
+        },
+        {
+            "fullUrl": "Organization/esempio-2-organization-l2",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "esempio-2-organization-l2",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationL2"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "value": "1234",
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio"
+                    }
+                ],
+                "partOf": {
+                    "reference": "Organization/esempio-2-organization-l1"
+                }
+            }
+        },
+        {
+            "fullUrl": "Organization/esempio-2-organization-l1",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "esempio-2-organization-l1",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationL1"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "value": "309672",
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoEnte"
+                    }
+                ]
+            }
+        }
+    ]
+}
