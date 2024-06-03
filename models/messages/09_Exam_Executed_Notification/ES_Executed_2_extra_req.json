@@ -180,7 +180,7 @@
                 "code": {
                     "coding": [
                         {
-                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale",
                             "code": "{{SR2SISS}}",
                             "display": "{{ServiceRequest1}}"
                         }
@@ -274,7 +274,7 @@
                 "code": {
                     "coding": [
                         {
-                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale",
                             "code": "{{SR2SISS}}",
                             "display": "{{ServiceRequest1}}"
                         }

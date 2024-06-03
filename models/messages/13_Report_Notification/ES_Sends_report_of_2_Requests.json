@@ -99,7 +99,7 @@
                         {
                             "code": "11502-2",
                             "display": "Laboratory Report",
-                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC"
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale"
                         }
                     ]
                 },
@@ -559,7 +559,7 @@
                 "code": {
                     "coding":  [
                         {
-                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale",
                             "code": "{{SR1SISS}}",
                             "display": "{{ServiceRequest1}}"
                         }
@@ -642,7 +642,7 @@
                 "code": {
                     "coding":  [
                         {
-                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale",
                             "code": "{{SR2SISS}}",
                             "display": "{{ServiceRequest2}}"
                         }

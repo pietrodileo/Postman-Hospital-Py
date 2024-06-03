@@ -292,7 +292,7 @@
                 "code": {
                     "coding": [
                         {
-                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale",
                             "code": "{{SR3SISS}}",
                             "display": "{{ServiceRequest3}}"
                         }
@@ -400,7 +400,7 @@
                 "code": {
                     "coding": [
                         {
-                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale",
                             "code": "{{SR4SISS}}",
                             "display": "{{ServiceRequest4}}"
                         }
@@ -485,7 +485,7 @@
                 "code": {
                     "coding": [
                         {
-                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale",
                             "code": "15074-8",
                             "display": "Glucose [Moles/volume] in Blood"
                         }
@@ -518,7 +518,7 @@
                 "code": {
                     "coding": [
                         {
-                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale",
                             "code": "15074-8",
                             "display": "Glucose [Moles/volume] in Blood"
                         }
@@ -568,7 +568,7 @@
                     "bodySite": {
                         "coding": [
                             {
-                                "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
+                                "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale",
                                 "code": "TBD",
                                 "display": "TBD"
                             }
@@ -609,7 +609,7 @@
                     "bodySite": {
                         "coding": [
                             {
-                                "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLOINC",
+                                "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale",
                                 "code": "TBD",
                                 "display": "TBD"
                             }

@@ -139,6 +139,7 @@ const L4code = "L4code_VSC"
 pm.collectionVariables.set("L4code", L4code);
 
 console.log("L1 code: ",pm.collectionVariables.get("L1code"), "L2 code: ",pm.collectionVariables.get("L2code"))
+console.log("L3 code: ",pm.collectionVariables.get("L3code"), "L4 code: ",pm.collectionVariables.get("L4code"))
 console.log("CodiceApplicativo: ",pm.collectionVariables.get("CodiceApplicativo"))
 console.log("URL Mock Service: ",pm.collectionVariables.get("URL_Mock"))
 
