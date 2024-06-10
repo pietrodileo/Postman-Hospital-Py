@@ -29,3 +29,9 @@ pm.collectionVariables.set("NomeSoftware", softwareName);
 console.log("L1 code: ",pm.collectionVariables.get("L1code"), "L2 code: ",pm.collectionVariables.get("L2code"))
 console.log("L3 code: ",pm.collectionVariables.get("L3code"), "L4 code: ",pm.collectionVariables.get("L4code"))
 console.log("CodiceApplicativo: ",pm.collectionVariables.get("CodiceApplicativo"))
+
+// Genera un UUID casuale utilizzando $randomUUID
+const requisitionNumber = pm.variables.replaceIn("{{$randomUUID}}").toString();
+const requisitionNumber2 = pm.variables.replaceIn("{{$randomUUID}}").toString();
+pm.collectionVariables.set("requisitionNumber", requisitionNumber);
+pm.collectionVariables.set("requisitionNumber2", requisitionNumber2);

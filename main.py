@@ -100,6 +100,14 @@ def _run_main(collectionName, L1, L2, L3, L4, codAppl, nomeSoftware, applName, o
                                          NomeSoftware=nomeSoftware, CollectionName=collectionName, ApplName=applName)
                 item.add_request_to_item(request.request_data)
 
+            create_daily_notification = True
+            # Execute a routine for the daily notification message
+            if "Daily_Notification" in folder_name:
+                if create_daily_notification:
+                    daily_notification_number = 10
+                    print("adding a daily notification message of {daily_notification_number} requests") 
+                    
+                                    
             print("_" * 100)
             # Add the new folder to the collection
             collection.add_folder_to_collection(item.item_data)
