@@ -72,12 +72,12 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
-                        "value": "5108"
+                        "value": "{{$randomUUID}}"
                     }
                 ],
                 "requisition": {
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
-                    "value": "Placer Requisition Value"
+                    "value": "{{requisitionNumber}}"
                 },
                 "status": "completed",
                 "intent": "order",
@@ -136,12 +136,12 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
-                        "value": "5108"
+                        "value": "{{$randomUUID}}"
                     }
                 ],
                 "requisition": {
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
-                    "value": "40093-3965-"
+                    "value": "{{requisitionNumber2}}"
                 },
                 "status": "completed",
                 "intent": "order",
@@ -200,12 +200,12 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
-                        "value": "5108"
+                        "value": "{{$randomUUID}}"
                     }
                 ],
                 "requisition": {
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
-                    "value": "40093-3965-"
+                    "value": "{{requisitionNumber2}}"
                 },
                 "status": "completed",
                 "intent": "order",
@@ -264,12 +264,12 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
-                        "value": "5108"
+                        "value": "{{$randomUUID}}"
                     }
                 ],
                 "requisition": {
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
-                    "value": "40093-3965-"
+                    "value": "{{requisitionNumber}}"
                 },
                 "status": "completed",
                 "intent": "order",
@@ -328,12 +328,12 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
-                        "value": "5108"
+                        "value": "{{$randomUUID}}"
                     }
                 ],
                 "requisition": {
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
-                    "value": "40093-3965-"
+                    "value": "{{requisitionNumber}}"
                 },
                 "status": "completed",
                 "intent": "order",
@@ -391,7 +391,7 @@
                 },
                 "identifier": [
                     {
-                        "value": "0002",
+                        "value": "{{L4code}}",
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeAmbulatorio"
                     }
                 ],
@@ -413,7 +413,7 @@
                 },
                 "identifier": [
                     {
-                        "value": "5678",
+                        "value": "{{L3code}}",
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto"
                     }
                 ],
@@ -435,7 +435,7 @@
                 },
                 "identifier": [
                     {
-                        "value": "1234",
+                        "value": "{{L2code}}",
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio"
                     }
                 ],
@@ -457,7 +457,7 @@
                 },
                 "identifier": [
                     {
-                        "value": "309672",
+                        "value": "{{L1code}}",
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoEnte"
                     }
                 ]
