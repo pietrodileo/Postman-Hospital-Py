@@ -3,6 +3,7 @@ import uuid
 import random
 import math
 from datetime import datetime, timedelta
+import time 
 
 def generate_message_header():
     message_header_id = str(uuid.uuid4())
@@ -70,7 +71,8 @@ def generate_service_request(code, requisition_number, l4_code):
     random_uuid = str(uuid.uuid4())
     start_date = datetime.now().isoformat()
     end_date = (datetime.now() + timedelta(days=30)).isoformat()
-    
+    categoria_ordine = random.choice(["1", "2"])
+    categoria_display = "Impegnativa proveniente dal CUP" if categoria_ordine == "2" else "Richiesta"
     service_request = {
         "fullUrl": f"ServiceRequest/{random_uuid}",
         "resource": {
@@ -99,8 +101,8 @@ def generate_service_request(code, requisition_number, l4_code):
                     "coding": [
                         {
                             "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
-                            "code": "2",
-                            "display": "Impegnativa proveniente dal CUP"
+                            "code": categoria_ordine,
+                            "display": categoria_display
                         }
                     ]
                 }
@@ -126,6 +128,9 @@ def generate_service_request(code, requisition_number, l4_code):
             "occurrencePeriod": {
                 "start": start_date,
                 "end": end_date
+            },
+            "subject": {
+                "type": "Patient"
             },
             "authoredOn": start_date,
             "performer": [
@@ -186,7 +191,8 @@ def generate_bundle(n):
     min_length = 1  
     
     requisition_numbers = [str(uuid.uuid4()) for _ in range(random.randint(min_length, math.ceil(n / 10)))]
-
+    print(f"number of requisition numbers: {len(requisition_numbers)}")
+    
     # Generate ServiceRequests
     for i in range(n):
         # Choose one number randomly
@@ -212,10 +218,19 @@ def generate_bundle(n):
     return bundle
 
 if __name__ == "__main__":
-    num_service_requests = 10  # Change this to the desired number of ServiceRequests
+    # Measure start time
+    start_time = time.time()
+
+    num_service_requests = 1000 # Change this to the desired number of ServiceRequests
     bundle = generate_bundle(num_service_requests)
     # Write the JSON to a file
     with open('HUGE_daily_notification.json', 'w') as f:
         json.dump(bundle, f, indent=4)
 
     print("JSON saved to 'HUGE_daily_notification.json'")
+    print(f"A request containing {num_service_requests} ServiceRequests has been generated")
+    # Measure end time
+    end_time = time.time()
+    # Calculate elapsed time
+    elapsed_time = end_time - start_time
+    print(f"Elapsed Time to build the message: {elapsed_time:.9f} seconds ({elapsed_time / 60:.9f} minutes)")
