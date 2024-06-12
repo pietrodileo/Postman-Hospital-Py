@@ -81,6 +81,9 @@
                 },
                 "status": "completed",
                 "intent": "order",
+                "subject": {
+                    "type": "Patient"
+                },    
                 "category": [
                     {
                         "coding": [
@@ -145,6 +148,9 @@
                 },
                 "status": "completed",
                 "intent": "order",
+                "subject": {
+                    "type": "Patient"
+                },    
                 "category": [
                     {
                         "coding": [
@@ -209,6 +215,9 @@
                 },
                 "status": "completed",
                 "intent": "order",
+                "subject": {
+                    "type": "Patient"
+                },    
                 "category": [
                     {
                         "coding": [
@@ -267,6 +276,9 @@
                         "value": "{{$randomUUID}}"
                     }
                 ],
+                "subject": {
+                    "type": "Patient"
+                },    
                 "requisition": {
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
                     "value": "{{requisitionNumber}}"
@@ -337,6 +349,9 @@
                 },
                 "status": "completed",
                 "intent": "order",
+                "subject": {
+                    "type": "Patient"
+                },    
                 "category": [
                     {
                         "coding": [
