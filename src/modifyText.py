@@ -8,7 +8,7 @@ class TextModifier:
     def append_texts(self, additional_text):
         self.text += additional_text
 
-    def replace_placeholders(self, L1, L2, L3, L4, CodAppl, NomeSoftware, CollectionName, ApplName):
+    def replace_placeholders(self, L1, L2, L3, L4, CodAppl, NomeSoftware, OMRLabCode, CollectionName, ApplName):
         """
         Replaces placeholders in the text with the provided values.
 
@@ -19,6 +19,7 @@ class TextModifier:
             L4 (str): The value to replace the 'L4code_VSC' placeholder.
             CodAppl (str): The value to replace the 'CodiceApplicativo_VSC' placeholder.
             NomeSoftware (str): The value to replace the 'NomeSoftware_VSC' and 'NomeOspedale_VSC' placeholders.
+            OMRLabCode (str): The value to replace the 'OMRLabCode_VSC' placeholder.
             CollectionName (str): The value to replace the 'NomeCollection_VSC' placeholder.
             ApplName (str): The value to replace the 'ApplName_VSC' placeholder.
 
@@ -40,6 +41,7 @@ class TextModifier:
             'L2code_VSC': L2,
             'L3code_VSC': L3,
             'L4code_VSC': L4,
+            'OMRLabCode_VSC': OMRLabCode,
             'CodiceApplicativo_VSC': CodAppl,
             'NomeSoftware_VSC': NomeSoftware,
             'NomeOspedale_VSC': NomeSoftware,

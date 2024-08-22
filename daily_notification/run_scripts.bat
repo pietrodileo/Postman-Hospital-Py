@@ -24,7 +24,7 @@ if %errorlevel% neq 0 (
 echo Second script executed successfully.
 
 :: Execute the second Python script a second time in order to test the API error response
-::python send_post_request.py
+python send_post_request.py
 
 :: Check if the second script executed successfully
 if %errorlevel% neq 0 (

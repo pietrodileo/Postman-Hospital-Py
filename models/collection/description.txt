@@ -3,6 +3,7 @@
 ## NomeOspedale_VSC
 
 Questa collection è stata creata automaticamente in data currentDate_VSC, per simulare l'applicativo di un laboratorio di analisi che possieda i seguenti parametri: 
+- **Codice Laboratorio OMR** = OMRLabCode_VSC;
 - **L1** = L1code_VSC;
 - **L2** = L2code_VSC;
 - **L3** = L3code_VSC;

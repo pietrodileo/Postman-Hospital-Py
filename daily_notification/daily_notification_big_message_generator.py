@@ -221,7 +221,7 @@ if __name__ == "__main__":
     # Measure start time
     start_time = time.time()
 
-    num_service_requests = 1000 # Change this to the desired number of ServiceRequests
+    num_service_requests = 40000 # Change this to the desired number of ServiceRequests
     bundle = generate_bundle(num_service_requests)
     # Write the JSON to a file
     with open('HUGE_daily_notification.json', 'w') as f:

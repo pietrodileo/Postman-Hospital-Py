@@ -23,6 +23,8 @@ const L3code = "L3code_VSC"
 pm.collectionVariables.set("L3code", L3code);
 const L4code = "L4code_VSC"   
 pm.collectionVariables.set("L4code", L4code);
+const OMRLabCode = "OMRLabCode_VSC"   
+pm.collectionVariables.set("OMRLabCode", OMRLabCode);
 const softwareName = "NomeSoftware_VSC"   
 pm.collectionVariables.set("NomeSoftware", softwareName);
 
@@ -103,6 +105,7 @@ pm.environment.set("SR2SISS", randomSISS2);
 // Stampa le prestazioni richieste casualmente
 console.log("Service Request 1 is:", randomValue, randomSISS, "; Service Request 2 is:", randomValue2, randomSISS2);
 
+console.log("OMR Lab Code: ",pm.collectionVariables.get("OMRLabCode"))
 console.log("L1 code: ",pm.collectionVariables.get("L1code"), "L2 code: ",pm.collectionVariables.get("L2code"))
 console.log("L3 code: ",pm.collectionVariables.get("L3code"), "L4 code: ",pm.collectionVariables.get("L4code"))
 console.log("CodiceApplicativo: ",pm.collectionVariables.get("CodiceApplicativo"))

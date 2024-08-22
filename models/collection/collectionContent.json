@@ -168,6 +168,11 @@
             "type": "any"
         },
         {
+            "key": "OMRLabCodeFiller",
+            "value": "Codice Laboratorio OMR Ente Servente",
+            "type": "any"
+        },
+        {
             "key": "L1codeFiller",
             "value": "Codice L1 Ente Servente",
             "type": "any"

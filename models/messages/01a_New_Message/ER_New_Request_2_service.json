@@ -108,7 +108,7 @@
                         },
                         "value": "202300001",
                         "assigner": {
-                            "reference": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287",
+                            "reference": "Organization/89ca2akc-9s82-34df-cfr4-01945719a987",
                             "display": "Laboratorio richiedente"
                         }
                     }
@@ -148,7 +148,7 @@
                     {
                         "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterServiceRequester",
                         "valueReference": {
-                            "reference": "Organization/72c10akc-9d02-34df-cina-01945719a018"
+                            "reference": "Organization/89ca2akc-9s82-34df-cfr4-01945719a987"
                         }
                     },
                     {
@@ -156,8 +156,8 @@
                         "valueString": "Il paziente ha riferito di avere avuto episodi di vertigini negli ultimi mesi"
                     },
                     {
-"url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterDettaglioOperatore",
-"valueString": "Si è provveduto alla raccolta dei campioni biologoci del paziente"
+                        "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterDettaglioOperatore",
+                        "valueString": "Si è provveduto alla raccolta dei campioni biologoci del paziente"
                     },
                     {
                         "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterNotePaziente",
@@ -318,7 +318,7 @@
                     {
                         "coding": [
                             {
-                                "code": "03091300",
+                                "code": "{{L2code}}",
                                 "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio"
                             }
                         ]
@@ -426,7 +426,7 @@
                     {
                         "coding": [
                             {
-                                "code": "03091300",
+                                "code": "{{L2code}}",
                                 "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio"
                             }
                         ]
@@ -631,7 +631,7 @@
                 },
                 "identifier": [
                     {
-                        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/CodiceStruttura",
+                        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/codiceIdentificativoEnte",
                         "value": "{{L1code}}"
                     }
                 ],
@@ -681,6 +681,29 @@
                 "name": "CARDIOLOGIA",
                 "partOf": {
                     "reference": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287"
+                }
+            }
+        },
+        {
+            "fullUrl": "Organization/89ca2akc-9s82-34df-cfr4-01945719a987",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "89ca2akc-9s82-34df-cfr4-01945719a987",
+                "meta": {
+                    "versionId": "1",
+                    "profile":  [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationLaboratorio"
+                    ]
+                },
+                "identifier":  [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR",
+                        "value": "{{OMRLabCode}}"
+                    }
+                ],
+                "name": "Laboratorio di analisi",
+                "partOf": {
+                    "reference": "Organization/72c10akc-9d02-34df-cina-01945719a018"
                 }
             }
         },

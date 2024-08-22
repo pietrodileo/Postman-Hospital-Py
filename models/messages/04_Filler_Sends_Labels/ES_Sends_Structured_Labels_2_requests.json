@@ -113,7 +113,7 @@
                         },
                         "value": "202300001",
                         "assigner": {
-                            "reference": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287",
+                            "reference": "Organization/89ca2akc-9s82-34df-cfr4-01945719a987",
                             "display": "Laboratorio richiedente"
                         }
                     }
@@ -147,7 +147,7 @@
                     {
                         "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterServiceRequester",
                         "valueReference": {
-                            "reference": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287"
+                            "reference": "Organization/89ca2akc-9s82-34df-cfr4-01945719a987"
                         }
                     },
                     {
@@ -243,26 +243,40 @@
                         }
                     ]
                 },
-                "orderDetail": {
-                    "coding": [
-                        {
-                            "system": "https://fhir.siss.regione.lombardia.it/sid/identificativoInternoUnitaErogante",
-                            "code": "0002"
-                        },
-                        {
-                            "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto",
-                            "code": "{{L3code}}"
-                        },
-                        {
-                            "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio",
-                            "code": "03091300"
-                        },
-                        {
-                            "system": "https://fhir.siss.regione.lombardia.it/sid/identificativoInternoSalaErogatrice",
-                            "code": "LAB"
-                        }
-                    ]
-                },
+                "orderDetail": [
+                    {
+                        "coding": [
+                            {
+                                "code": "0002",
+                                "system": "https://fhir.siss.regione.lombardia.it/sid/identificativoInternoUnitaErogante"
+                            }
+                        ]
+                    },
+                    {
+                        "coding": [
+                            {
+                                "code": "{{L3code}}",
+                                "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto"
+                            }
+                        ]
+                    },
+                    {
+                        "coding": [
+                            {
+                                "code": "{{L2code}}",
+                                "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio"
+                            }
+                        ]
+                    },
+                    {
+                        "coding": [
+                            {
+                                "code": "LAB",
+                                "system": "https://fhir.siss.regione.lombardia.it/sid/identificativoInternoSalaErogatrice"
+                            }
+                        ]
+                    }
+                ],
                 "quantityQuantity": {
                     "value": 1
                 },
@@ -277,7 +291,7 @@
                 "authoredOn": "2022-11-16T14:59:37Z",
                 "performer": [
                     {
-                        "reference": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287"
+                        "reference": "Organization/38c13a45-fbe0-11ed-99f7-91181700b9s0"
                     }
                 ],
                 "reasonCode": [
@@ -362,26 +376,40 @@
                         }
                     ]
                 },
-                "orderDetail": {
-                    "coding": [
-                        {
-                            "system": "https://fhir.siss.regione.lombardia.it/sid/identificativoInternoUnitaErogante",
-                            "code": "0002"
-                        },
-                        {
-                            "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto",
-                            "code": "{{L3code}}"
-                        },
-                        {
-                            "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio",
-                            "code": "03091300"
-                        },
-                        {
-                            "system": "https://fhir.siss.regione.lombardia.it/sid/identificativoInternoSalaErogatrice",
-                            "code": "LAB"
-                        }
-                    ]
-                },
+                "orderDetail": [
+                    {
+                        "coding": [
+                            {
+                                "code": "0002",
+                                "system": "https://fhir.siss.regione.lombardia.it/sid/identificativoInternoUnitaErogante"
+                            }
+                        ]
+                    },
+                    {
+                        "coding": [
+                            {
+                                "code": "{{L3code}}",
+                                "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto"
+                            }
+                        ]
+                    },
+                    {
+                        "coding": [
+                            {
+                                "code": "{{L2code}}",
+                                "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio"
+                            }
+                        ]
+                    },
+                    {
+                        "coding": [
+                            {
+                                "code": "LAB",
+                                "system": "https://fhir.siss.regione.lombardia.it/sid/identificativoInternoSalaErogatrice"
+                            }
+                        ]
+                    }
+                ],
                 "quantityQuantity": {
                     "value": 1
                 },
@@ -396,7 +424,7 @@
                 "authoredOn": "2022-11-16T14:59:37Z",
                 "performer": [
                     {
-                        "reference": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287"
+                        "reference": "Organization/38c13a45-fbe0-11ed-99f7-91181700b9s0"
                     }
                 ],
                 "reasonCode": [
@@ -648,6 +676,52 @@
                         ]
                     }
                 ]
+            }
+        },
+        {
+            "fullUrl": "Organization/38c13a45-fbe0-11ed-99f7-91181700b9s0",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "38c13a45-fbe0-11ed-99f7-91181700b9s0",
+                "meta": {
+                    "versionId": "1",
+                    "profile":  [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationLaboratorio"
+                    ]
+                },
+                "identifier":  [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR",
+                        "value": "{{OMRLabCode}}"
+                    }
+                ],
+                "name": "Laboratorio di analisi",
+                "partOf": {
+                    "reference": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287"
+                }
+            }
+        },
+        {
+            "fullUrl": "Organization/89ca2akc-9s82-34df-cfr4-01945719a987",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "89ca2akc-9s82-34df-cfr4-01945719a987",
+                "meta": {
+                    "versionId": "1",
+                    "profile":  [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationLaboratorio"
+                    ]
+                },
+                "identifier":  [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR",
+                        "value": "{{OMRLabCodeFiller}}"
+                    }
+                ],
+                "name": "Laboratorio di analisi",
+                "partOf": {
+                    "reference": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287"
+                }
             }
         },
         {

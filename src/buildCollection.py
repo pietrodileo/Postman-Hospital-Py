@@ -28,7 +28,7 @@ class Collection:
             print("Error loading collection data.")
 
     def build_collection(self, CollectionName, descriptionPath, L1, L2, L3, L4,
-                         CodAppl, NomeSoftware, ApplName):
+                         CodAppl, OMRLabCode, NomeSoftware, ApplName):
         """
         Builds a new collection by modifying the description file and setting the collection name and UUID.
 
@@ -40,6 +40,7 @@ class Collection:
             L3 (str): The third level identifier of the collection.
             L4 (str): The fourth level identifier of the collection.
             CodAppl (str): The application code.
+            OMRLabCode (str): Laboratory code assigned by the OMR.
             NomeSoftware (str): The name of the software.
             ApplName (str): The name of the application.
 
@@ -54,7 +55,7 @@ class Collection:
                     description_content = description_file.read()
                 # Modify text
                 textMod = TextModifier(description_content)
-                textMod.replace_placeholders(L1, L2, L3, L4, CodAppl, NomeSoftware, CollectionName, ApplName)
+                textMod.replace_placeholders(L1, L2, L3, L4, CodAppl, NomeSoftware, OMRLabCode, CollectionName, ApplName)
                 # Insert the content of description.txt into the "description" field
                 self.collection_data["info"]["description"] = textMod.text
                 # Generate a collection UUID

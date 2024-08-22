@@ -23,8 +23,11 @@ const L3code = "L3code_VSC"
 pm.collectionVariables.set("L3code", L3code);
 const L4code = "L4code_VSC"   
 pm.collectionVariables.set("L4code", L4code);
+const OMRLabCode = "OMRLabCode_VSC"   
+pm.collectionVariables.set("OMRLabCode", OMRLabCode);
 const softwareName = "NomeSoftware_VSC"   
 pm.collectionVariables.set("NomeSoftware", softwareName);
+console.log("OMR Lab Code: ",pm.collectionVariables.get("OMRLabCode"))
 console.log("L1 code: ",pm.collectionVariables.get("L1code"), "L2 code: ",pm.collectionVariables.get("L2code"))
 console.log("L3 code: ",pm.collectionVariables.get("L3code"), "L4 code: ",pm.collectionVariables.get("L4code"))
 console.log("CodiceApplicativo: ",pm.collectionVariables.get("CodiceApplicativo"))
@@ -98,3 +101,4 @@ console.log("ServiceRequest4:", SR4Value);
 // Dichiara le variabili di ambiente L1 filler e L2 filler da utilizzare negli altri flussi per identificare il placer
 pm.environment.set("L1codeFiller",L1code);
 pm.environment.set("L2codeFiller",L2code);
+pm.environment.set("OMRLabCodeFiller",OMRLabCode);
