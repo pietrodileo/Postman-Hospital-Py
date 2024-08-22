@@ -1,3 +1,6 @@
+# temp files too large to be handled on GitHub
+daily_notification/HUGE_daily_notification.json
+
 # custom files
 Postman Hospital Base Model New.postman_collection.json
 structured_keys.txt
