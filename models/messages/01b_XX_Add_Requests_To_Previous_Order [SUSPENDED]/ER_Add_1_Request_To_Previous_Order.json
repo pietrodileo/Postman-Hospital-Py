@@ -446,7 +446,7 @@
                 },
                 "identifier": [
                     {
-                        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/codiceIdentificativoEnte",
+                        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/CodiceStruttura",
                         "value": "{{L1code}}"
                     }
                 ],

@@ -228,7 +228,7 @@
                 },
                 "authoredOn": "2022-11-16T14:59:37Z",
                 "requester": {
-                    "reference": "Practitioner/1fcacede-58fa-4500-8868-92644f365799",
+                    "reference": "PractitionerRole/65a0765e-6f57-11ee-adbe-02001700b287",
                     "display": "Medico"
                 },
                 "performer": [
@@ -406,6 +406,33 @@
                     }
                 ],
                 "generalPractitioner": {
+                    "reference": "PractitionerRole/65a0765e-6f57-11ee-adbe-02001700b287"
+                }
+            }
+        },
+        {
+            "fullUrl": "PractitionerRole/65a0765e-6f57-11ee-adbe-02001700b287",
+            "resource": {
+                "resourceType": "PractitionerRole",
+                "id": "65a0765e-6f57-11ee-adbe-02001700b287",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabPractitionerRoleMedico"
+                    ]
+                },
+                "code": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/ValueSet/QualificaMedico",
+                                "code": "2",
+                                "display": "Specialista"
+                            }
+                        ]
+                    }
+                ],
+                "practitioner": {
                     "reference": "Practitioner/1fcacede-58fa-4500-8868-92644f365799"
                 }
             }
