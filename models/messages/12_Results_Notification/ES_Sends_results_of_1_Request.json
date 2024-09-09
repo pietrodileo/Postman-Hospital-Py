@@ -822,7 +822,7 @@
                 },
                 "identifier":  [
                     {
-                        "value": "{{L1codePlacer}}",
+                        "value": "{{L1codeFiller}}",
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoEnte"
                     }
                 ]
@@ -887,7 +887,7 @@
                 },
                 "identifier":  [
                     {
-                        "value": "{{L2codePlacer}}",
+                        "value": "{{L2codeFiller}}",
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio"
                     }
                 ],

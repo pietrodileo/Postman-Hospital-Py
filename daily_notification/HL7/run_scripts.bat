@@ -1,8 +1,11 @@
 @echo off
 echo.
 
-:: Execute the first Python script
-python daily_notification_big_message_generator.py
+:: Define the number of service requests
+set NUM_SERVICE_REQUESTS=200000
+
+:: Execute the first Python script with the defined number of service requests
+python daily_notification_big_message_generator_hl7.py %NUM_SERVICE_REQUESTS%
 
 :: Check if the first script executed successfully
 if %errorlevel% neq 0 (
@@ -11,9 +14,10 @@ if %errorlevel% neq 0 (
 )
 
 echo First script executed successfully.
+echo.
 
 :: Execute the second Python script
-python send_post_request.py
+python send_hl7_daily_notif_mllp.py
 
 :: Check if the second script executed successfully
 if %errorlevel% neq 0 (
@@ -22,9 +26,10 @@ if %errorlevel% neq 0 (
 )
 
 echo Second script executed successfully.
+echo.
 
 :: Execute the second Python script a second time in order to test the API error response
-python send_post_request.py
+python send_hl7_daily_notif_mllp.py
 
 :: Check if the second script executed successfully
 if %errorlevel% neq 0 (

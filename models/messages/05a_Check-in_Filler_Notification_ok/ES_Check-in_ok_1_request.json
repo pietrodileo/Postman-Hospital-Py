@@ -421,7 +421,7 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoEnte",
-                        "value": "{{L1codePlacer}}"
+                        "value": "{{L1codeFiller}}"
                     }
                 ],
                 "name": "Denominazione dell'ente L1"
@@ -440,7 +440,7 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio",
-                        "value": "{{L2codePlacer}}"
+                        "value": "{{L2codeFiller}}"
                     }
                 ],
                 "partOf": {

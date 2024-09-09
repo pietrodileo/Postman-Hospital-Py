@@ -1,5 +1,8 @@
 # temp files too large to be handled on GitHub
 daily_notification/HUGE_daily_notification.json
+daily_notification/HL7/output
+daily_notification/HL7/generated_messages/HL7_message.txt
+daily_notification/daily_notification/output
 
 # custom files
 Postman Hospital Base Model New.postman_collection.json

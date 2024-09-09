@@ -1,5 +1,5 @@
 {
-    "richiesta": "Check-in servente failed",
+    "richiesta": "Check-in servente",
     "resourceType": "Bundle",
     "id": "{{$randomUUID}}",
     "type": "message",
@@ -219,7 +219,8 @@
                             }
                         ]
                     }
-                ],uantityQuantity": {
+                ],
+                "quantityQuantity": {
                     "value": 1
                 },
                 "subject": {
@@ -247,6 +248,52 @@
                         ]
                     }
                 ]
+            }
+        },
+        {
+            "fullUrl": "Organization/38c13a45-fbe0-11ed-99f7-91181700b9s0",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "38c13a45-fbe0-11ed-99f7-91181700b9s0",
+                "meta": {
+                    "versionId": "1",
+                    "profile":  [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationLaboratorio"
+                    ]
+                },
+                "identifier":  [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR",
+                        "value": "{{OMRLabCode}}"
+                    }
+                ],
+                "name": "Laboratorio di analisi",
+                "partOf": {
+                    "reference": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287"
+                }
+            }
+        },
+        {
+            "fullUrl": "Organization/89ca2akc-9s82-34df-cfr4-01945719a987",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "89ca2akc-9s82-34df-cfr4-01945719a987",
+                "meta": {
+                    "versionId": "1",
+                    "profile":  [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationLaboratorio"
+                    ]
+                },
+                "identifier":  [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR",
+                        "value": "{{OMRLabCodeFiller}}"
+                    }
+                ],
+                "name": "Laboratorio di analisi",
+                "partOf": {
+                    "reference": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287"
+                }
             }
         },
         {
@@ -362,52 +409,6 @@
             }
         },
         {
-            "fullUrl": "Organization/38c13a45-fbe0-11ed-99f7-91181700b9s0",
-            "resource": {
-                "resourceType": "Organization",
-                "id": "38c13a45-fbe0-11ed-99f7-91181700b9s0",
-                "meta": {
-                    "versionId": "1",
-                    "profile":  [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationLaboratorio"
-                    ]
-                },
-                "identifier":  [
-                    {
-                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR",
-                        "value": "{{OMRLabCode}}"
-                    }
-                ],
-                "name": "Laboratorio di analisi",
-                "partOf": {
-                    "reference": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287"
-                }
-            }
-        },
-        {
-            "fullUrl": "Organization/89ca2akc-9s82-34df-cfr4-01945719a987",
-            "resource": {
-                "resourceType": "Organization",
-                "id": "89ca2akc-9s82-34df-cfr4-01945719a987",
-                "meta": {
-                    "versionId": "1",
-                    "profile":  [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationLaboratorio"
-                    ]
-                },
-                "identifier":  [
-                    {
-                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR",
-                        "value": "{{OMRLabCodeFiller}}"
-                    }
-                ],
-                "name": "Laboratorio di analisi",
-                "partOf": {
-                    "reference": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287"
-                }
-            }
-        },
-        {
             "fullUrl": "Organization/7195779b-9c43-4074-a2d4-7e34e18b1ae4",
             "resource": {
                 "resourceType": "Organization",
@@ -420,7 +421,7 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoEnte",
-                        "value": "{{L1codePlacer}}"
+                        "value": "{{L1codeFiller}}"
                     }
                 ],
                 "name": "Denominazione dell'ente L1"
@@ -439,7 +440,7 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio",
-                        "value": "{{L2codePlacer}}"
+                        "value": "{{L2codeFiller}}"
                     }
                 ],
                 "partOf": {
