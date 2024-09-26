@@ -1,5 +1,5 @@
 {
-    "richiesta": "Cancellation Notification",
+    "richiesta": "Exam Cancelled",
     "resourceType": "Bundle",
     "id": "{{$randomUUID}}",
     "type": "message",
@@ -78,19 +78,11 @@
                     ],
                     "versionId": "1"
                 },
-                "basedOn": [
-                    {
-                        "reference": "ServiceRequest/d4ca776d-feb4-43ab-b945-36c47cafb8b3"
-                    }
-                ],
-                "status": "cancelled",
-                "intent": "order",
-                "encounter": {
-                    "reference": "Encounter/ace5cde7-33f3-4d36-9d6b-9a837ed7fdcb"
-                },
                 "focus": {
                     "reference": "ServiceRequest/d4ca776d-feb4-43ab-b945-36c47cafb8b3"
-                }
+                },
+                "status": "cancelled",
+                "intent": "order"
             }
         },
         {
@@ -186,17 +178,6 @@
                         "value": "{{OMRServiceUID1}}"
                     }
                 ],
-                "category": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
-                                "code": "1",
-                                "display": "Richiesta"
-                            }
-                        ]
-                    }
-                ],
                 "requisition": {
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
                     "value": "Placer Requisition Value"
@@ -213,6 +194,17 @@
                         }
                     ]
                 },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
                 "orderDetail": [
                     {
                         "coding": [
@@ -259,10 +251,6 @@
                     "display": "Informazioni Richiesta Lab"
                 },
                 "authoredOn": "2022-11-16T14:59:37Z",
-                "requester": {
-                    "reference": "Practitioner/1fcacede-58fa-4500-8868-92644f365799",
-                    "display": "Medico"
-                },
                 "performer": [
                     {
                         "reference": "Organization/38c13a45-fbe0-11ed-99f7-91181700b9s0"
@@ -279,52 +267,6 @@
                         ]
                     }
                 ]
-            }
-        },
-        {
-            "fullUrl": "Organization/38c13a45-fbe0-11ed-99f7-91181700b9s0",
-            "resource": {
-                "resourceType": "Organization",
-                "id": "38c13a45-fbe0-11ed-99f7-91181700b9s0",
-                "meta": {
-                    "versionId": "1",
-                    "profile":  [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationLaboratorio"
-                    ]
-                },
-                "identifier":  [
-                    {
-                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR",
-                        "value": "{{OMRLabCode}}"
-                    }
-                ],
-                "name": "Laboratorio di analisi",
-                "partOf": {
-                    "reference": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287"
-                }
-            }
-        },
-        {
-            "fullUrl": "Organization/89ca2akc-9s82-34df-cfr4-01945719a987",
-            "resource": {
-                "resourceType": "Organization",
-                "id": "89ca2akc-9s82-34df-cfr4-01945719a987",
-                "meta": {
-                    "versionId": "1",
-                    "profile":  [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationLaboratorio"
-                    ]
-                },
-                "identifier":  [
-                    {
-                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR",
-                        "value": "{{OMRLabCodeFiller}}"
-                    }
-                ],
-                "name": "Laboratorio di analisi",
-                "partOf": {
-                    "reference": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287"
-                }
             }
         },
         {
@@ -352,6 +294,17 @@
                         "value": "{{OMRServiceUID2}}"
                     }
                 ],
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
                 "requisition": {
                     "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
                     "value": "Placer Requisition Value"
@@ -368,17 +321,6 @@
                         }
                     ]
                 },
-                "category": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
-                                "code": "1",
-                                "display": "Richiesta"
-                            }
-                        ]
-                    }
-                ],
                 "orderDetail": [
                     {
                         "coding": [
@@ -425,10 +367,6 @@
                     "display": "Informazioni Richiesta Lab"
                 },
                 "authoredOn": "2022-11-16T14:59:37Z",
-                "requester": {
-                    "reference": "Practitioner/1fcacede-58fa-4500-8868-92644f365799",
-                    "display": "Medico"
-                },
                 "performer": [
                     {
                         "reference": "Organization/38c13a45-fbe0-11ed-99f7-91181700b9s0"
@@ -556,43 +494,6 @@
                             }
                         ]
                     }
-                ],
-                "generalPractitioner": {
-                    "reference": "Practitioner/1fcacede-58fa-4500-8868-92644f365799"
-                }
-            }
-        },
-        {
-            "fullUrl": "Practitioner/1fcacede-58fa-4500-8868-92644f365799",
-            "resource": {
-                "resourceType": "Practitioner",
-                "id": "1fcacede-58fa-4500-8868-92644f365799",
-                "meta": {
-                    "profile": [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabPractitionerMedico"
-                    ]
-                },
-                "identifier": [
-                    {
-                        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/CodiceFiscale",
-                        "type": {
-                            "coding": [
-                                {
-                                    "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/CodiceFiscale",
-                                    "code": "NN"
-                                }
-                            ]
-                        },
-                        "value": "NVESFN77E09H264L"
-                    }
-                ],
-                "name": [
-                    {
-                        "family": "Neva",
-                        "given": [
-                            "Stefano"
-                        ]
-                    }
                 ]
             }
         },
@@ -654,6 +555,52 @@
                     }
                 ],
                 "name": "Denominazione dell'ente L1"
+            }
+        },
+        {
+            "fullUrl": "Organization/38c13a45-fbe0-11ed-99f7-91181700b9s0",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "38c13a45-fbe0-11ed-99f7-91181700b9s0",
+                "meta": {
+                    "versionId": "1",
+                    "profile":  [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationLaboratorio"
+                    ]
+                },
+                "identifier":  [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR",
+                        "value": "{{OMRLabCode}}"
+                    }
+                ],
+                "name": "Laboratorio di analisi",
+                "partOf": {
+                    "reference": "Organization/37d47b20-fbe0-11ed-99f7-02001700b287"
+                }
+            }
+        },
+        {
+            "fullUrl": "Organization/89ca2akc-9s82-34df-cfr4-01945719a987",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "89ca2akc-9s82-34df-cfr4-01945719a987",
+                "meta": {
+                    "versionId": "1",
+                    "profile":  [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationLaboratorio"
+                    ]
+                },
+                "identifier":  [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR",
+                        "value": "{{OMRLabCodeFiller}}"
+                    }
+                ],
+                "name": "Laboratorio di analisi",
+                "partOf": {
+                    "reference": "Organization/30d4p103-fbe0-11ed-99f7-02001700b287"
+                }
             }
         },
         {

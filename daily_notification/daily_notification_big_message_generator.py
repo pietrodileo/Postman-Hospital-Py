@@ -4,6 +4,7 @@ import random
 import math
 from datetime import datetime, timedelta
 import time 
+import os 
 
 def generate_message_header():
     message_header_id = str(uuid.uuid4())
@@ -42,7 +43,7 @@ def generate_message_header():
 
 def generate_organization(code, system, profile, partOf=None):  
     organization_url = str(uuid.uuid4())
-    code_name = f"{code}code"
+    identifier_value = f"{code}code"
     organization = {
         "fullUrl": "Organization/" + organization_url,
         "resource": {
@@ -56,7 +57,7 @@ def generate_organization(code, system, profile, partOf=None):
             },
             "identifier": [
                 {
-                    "value": f"{{{{{code_name}}}}}",
+                    "value": f"{{{{{identifier_value}}}}}",
                     "system": system
                 }
             ]
@@ -186,7 +187,12 @@ def generate_bundle(n):
         "fullUrl": organization_l4["fullUrl"],
         "resource": organization_l4["resource"]
     })
-    
+    organization_omrLabCode = generate_organization("OMRLab", "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR", "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationLaboratorio",organization_l4["fullUrl"])
+    bundle["entry"].append({
+        "fullUrl": organization_omrLabCode["fullUrl"],
+        "resource": organization_omrLabCode["resource"]
+    })
+   
     # Define a list of random requisition numbers 
     min_length = 1  
     
@@ -221,13 +227,17 @@ if __name__ == "__main__":
     # Measure start time
     start_time = time.time()
 
-    num_service_requests = 40000 # Change this to the desired number of ServiceRequests
+    num_service_requests = 10 # Change this to the desired number of ServiceRequests
     bundle = generate_bundle(num_service_requests)
     # Write the JSON to a file
-    with open('HUGE_daily_notification.json', 'w') as f:
-        json.dump(bundle, f, indent=4)
+    input_file_path = os.path.join("daily_notification", "input", "HUGE_daily_notification.json")    
+    # Create the output directory if it does not exist
+    os.makedirs(os.path.dirname(input_file_path), exist_ok=True)
+    # Save the response data
+    with open(input_file_path, 'w') as file:
+        json.dump(bundle, file, indent=4)
 
-    print("JSON saved to 'HUGE_daily_notification.json'")
+    print(f"JSON saved to {input_file_path}")
     print(f"A request containing {num_service_requests} ServiceRequests has been generated")
     # Measure end time
     end_time = time.time()

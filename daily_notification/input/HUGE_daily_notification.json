@@ -1,0 +1,853 @@
+{
+    "resourceType": "Bundle",
+    "id": "95acdd5d-0085-4cc2-b495-62f091323f07",
+    "type": "message",
+    "timestamp": "2024-09-12T10:07:14.048562",
+    "meta": {
+        "versionId": "1",
+        "profile": [
+            "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabBundleNotificaGiornaliera"
+        ]
+    },
+    "entry": [
+        {
+            "fullUrl": "MessageHeader/ce4e941d-a1b6-4bca-b327-725c4930c462",
+            "resource": {
+                "resourceType": "MessageHeader",
+                "id": "ce4e941d-a1b6-4bca-b327-725c4930c462",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabMessageHeader"
+                    ],
+                    "lastUpdated": "2024-09-12T10:07:14.048562"
+                },
+                "eventCoding": {
+                    "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodiceEventoMessageHeader",
+                    "code": "OML^O21",
+                    "display": "OML^O21^OML_O21"
+                },
+                "destination": [
+                    {
+                        "name": "OMR",
+                        "endpoint": "localhost:52773/fhir/retilab/Omr"
+                    }
+                ],
+                "source": {
+                    "name": "{{CodiceApplicativo}}",
+                    "software": "{{NomeSoftware}}",
+                    "endpoint": "{{URL_Mock}}"
+                },
+                "focus": [
+                    {
+                        "reference": "ServiceRequest/ff6e17b6-c953-47fa-a8a0-d86fcbd4ed96"
+                    },
+                    {
+                        "reference": "ServiceRequest/d6c508de-9877-4c6c-b236-78e36e1e4ed1"
+                    },
+                    {
+                        "reference": "ServiceRequest/4de22d25-cc7f-4a0f-96bc-644430764e38"
+                    },
+                    {
+                        "reference": "ServiceRequest/7aef81f9-c20c-4be3-adb2-9336d30fed6b"
+                    },
+                    {
+                        "reference": "ServiceRequest/36dfa705-82f2-47eb-b29d-f0f02febd11d"
+                    },
+                    {
+                        "reference": "ServiceRequest/c6017b12-1e47-4ff5-b098-482a78467c1e"
+                    },
+                    {
+                        "reference": "ServiceRequest/0a15efc2-9af3-4282-98d5-2a34d6775476"
+                    },
+                    {
+                        "reference": "ServiceRequest/63fc9145-ef6c-4e2c-b3b6-b44fba97cb45"
+                    },
+                    {
+                        "reference": "ServiceRequest/93efeea6-f92e-4184-974f-0755245b448b"
+                    },
+                    {
+                        "reference": "ServiceRequest/dfdd9b24-405e-4d2d-afdb-1cc30da30ecd"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "Organization/004e44c8-1b9c-4cd6-a112-60e3c1adae55",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "004e44c8-1b9c-4cd6-a112-60e3c1adae55",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationL1"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "value": "{{L1code}}",
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoEnte"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "Organization/c6290bbf-6d4e-4a29-96d2-da907d4d40d6",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "c6290bbf-6d4e-4a29-96d2-da907d4d40d6",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationL2"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "value": "{{L2code}}",
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio"
+                    }
+                ],
+                "partOf": [
+                    "Organization/004e44c8-1b9c-4cd6-a112-60e3c1adae55"
+                ]
+            }
+        },
+        {
+            "fullUrl": "Organization/24466d6b-c1b6-4785-bc2d-4806d1b126a3",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "24466d6b-c1b6-4785-bc2d-4806d1b126a3",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationL3"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "value": "{{L3code}}",
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto"
+                    }
+                ],
+                "partOf": [
+                    "Organization/c6290bbf-6d4e-4a29-96d2-da907d4d40d6"
+                ]
+            }
+        },
+        {
+            "fullUrl": "Organization/1d795d8d-6a99-4083-9533-bbb5617abc32",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "1d795d8d-6a99-4083-9533-bbb5617abc32",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationL4"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "value": "{{L4code}}",
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeAmbulatorio"
+                    }
+                ],
+                "partOf": [
+                    "Organization/24466d6b-c1b6-4785-bc2d-4806d1b126a3"
+                ]
+            }
+        },
+        {
+            "fullUrl": "Organization/1a7d6f2e-0619-4425-9a7c-67f894790183",
+            "resource": {
+                "resourceType": "Organization",
+                "id": "1a7d6f2e-0619-4425-9a7c-67f894790183",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabOrganizationLaboratorio"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "value": "{{OMRLabcode}}",
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR"
+                    }
+                ],
+                "partOf": [
+                    "Organization/1d795d8d-6a99-4083-9533-bbb5617abc32"
+                ]
+            }
+        },
+        {
+            "fullUrl": "ServiceRequest/ff6e17b6-c953-47fa-a8a0-d86fcbd4ed96",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "ff6e17b6-c953-47fa-a8a0-d86fcbd4ed96",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabServiceRequestRichiestaEsamiLab"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
+                        "value": "d121bac9-106e-484f-9928-1bbee1767c29"
+                    }
+                ],
+                "requisition": {
+                    "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
+                    "value": "87653443-b597-4d7f-8971-adceaacf3c7c"
+                },
+                "status": "completed",
+                "intent": "order",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "2",
+                                "display": "Impegnativa proveniente dal CUP"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "urgent",
+                "code": {
+                    "coding": [
+                        {
+                            "display": "E00777009",
+                            "code": "code-61191",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale"
+                        },
+                        {
+                            "display": "11221",
+                            "code": "code-61191",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLocale"
+                        }
+                    ]
+                },
+                "quantityQuantity": {
+                    "value": 1
+                },
+                "occurrencePeriod": {
+                    "start": "2024-09-12T10:07:14.048562",
+                    "end": "2024-10-12T10:07:14.048562"
+                },
+                "subject": {
+                    "type": "Patient"
+                },
+                "authoredOn": "2024-09-12T10:07:14.048562",
+                "performer": [
+                    {
+                        "reference": "Organization/1d795d8d-6a99-4083-9533-bbb5617abc32"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "ServiceRequest/d6c508de-9877-4c6c-b236-78e36e1e4ed1",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "d6c508de-9877-4c6c-b236-78e36e1e4ed1",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabServiceRequestRichiestaEsamiLab"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
+                        "value": "0bf52cad-b3bd-44d3-b6a7-ec3792636c14"
+                    }
+                ],
+                "requisition": {
+                    "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
+                    "value": "87653443-b597-4d7f-8971-adceaacf3c7c"
+                },
+                "status": "completed",
+                "intent": "order",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "2",
+                                "display": "Impegnativa proveniente dal CUP"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "urgent",
+                "code": {
+                    "coding": [
+                        {
+                            "display": "E00777009",
+                            "code": "code-95554",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale"
+                        },
+                        {
+                            "display": "11221",
+                            "code": "code-95554",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLocale"
+                        }
+                    ]
+                },
+                "quantityQuantity": {
+                    "value": 1
+                },
+                "occurrencePeriod": {
+                    "start": "2024-09-12T10:07:14.048562",
+                    "end": "2024-10-12T10:07:14.048562"
+                },
+                "subject": {
+                    "type": "Patient"
+                },
+                "authoredOn": "2024-09-12T10:07:14.048562",
+                "performer": [
+                    {
+                        "reference": "Organization/1d795d8d-6a99-4083-9533-bbb5617abc32"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "ServiceRequest/4de22d25-cc7f-4a0f-96bc-644430764e38",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "4de22d25-cc7f-4a0f-96bc-644430764e38",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabServiceRequestRichiestaEsamiLab"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
+                        "value": "3d477367-55d2-4108-a673-be2c4e47ba70"
+                    }
+                ],
+                "requisition": {
+                    "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
+                    "value": "87653443-b597-4d7f-8971-adceaacf3c7c"
+                },
+                "status": "completed",
+                "intent": "order",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "urgent",
+                "code": {
+                    "coding": [
+                        {
+                            "display": "E00777009",
+                            "code": "code-57745",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale"
+                        },
+                        {
+                            "display": "11221",
+                            "code": "code-57745",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLocale"
+                        }
+                    ]
+                },
+                "quantityQuantity": {
+                    "value": 1
+                },
+                "occurrencePeriod": {
+                    "start": "2024-09-12T10:07:14.048562",
+                    "end": "2024-10-12T10:07:14.048562"
+                },
+                "subject": {
+                    "type": "Patient"
+                },
+                "authoredOn": "2024-09-12T10:07:14.048562",
+                "performer": [
+                    {
+                        "reference": "Organization/1d795d8d-6a99-4083-9533-bbb5617abc32"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "ServiceRequest/7aef81f9-c20c-4be3-adb2-9336d30fed6b",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "7aef81f9-c20c-4be3-adb2-9336d30fed6b",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabServiceRequestRichiestaEsamiLab"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
+                        "value": "1537c470-daa1-4311-80d9-5f33755fb502"
+                    }
+                ],
+                "requisition": {
+                    "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
+                    "value": "87653443-b597-4d7f-8971-adceaacf3c7c"
+                },
+                "status": "completed",
+                "intent": "order",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "2",
+                                "display": "Impegnativa proveniente dal CUP"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "urgent",
+                "code": {
+                    "coding": [
+                        {
+                            "display": "E00777009",
+                            "code": "code-54883",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale"
+                        },
+                        {
+                            "display": "11221",
+                            "code": "code-54883",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLocale"
+                        }
+                    ]
+                },
+                "quantityQuantity": {
+                    "value": 1
+                },
+                "occurrencePeriod": {
+                    "start": "2024-09-12T10:07:14.048562",
+                    "end": "2024-10-12T10:07:14.048562"
+                },
+                "subject": {
+                    "type": "Patient"
+                },
+                "authoredOn": "2024-09-12T10:07:14.048562",
+                "performer": [
+                    {
+                        "reference": "Organization/1d795d8d-6a99-4083-9533-bbb5617abc32"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "ServiceRequest/36dfa705-82f2-47eb-b29d-f0f02febd11d",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "36dfa705-82f2-47eb-b29d-f0f02febd11d",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabServiceRequestRichiestaEsamiLab"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
+                        "value": "e6653d7d-40c9-4bd0-8891-ccd4382870cb"
+                    }
+                ],
+                "requisition": {
+                    "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
+                    "value": "87653443-b597-4d7f-8971-adceaacf3c7c"
+                },
+                "status": "completed",
+                "intent": "order",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "urgent",
+                "code": {
+                    "coding": [
+                        {
+                            "display": "E00777009",
+                            "code": "code-8648",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale"
+                        },
+                        {
+                            "display": "11221",
+                            "code": "code-8648",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLocale"
+                        }
+                    ]
+                },
+                "quantityQuantity": {
+                    "value": 1
+                },
+                "occurrencePeriod": {
+                    "start": "2024-09-12T10:07:14.048562",
+                    "end": "2024-10-12T10:07:14.048562"
+                },
+                "subject": {
+                    "type": "Patient"
+                },
+                "authoredOn": "2024-09-12T10:07:14.048562",
+                "performer": [
+                    {
+                        "reference": "Organization/1d795d8d-6a99-4083-9533-bbb5617abc32"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "ServiceRequest/c6017b12-1e47-4ff5-b098-482a78467c1e",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "c6017b12-1e47-4ff5-b098-482a78467c1e",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabServiceRequestRichiestaEsamiLab"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
+                        "value": "70e6f336-26f5-483d-8979-54c341b9d813"
+                    }
+                ],
+                "requisition": {
+                    "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
+                    "value": "87653443-b597-4d7f-8971-adceaacf3c7c"
+                },
+                "status": "completed",
+                "intent": "order",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "urgent",
+                "code": {
+                    "coding": [
+                        {
+                            "display": "E00777009",
+                            "code": "code-93445",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale"
+                        },
+                        {
+                            "display": "11221",
+                            "code": "code-93445",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLocale"
+                        }
+                    ]
+                },
+                "quantityQuantity": {
+                    "value": 1
+                },
+                "occurrencePeriod": {
+                    "start": "2024-09-12T10:07:14.048562",
+                    "end": "2024-10-12T10:07:14.048562"
+                },
+                "subject": {
+                    "type": "Patient"
+                },
+                "authoredOn": "2024-09-12T10:07:14.048562",
+                "performer": [
+                    {
+                        "reference": "Organization/1d795d8d-6a99-4083-9533-bbb5617abc32"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "ServiceRequest/0a15efc2-9af3-4282-98d5-2a34d6775476",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "0a15efc2-9af3-4282-98d5-2a34d6775476",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabServiceRequestRichiestaEsamiLab"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
+                        "value": "cc98c84e-771a-475f-b307-8921f51349c9"
+                    }
+                ],
+                "requisition": {
+                    "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
+                    "value": "87653443-b597-4d7f-8971-adceaacf3c7c"
+                },
+                "status": "completed",
+                "intent": "order",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "urgent",
+                "code": {
+                    "coding": [
+                        {
+                            "display": "E00777009",
+                            "code": "code-37805",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale"
+                        },
+                        {
+                            "display": "11221",
+                            "code": "code-37805",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLocale"
+                        }
+                    ]
+                },
+                "quantityQuantity": {
+                    "value": 1
+                },
+                "occurrencePeriod": {
+                    "start": "2024-09-12T10:07:14.048562",
+                    "end": "2024-10-12T10:07:14.048562"
+                },
+                "subject": {
+                    "type": "Patient"
+                },
+                "authoredOn": "2024-09-12T10:07:14.048562",
+                "performer": [
+                    {
+                        "reference": "Organization/1d795d8d-6a99-4083-9533-bbb5617abc32"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "ServiceRequest/63fc9145-ef6c-4e2c-b3b6-b44fba97cb45",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "63fc9145-ef6c-4e2c-b3b6-b44fba97cb45",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabServiceRequestRichiestaEsamiLab"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
+                        "value": "08a7b47b-8e77-4894-b932-1efbe956d2f3"
+                    }
+                ],
+                "requisition": {
+                    "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
+                    "value": "87653443-b597-4d7f-8971-adceaacf3c7c"
+                },
+                "status": "completed",
+                "intent": "order",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "1",
+                                "display": "Richiesta"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "urgent",
+                "code": {
+                    "coding": [
+                        {
+                            "display": "E00777009",
+                            "code": "code-25636",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale"
+                        },
+                        {
+                            "display": "11221",
+                            "code": "code-25636",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLocale"
+                        }
+                    ]
+                },
+                "quantityQuantity": {
+                    "value": 1
+                },
+                "occurrencePeriod": {
+                    "start": "2024-09-12T10:07:14.048562",
+                    "end": "2024-10-12T10:07:14.048562"
+                },
+                "subject": {
+                    "type": "Patient"
+                },
+                "authoredOn": "2024-09-12T10:07:14.048562",
+                "performer": [
+                    {
+                        "reference": "Organization/1d795d8d-6a99-4083-9533-bbb5617abc32"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "ServiceRequest/93efeea6-f92e-4184-974f-0755245b448b",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "93efeea6-f92e-4184-974f-0755245b448b",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabServiceRequestRichiestaEsamiLab"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
+                        "value": "9fe7f859-e6b9-46bb-89bd-848641775263"
+                    }
+                ],
+                "requisition": {
+                    "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
+                    "value": "87653443-b597-4d7f-8971-adceaacf3c7c"
+                },
+                "status": "completed",
+                "intent": "order",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "2",
+                                "display": "Impegnativa proveniente dal CUP"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "urgent",
+                "code": {
+                    "coding": [
+                        {
+                            "display": "E00777009",
+                            "code": "code-8541",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale"
+                        },
+                        {
+                            "display": "11221",
+                            "code": "code-8541",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLocale"
+                        }
+                    ]
+                },
+                "quantityQuantity": {
+                    "value": 1
+                },
+                "occurrencePeriod": {
+                    "start": "2024-09-12T10:07:14.048562",
+                    "end": "2024-10-12T10:07:14.048562"
+                },
+                "subject": {
+                    "type": "Patient"
+                },
+                "authoredOn": "2024-09-12T10:07:14.048562",
+                "performer": [
+                    {
+                        "reference": "Organization/1d795d8d-6a99-4083-9533-bbb5617abc32"
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "ServiceRequest/dfdd9b24-405e-4d2d-afdb-1cc30da30ecd",
+            "resource": {
+                "resourceType": "ServiceRequest",
+                "id": "dfdd9b24-405e-4d2d-afdb-1cc30da30ecd",
+                "meta": {
+                    "versionId": "1",
+                    "profile": [
+                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabServiceRequestRichiestaEsamiLab"
+                    ]
+                },
+                "identifier": [
+                    {
+                        "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerOrderNumber",
+                        "value": "91024a29-9955-49d4-be92-1ea4827dd67f"
+                    }
+                ],
+                "requisition": {
+                    "system": "https://fhir.siss.regione.lombardia.it/sid/PlacerRequisitionNumber",
+                    "value": "87653443-b597-4d7f-8971-adceaacf3c7c"
+                },
+                "status": "completed",
+                "intent": "order",
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "https://fhir.siss.regione.lombardia.it/Valueset/CategoriaOrdine",
+                                "code": "2",
+                                "display": "Impegnativa proveniente dal CUP"
+                            }
+                        ]
+                    }
+                ],
+                "priority": "urgent",
+                "code": {
+                    "coding": [
+                        {
+                            "display": "E00777009",
+                            "code": "code-88034",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaPrestazioniLaboratorioRegionale"
+                        },
+                        {
+                            "display": "11221",
+                            "code": "code-88034",
+                            "system": "https://fhir.siss.regione.lombardia.it/ValueSet/CodificaLocale"
+                        }
+                    ]
+                },
+                "quantityQuantity": {
+                    "value": 1
+                },
+                "occurrencePeriod": {
+                    "start": "2024-09-12T10:07:14.048562",
+                    "end": "2024-10-12T10:07:14.048562"
+                },
+                "subject": {
+                    "type": "Patient"
+                },
+                "authoredOn": "2024-09-12T10:07:14.048562",
+                "performer": [
+                    {
+                        "reference": "Organization/1d795d8d-6a99-4083-9533-bbb5617abc32"
+                    }
+                ]
+            }
+        }
+    ]
+}
