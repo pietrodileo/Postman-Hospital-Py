@@ -251,10 +251,6 @@
                     "display": "Informazioni Richiesta Lab"
                 },
                 "authoredOn": "2022-11-16T14:59:37Z",
-                "requester": {
-                    "reference": "Practitioner/1fcacede-58fa-4500-8868-92644f365799",
-                    "display": "Medico"
-                },
                 "performer": [
                     {
                         "reference": "Organization/38c13a45-fbe0-11ed-99f7-91181700b9s0"
@@ -371,10 +367,6 @@
                     "display": "Informazioni Richiesta Lab"
                 },
                 "authoredOn": "2022-11-16T14:59:37Z",
-                "requester": {
-                    "reference": "Practitioner/1fcacede-58fa-4500-8868-92644f365799",
-                    "display": "Medico"
-                },
                 "performer": [
                     {
                         "reference": "Organization/38c13a45-fbe0-11ed-99f7-91181700b9s0"
@@ -500,43 +492,6 @@
                                 "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabAddressCodiceISTAT",
                                 "valueString": "015146"
                             }
-                        ]
-                    }
-                ],
-                "generalPractitioner": {
-                    "reference": "Practitioner/1fcacede-58fa-4500-8868-92644f365799"
-                }
-            }
-        },
-        {
-            "fullUrl": "Practitioner/1fcacede-58fa-4500-8868-92644f365799",
-            "resource": {
-                "resourceType": "Practitioner",
-                "id": "1fcacede-58fa-4500-8868-92644f365799",
-                "meta": {
-                    "profile": [
-                        "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabPractitionerMedico"
-                    ]
-                },
-                "identifier": [
-                    {
-                        "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/CodiceFiscale",
-                        "type": {
-                            "coding": [
-                                {
-                                    "system": "https://fhir.siss.regione.lombardia.it/CodeSystem/CodiceFiscale",
-                                    "code": "NN"
-                                }
-                            ]
-                        },
-                        "value": "NVESFN77E09H264L"
-                    }
-                ],
-                "name": [
-                    {
-                        "family": "Neva",
-                        "given": [
-                            "Stefano"
                         ]
                     }
                 ]

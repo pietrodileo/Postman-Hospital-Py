@@ -1,0 +1,10 @@
+# Exam Executed Notification
+
+In questa cartella sono contenuti i messaggi che il laboratorio (come ES) invia all'OMR per notificare di aver completato gli esami richiesti in 1 o 2 prestazioni:
+
+  * "*ES Executed 1 extra request*": notifica di esame eseguito per 1 prestazione extra aggiunta dal servente;
+  * "*ES Executed 2 extra requests*": notifica di esame eseguito per 2 prestazioni extra aggiunte dal servente;
+  * "*ES Executed 1 request + 1 extra request*": notifica di esame eseguito per 1 prestazione + 1 prestazione extra aggiunta dal servente;
+  * "*ES Executed 2 requests + 1 extra requests*": notifica di esame eseguito per 2 prestazioni + 2 prestazioni extra aggiunte dal servente;
+  * "*ES Executed 1 request + 2 extra request*": notifica di esame eseguito per 1 prestazione + 1 prestazione extra aggiunta dal servente;
+  * "*ES Executed 2 requests + 2 extra requests*": notifica di esame eseguito per 2 prestazioni + 2 prestazioni extra aggiunte dal servente;
