@@ -33,7 +33,9 @@ console.log("L1 code: ",pm.collectionVariables.get("L1code"), "L2 code: ",pm.col
 console.log("L3 code: ",pm.collectionVariables.get("L3code"), "L4 code: ",pm.collectionVariables.get("L4code"))
 console.log("CodiceApplicativo: ",pm.collectionVariables.get("CodiceApplicativo"))
 
-// Dichiara le variabili di ambiente L1 filler e L2 filler da utilizzare negli altri flussi per identificare il placer
+// Dichiara le variabili di ambiente L1, L2, L3, L4, OMRLabCode filler da utilizzare negli altri flussi per identificare il filler
 pm.environment.set("L1codeFiller",L1code);
 pm.environment.set("L2codeFiller",L2code);
+pm.environment.set("L3codeFiller",L3code);
+pm.environment.set("L4codeFiller",L4code);
 pm.environment.set("OMRLabCodeFiller",OMRLabCode);

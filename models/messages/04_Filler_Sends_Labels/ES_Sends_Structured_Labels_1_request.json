@@ -574,7 +574,7 @@
                 "identifier":  [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR",
-                        "value": "{{OMRLabCode}}"
+                        "value": "{{OMRLabCodeFiller}}"
                     }
                 ],
                 "name": "Laboratorio di analisi",
@@ -597,7 +597,7 @@
                 "identifier":  [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR",
-                        "value": "{{OMRLabCodeFiller}}"
+                        "value": "{{OMRLabCodePlacer}}"
                     }
                 ],
                 "name": "Laboratorio di analisi",
@@ -660,7 +660,7 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoEnte",
-                        "value": "{{L1code}}"
+                        "value": "{{L1codePlacer}}"
                     }
                 ],
                 "name": "Denominazione dell'ente L1"
@@ -679,7 +679,7 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio",
-                        "value": "{{L2code}}"
+                        "value": "{{L2codePlacer}}"
                     }
                 ],
                 "partOf": {

@@ -363,7 +363,7 @@
                 "identifier":  [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR",
-                        "value": "{{OMRLabCodeFiller}}"
+                        "value": "{{OMRLabCodePlacer}}"
                     }
                 ],
                 "name": "Laboratorio di analisi",
@@ -386,7 +386,7 @@
                 "identifier":  [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceLaboratorioOMR",
-                        "value": "{{OMRLabCode}}"
+                        "value": "{{OMRLabCodeFiller}}"
                     }
                 ],
                 "name": "Laboratorio di analisi",
@@ -465,7 +465,7 @@
                 },
                 "performer":  [
                     {
-                        "reference": "Organization/38c13a45-fbe0-11ed-99f7-91181700b9s0"
+                        "reference": "Organization/89ca2akc-9s82-34df-cfr4-01945719a987"
                     }
                 ],
                 "orderDetail":  [
@@ -548,7 +548,7 @@
                 },
                 "performer":  [
                     {
-                        "reference": "Organization/38c13a45-fbe0-11ed-99f7-91181700b9s0"
+                        "reference": "Organization/89ca2akc-9s82-34df-cfr4-01945719a987"
                     }
                 ],
                 "orderDetail":  [
@@ -682,7 +682,7 @@
                     {
                         "url": "https://fhir.siss.regione.lombardia.it/StructureDefinition/ReteLabEncounterServiceRequester",
                         "valueReference": {
-                            "reference": "Organization/89ca2akc-9s82-34df-cfr4-01945719a987"
+                            "reference": "Organization/38c13a45-fbe0-11ed-99f7-91181700b9s0"
                         }
                     }
                 ],
@@ -701,7 +701,7 @@
                         },
                         "value": "1",
                         "assigner": {
-                            "reference": "Organization/89ca2akc-9s82-34df-cfr4-01945719a987",
+                            "reference": "Organization/38c13a45-fbe0-11ed-99f7-91181700b9s0",
                             "display": "Laboratorio richiedente"
                         }
                     }
@@ -768,7 +768,7 @@
                 "name": "CARDIOLOGIA",
                 "identifier":  [
                     {
-                        "value": "12211",
+                        "value": "{{L3codeFiller}}",
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto"
                     }
                 ],
@@ -790,7 +790,7 @@
                 },
                 "identifier":  [
                     {
-                        "value": "0002",
+                        "value": "{{L4codePlacer}}",
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeAmbulatorio"
                     }
                 ],
@@ -812,7 +812,7 @@
                 },
                 "identifier":  [
                     {
-                        "value": "{{L3code}}",
+                        "value": "{{L3codePlacer}}",
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialeReparto"
                     }
                 ],
@@ -834,7 +834,7 @@
                 },
                 "identifier":  [
                     {
-                        "value": "{{L2code}}",
+                        "value": "{{L2codePlacer}}",
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceMinisterialePresidio"
                     }
                 ],
@@ -856,7 +856,7 @@
                 },
                 "identifier":  [
                     {
-                        "value": "{{L1code}}",
+                        "value": "{{L1codePlacer}}",
                         "system": "https://fhir.siss.regione.lombardia.it/sid/codiceIdentificativoEnte"
                     }
                 ]

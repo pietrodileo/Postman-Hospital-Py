@@ -15,6 +15,8 @@ console.log("MessageHeaderID:", MessageHeaderID);
 // Dichiara le informazioni sull'Ente
 const CodiceApplicativo = "CodiceApplicativo_VSC"  
 pm.collectionVariables.set("CodiceApplicativo", CodiceApplicativo);
+
+// Dichiara le variabili di ambiente L1, L2, L3, L4, OMRLabCode
 const L1code = "L1code_VSC"   
 pm.collectionVariables.set("L1code", L1code);
 const L2code = "L2code_VSC"   
@@ -27,9 +29,9 @@ const OMRLabCode = "OMRLabCode_VSC"
 pm.collectionVariables.set("OMRLabCode", OMRLabCode);
 const softwareName = "NomeSoftware_VSC"   
 pm.collectionVariables.set("NomeSoftware", softwareName);
-console.log("OMR Lab Code: ",pm.collectionVariables.get("OMRLabCode"))
-console.log("L1 code: ",pm.collectionVariables.get("L1code"), "L2 code: ",pm.collectionVariables.get("L2code"))
-console.log("L3 code: ",pm.collectionVariables.get("L3code"), "L4 code: ",pm.collectionVariables.get("L4code"))
+console.log("OMR Lab Code filler: ",pm.environment.get("OMRLabCodeFiller"))
+console.log("L1 code filler: ",pm.environment.get("L1codeFiller"), "L2 code filler: ",pm.environment.get("L2codeFiller"))
+console.log("L3 code filler: ",pm.environment.get("L3codeFiller"), "L4 code filler: ",pm.environment.get("L4codeFiller"))
 console.log("CodiceApplicativo: ",pm.collectionVariables.get("CodiceApplicativo"))
 
 // Estraiamo le richieste precedentemente assegnate
@@ -98,7 +100,9 @@ console.log("SR4SISS:", SR4SISS);
 console.log("ServiceRequest3:", SR3Value);
 console.log("ServiceRequest4:", SR4Value);
 
-// Dichiara le variabili di ambiente L1 filler e L2 filler da utilizzare negli altri flussi per identificare il placer
+// Dichiara le variabili di ambiente L1, L2, L3, L4, OMRLabCode filler da utilizzare negli altri flussi per identificare il filler
 pm.environment.set("L1codeFiller",L1code);
 pm.environment.set("L2codeFiller",L2code);
+pm.environment.set("L3codeFiller",L3code);
+pm.environment.set("L4codeFiller",L4code);
 pm.environment.set("OMRLabCodeFiller",OMRLabCode);

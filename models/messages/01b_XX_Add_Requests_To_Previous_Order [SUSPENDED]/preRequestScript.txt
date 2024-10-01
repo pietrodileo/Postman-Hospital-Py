@@ -57,6 +57,9 @@ pm.collectionVariables.set("PlacerOrderNumber", CodiceApplicativo + "-" + servic
 pm.collectionVariables.set("PlacerOrderNumber2", CodiceApplicativo + "-" + secondServiceIDString);
 console.log("");
 
-// Dichiara le variabili di ambiente L1 placer e L2 placer da utilizzare negli altri flussi per identificare il placer
-pm.environment.set("L1codePlacer", L1code);
-pm.environment.set("L2codePlacer", L2code);
+// Dichiara le variabili di ambiente L1, L2, L3, L4, OMRLabCode placer da utilizzare negli altri flussi per identificare il placer
+pm.environment.set("L1codePlacer",L1code);
+pm.environment.set("L2codePlacer",L2code);
+pm.environment.set("L3codePlacer",L3code);
+pm.environment.set("L4codePlacer",L4code);
+pm.environment.set("OMRLabCodePlacer",OMRLabCode);
