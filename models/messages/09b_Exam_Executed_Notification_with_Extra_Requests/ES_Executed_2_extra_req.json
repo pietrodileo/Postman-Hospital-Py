@@ -167,7 +167,7 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/FillerOrderNumber",
-                        "value": "{{$randomUUID}}"
+                        "value": "{{ExtraRequestFillerID1}}"
                     }
                 ],
                 "requisition": {
@@ -275,7 +275,7 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/FillerOrderNumber",
-                        "value": "{{$randomUUID}}"
+                        "value": "{{ExtraRequestFillerID2}}"
                     }
                 ],
                 "requisition": {

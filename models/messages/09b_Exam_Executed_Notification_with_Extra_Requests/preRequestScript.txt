@@ -106,3 +106,23 @@ pm.environment.set("L2codeFiller",L2code);
 pm.environment.set("L3codeFiller",L3code);
 pm.environment.set("L4codeFiller",L4code);
 pm.environment.set("OMRLabCodeFiller",OMRLabCode);
+
+// Verifica se le variabili contenenti gli id delle richieste extra sono state precedentemente dichiarate
+// Se non sono state dichiarate, le creo
+let ExtraRequestFillerID1Key = "ExtraRequestFillerID1";
+let ExtraRequestFillerID1 = pm.collectionVariables.has(ExtraRequestFillerID1Key)
+  ? pm.collectionVariables.get(ExtraRequestFillerID1Key)
+  : null;
+
+let ExtraRequestFillerID2Key = "ExtraRequestFillerID2";
+let ExtraRequestFillerID2 = pm.collectionVariables.has(ExtraRequestFillerID2Key)
+  ? pm.collectionVariables.get(ExtraRequestFillerID2Key)
+  : null;
+
+let force_extra_req_IDs_generation = 0
+if ((ExtraRequestFillerID1 == null || ExtraRequestFillerID2 == null) || (force_extra_req_IDs_generation)) {
+    let ExtraRequestFillerID1 = pm.variables.replaceIn("{{$randomUUID}}").toString();
+    pm.collectionVariables.set("ExtraRequestFillerID1", ExtraRequestFillerID1);
+    let ExtraRequestFillerID2 = pm.variables.replaceIn("{{$randomUUID}}").toString();
+    pm.collectionVariables.set("ExtraRequestFillerID2", ExtraRequestFillerID2);
+}

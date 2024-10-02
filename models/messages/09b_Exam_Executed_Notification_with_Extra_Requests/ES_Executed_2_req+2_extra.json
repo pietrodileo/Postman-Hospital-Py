@@ -447,7 +447,7 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/FillerOrderNumber",
-                        "value": "{{$randomUUID}}"
+                        "value": "{{ExtraRequestFillerID1}}"
                     }
                 ],
                 "status": "active",
@@ -551,7 +551,7 @@
                 "identifier": [
                     {
                         "system": "https://fhir.siss.regione.lombardia.it/sid/FillerOrderNumber",
-                        "value": "{{$randomUUID}}"
+                        "value": "{{ExtraRequestFillerID2}}"
                     }
                 ],
                 "status": "active",
